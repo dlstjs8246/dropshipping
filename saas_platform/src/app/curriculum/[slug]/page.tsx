@@ -9,7 +9,7 @@ export default async function LectureReader({ params }: { params: Promise<{ slug
   const { slug } = resolvedParams;
   
   // course_materials 디렉토리의 파일 읽기
-  const filePath = path.join(process.cwd(), '../course_materials', `${slug}.md`);
+  const filePath = path.join(process.cwd(), 'course_materials', `${slug}.md`);
   
   let content = '';
   try {
