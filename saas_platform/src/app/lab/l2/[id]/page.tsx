@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CopyButton } from "../../l1/[id]/CopyButton";
 import { DownloadBundleButton } from "./DownloadBundleButton";
+import { DeleteSessionButton } from "@/components/layout/DeleteSessionButton";
 import type { L2Output } from "../actions";
 
 export const metadata = { title: "Assistant 빌드 결과 | Command Center" };
@@ -58,10 +59,16 @@ export default async function L2ResultPage({
             {output.spec.oneLineIdentity}
           </p>
         </div>
-        <DownloadBundleButton
-          filename={`${output.spec.brandName}-${output.type}-bundle.md`}
-          content={renderBundleMd(output)}
-        />
+        <div className="flex shrink-0 gap-2">
+          <DownloadBundleButton
+            filename={`${output.spec.brandName}-${output.type}-bundle.md`}
+            content={renderBundleMd(output)}
+          />
+          <DeleteSessionButton
+            id={row.id}
+            title={`${output.spec.brandName} ${output.type} 비서`}
+          />
+        </div>
       </div>
 
       <Card className="mb-6">

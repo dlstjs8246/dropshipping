@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { SidebarNav } from "./SidebarNav";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Sidebar() {
   return (
@@ -16,6 +17,10 @@ export function Sidebar() {
         <span className="text-base">Command Center</span>
       </Link>
       <SidebarNav className="flex-1 overflow-y-auto" />
+      <div className="flex items-center justify-between border-t px-3 py-2">
+        <span className="text-xs text-muted-foreground">테마</span>
+        <ThemeToggle />
+      </div>
     </aside>
   );
 }
