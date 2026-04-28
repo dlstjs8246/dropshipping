@@ -14,6 +14,7 @@ export const labModuleEnum = pgEnum("lab_module", [
   "margin",
   "l1_triangulation",
   "l2_builder",
+  "l3_agent",
 ]);
 export const verdictEnum = pgEnum("verdict", ["GO", "HOLD", "FAIL"]);
 

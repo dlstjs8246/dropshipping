@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calculator, Bot, Sparkles, BookOpen, ArrowRight } from "lucide-react";
+import { Calculator, Bot, Sparkles, Workflow, BookOpen, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -36,21 +36,21 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-20 grid gap-6 md:grid-cols-3">
+      <div className="mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <ModuleCard
           href="/margin"
           icon={Calculator}
           title="Margin Shield"
           level="L0-L1"
-          description="CJ URL 한 줄 → 7-필터 Kill Criteria 자동 평가 + 관세 포함 Landed Cost + GO/HOLD/FAIL 판정. W2~W3 강의를 코드로."
-          courseRef="W2 Kill Criteria · W3 Landed Cost"
+          description="CJ URL → 7-필터 Kill Criteria + Landed Cost + GO/HOLD/FAIL. W2~W3 강의를 코드로."
+          courseRef="W2 · W3"
         />
         <ModuleCard
           href="/lab/l1"
           icon={Sparkles}
           title="L1 Triangulation"
           level="L1"
-          description="질문 1개 → Claude 3-temperature 병렬 호출 + 합의/부분/충돌 자동 분류. Supplement 08 §6.2 4단계 프로토콜 시연."
+          description="질문 → 3-temp Claude 병렬 + 합의/충돌 자동 분류. Supplement 08 §6.2 4단계 프로토콜."
           courseRef="Supplement 08 §6.2"
         />
         <ModuleCard
@@ -58,8 +58,16 @@ export default function Home() {
           icon={Bot}
           title="L2 Assistant Builder"
           level="L2"
-          description="카피·DM·CS 비서 5단계 빌드 (명세 → 시스템 프롬프트 → 지식 → 테스트 → 배포). Claude Projects 복붙 가능 .md 다운로드."
-          courseRef="Supplement 09 §3·§7~§9"
+          description="카피·DM·CS 비서 5단계 빌드. Claude Projects 복붙 가능 .md 다운로드."
+          courseRef="Supplement 09 §3"
+        />
+        <ModuleCard
+          href="/lab/l3"
+          icon={Workflow}
+          title="L3 Agent Sandbox"
+          level="L3"
+          description="Mock 주문 → 룰 평가 → AUTO_ORDER/ESCALATE 시뮬레이션. Make.com 블루프린트 export."
+          courseRef="Supplement 10 §3"
         />
       </div>
 

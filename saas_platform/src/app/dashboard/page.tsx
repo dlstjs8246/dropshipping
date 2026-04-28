@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calculator, Sparkles, Bot, ArrowRight } from "lucide-react";
+import { Calculator, Sparkles, Bot, Workflow, ArrowRight } from "lucide-react";
 import { db } from "@/lib/db";
 import { labSessions } from "@/lib/db/schema";
 import { desc, eq } from "drizzle-orm";
@@ -29,6 +29,11 @@ const MODULE_META: Record<
     label: "L2 Assistant Builder",
     icon: Bot,
   },
+  l3_agent: {
+    href: (id) => `/lab/l3/${id}`,
+    label: "L3 Agent Sandbox",
+    icon: Workflow,
+  },
 };
 
 export default async function DashboardPage() {
@@ -51,7 +56,7 @@ export default async function DashboardPage() {
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <ModuleCard
           href="/margin"
           icon={Calculator}
@@ -69,6 +74,12 @@ export default async function DashboardPage() {
           icon={Bot}
           title="L2 Assistant Builder"
           description="카피·DM·CS 비서 5단계 빌드"
+        />
+        <ModuleCard
+          href="/lab/l3"
+          icon={Workflow}
+          title="L3 Agent Sandbox"
+          description="Mock 주문 → AUTO_ORDER/ESCALATE"
         />
       </div>
 
