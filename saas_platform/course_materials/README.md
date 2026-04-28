@@ -1,8 +1,10 @@
 # 🎓 AI-Powered Shopify Dropshipping Master Class
 
-> **강사용 통합 대시보드 (Reader Homepage)**
-> 
-> 이 페이지는 14주간의 전체 커리큘럼 교안 및 실습 자료를 한눈에 파악하고 바로 이동할 수 있는 목차(Index) 페이지입니다. 강의를 진행하기 전, 주차별 링크를 클릭하여 대본과 가이드를 확인하세요.
+> **수강생용 강의 자료실 (Course Library)**
+>
+> 14주 마스터 클래스의 모든 교안·템플릿·보충 자료를 한 곳에서 열람합니다. 매주 수업 전후로 해당 주차의 링크를 클릭해 학습하세요. 보충 강의(Supplement)와 부록(Appendix)은 졸업 후 운영 단계에서도 계속 참조할 수 있는 자료입니다.
+>
+> 💡 **강사용 대본 및 운영 가이드**는 [`instructor/`](./instructor/) 폴더에 별도로 보관되어 있습니다.
 
 ---
 
@@ -10,13 +12,49 @@
 학생들에게 직접 링크로 배포하거나 수업 중 활용할 필수 템플릿입니다.
 
 - 🔗 [01. 수강생 개인 노션 대시보드 양식](./01_Notion_Dashboard.md)
-- 🔗 [02. 수업용 마스터 프롬프트 모음집](./02_Master_Prompts.md)
+- 🔗 [02. 수업용 마스터 프롬프트 모음집 (11종 — DM·광고이미지·데이터분석 포함)](./02_Master_Prompts.md)
 - 🔗 [03. 마진 계산기 및 상품 스코어카드 (CSV)](./03_Scorecard_Template.csv)
 - 🔗 [04. Make.com 노코드 자동화 블루프린트 가이드](./04_Make_Automation_Guide.md)
 
 ---
 
-## 📅 주차별 상세 강의 교안 (강사용 대본)
+## 🆕 보충 강의 (옵션 트랙)
+정규 14주 외 깊이 있게 다루는 옵션 강의입니다. 정식 출시 후 운영 단계에서 1회독 권장.
+
+### 운영·법적·이메일 트랙
+- 🔗 [Supplement 01: 이메일 자동화 플레이북 (Klaviyo + 환영/장바구니/Win-back 시퀀스)](./Supplement_01_Email_Automation_Playbook.md)
+- 🔗 [Supplement 02: 광고 예산 계산기 (4 시나리오 CSV)](./Supplement_02_Ad_Budget_Calculator.csv)
+
+### 🤖 AI Mastery Track — L1 → L2 → L3
+"AI를 활용한 수익화"의 완전한 학습 경로. AI가 처음이라면 **L1부터 순서대로** 학습하세요.
+
+**🎯 L1 — Generative AI Foundations (입문, 시작점)**
+- 🔗 [Supplement 08: L1 생성형 AI 다루는법 (할루시네이션·교차검증·언어 결정)](./Supplement_08_L1_Generative_AI_Foundations.md) ← **시작점**
+
+**🛠 L2 — AI Activation (활용)**
+- 🔗 [Supplement 03: AI 도구 선택 가이드 (작업별 매트릭스 2026)](./Supplement_03_AI_Tool_Selection_Guide.md)
+- 🔗 [Supplement 04: 고급 프롬프트 엔지니어링 (CoT·Few-shot·Self-Critique 등 6대 패턴)](./Supplement_04_Advanced_Prompt_Engineering.md)
+- 🔗 [Supplement 05: AI 워크플로우 레시피 (다중 AI 연결 10종)](./Supplement_05_AI_Workflow_Recipes.md)
+- 🔗 [Supplement 06: AI 에셋 생산 스택 (음성·영상·음악 통합)](./Supplement_06_AI_Asset_Generation_Stack.md)
+- 🔗 [Supplement 09: L2 AI Assistant 사용법 — 본인 비서 만들기 (카피·DM·CS)](./Supplement_09_L2_AI_Assistant_Building.md)
+
+**🤖 L3 — AI Automation (자동화)**
+- 🔗 [Supplement 07: AI Agent 빌더 비교 (Custom GPTs vs Claude Projects vs Gemini Gems)](./Supplement_07_AI_Agent_Builder_Comparison.md)
+- 🔗 [Supplement 10: L3 AI Agent 사용법 — 의사결정 자동화 & 무인 시스템](./Supplement_10_L3_AI_Agent_Building.md)
+
+---
+
+## 📚 부록 (졸업 후 참조용)
+운영 중 부닥치는 법적·기술적 이슈에 대한 빠른 참조 자료입니다.
+
+- 🔗 [Appendix A: 환불정책 + 법적 체크리스트 (한 → 미)](./Appendix_A_Refund_Legal_Checklist.md)
+- 🔗 [Appendix B: 상품 페이지 SEO 체크리스트](./Appendix_B_SEO_Checklist.md)
+- 🔗 [Appendix C: 배송 옵션 분석 (DDP/DDU + 캐리어 비교)](./Appendix_C_Shipping_Carriers_DDP_DDU.md)
+- 🔗 [Appendix D: 첫 100명 고객 확보 90일 플레이북 (Seed → Validate → Accelerate → Scale)](./Appendix_D_First_100_Customers.md)
+
+---
+
+## 📅 주차별 강의 교안
 
 ### 🟢 Phase 1: 기초 + 비즈니스 설계
 - **Week 01**: 🔗 [AI의 세계와 2026 드랍쉬핑 아키텍처](./Week01_AI_Dropshipping_Intro.md)
@@ -44,9 +82,8 @@
 
 ---
 
-## 💻 부록: 강사 자체 개발 SaaS (14주차 오픈)
-14주차에 수강생들에게 선물로 제공할 '수동 작업 자동화 대시보드' 관련 자료입니다.
+## 💻 부록: Command Center SaaS (14주차 공개)
+14주차에 1기 수강생에게 평생 무료로 제공되는 **'수동 작업 자동화 대시보드'** 관련 자료입니다.
 
 - 📄 **SaaS 기능 명세서**: 🔗 [SaaS_개발_기획서.md](../SaaS_개발_기획서.md)
-- 🚀 **SaaS 소스코드 (Next.js)**: `../saas_platform/` 디렉토리 참조
-  - 터미널에서 `cd ../saas_platform` 입력 후 `npm run dev`로 실행 가능
+- 🚀 **SaaS 접속 안내**: 14주차에 공개될 라이브 링크 + 평생 무료 계정 발급 절차

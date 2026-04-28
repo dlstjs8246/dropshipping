@@ -4,18 +4,63 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+function csvToMarkdown(csv: string, title: string): string {
+  const lines = csv.trim().split(/\r?\n/).filter((l) => l.length > 0);
+  if (lines.length === 0) return `# ${title}\n\n(빈 CSV 파일)`;
+
+  const parseRow = (row: string): string[] => {
+    const cells: string[] = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < row.length; i++) {
+      const ch = row[i];
+      if (ch === '"') {
+        inQuotes = !inQuotes;
+      } else if (ch === ',' && !inQuotes) {
+        cells.push(current.trim());
+        current = '';
+      } else {
+        current += ch;
+      }
+    }
+    cells.push(current.trim());
+    return cells;
+  };
+
+  const header = parseRow(lines[0]);
+  const body = lines.slice(1).map(parseRow);
+
+  const md: string[] = [`# ${title}`, ''];
+  md.push('| ' + header.join(' | ') + ' |');
+  md.push('| ' + header.map(() => '---').join(' | ') + ' |');
+  for (const row of body) {
+    const padded = [...row];
+    while (padded.length < header.length) padded.push('');
+    md.push('| ' + padded.slice(0, header.length).map((c) => c || '—').join(' | ') + ' |');
+  }
+  return md.join('\n');
+}
+
 export default async function LectureReader({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
-  
-  // course_materials 디렉토리의 파일 읽기
-  const filePath = path.join(process.cwd(), 'course_materials', `${slug}.md`);
-  
+
+  const baseDir = path.join(process.cwd(), 'course_materials');
+  const mdPath = path.join(baseDir, `${slug}.md`);
+  const csvPath = path.join(baseDir, `${slug}.csv`);
+
   let content = '';
   try {
-    content = fs.readFileSync(filePath, 'utf8');
-  } catch (e) {
-    content = '# Error\n파일을 찾을 수 없습니다. 경로(`course_materials/`)를 확인해주세요.';
+    if (fs.existsSync(mdPath)) {
+      content = fs.readFileSync(mdPath, 'utf8');
+    } else if (fs.existsSync(csvPath)) {
+      const csv = fs.readFileSync(csvPath, 'utf8');
+      content = csvToMarkdown(csv, slug.replace(/_/g, ' '));
+    } else {
+      content = '# Error\n파일을 찾을 수 없습니다. 경로(`course_materials/`)를 확인해주세요.';
+    }
+  } catch {
+    content = '# Error\n파일 읽기 중 오류가 발생했습니다.';
   }
 
   return (
