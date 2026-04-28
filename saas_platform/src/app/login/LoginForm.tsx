@@ -26,6 +26,7 @@ export function LoginForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
+  const [oauthLoading, setOauthLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const { register, handleSubmit, formState } = useForm<FormValues>({
@@ -48,6 +49,24 @@ export function LoginForm() {
     } catch (err) {
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "알 수 없는 오류");
+    }
+  }
+
+  async function onGoogleSignIn() {
+    setOauthLoading(true);
+    setErrorMessage(null);
+    try {
+      const supabase = createClient();
+      const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`;
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo },
+      });
+      if (error) throw error;
+      // signInWithOAuth redirects browser; no further state change needed.
+    } catch (err) {
+      setOauthLoading(false);
+      setErrorMessage(err instanceof Error ? err.message : "Google 로그인 실패");
     }
   }
 
@@ -77,10 +96,39 @@ export function LoginForm() {
       <CardHeader>
         <CardTitle>로그인 / 가입</CardTitle>
         <CardDescription>
-          비밀번호 없음. 이메일에 도착하는 링크를 클릭하면 됩니다.
+          비밀번호 없음. Google 계정 또는 이메일 매직 링크.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-4">
+        <Button
+          type="button"
+          variant="outline"
+          className="w-full"
+          onClick={onGoogleSignIn}
+          disabled={oauthLoading || status === "sending"}
+        >
+          {oauthLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              이동 중...
+            </>
+          ) : (
+            <>
+              <GoogleIcon className="mr-2 h-4 w-4" />
+              Google로 계속
+            </>
+          )}
+        </Button>
+
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center" aria-hidden="true">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs">
+            <span className="bg-card px-2 text-muted-foreground">또는</span>
+          </div>
+        </div>
+
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">이메일</Label>
@@ -106,8 +154,9 @@ export function LoginForm() {
 
           <Button
             type="submit"
+            variant="secondary"
             className="w-full"
-            disabled={status === "sending"}
+            disabled={status === "sending" || oauthLoading}
           >
             {status === "sending" ? (
               <>
@@ -124,5 +173,29 @@ export function LoginForm() {
         </form>
       </CardContent>
     </Card>
+  );
+}
+
+function GoogleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden>
+      <path
+        fill="#EA4335"
+        d="M12 5.04c1.7 0 3.21.59 4.41 1.74l3.3-3.3C17.85 1.6 15.18.5 12 .5 7.34.5 3.27 3.16 1.3 7.06l3.85 2.99C6.13 7.13 8.83 5.04 12 5.04z"
+      />
+      <path
+        fill="#4285F4"
+        d="M23.5 12.27c0-.83-.07-1.62-.2-2.39H12v4.51h6.46c-.28 1.5-1.13 2.77-2.41 3.62l3.71 2.88c2.17-2 3.74-4.95 3.74-8.62z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.16 14.05a7.49 7.49 0 0 1 0-4.73L1.3 6.34a12.45 12.45 0 0 0 0 11.32l3.86-3.61z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 23.5c3.18 0 5.85-1.06 7.8-2.86l-3.71-2.88c-1.04.7-2.39 1.12-4.09 1.12-3.16 0-5.85-2.09-6.84-4.92L1.3 17.05C3.27 20.84 7.34 23.5 12 23.5z"
+      />
+      <path fill="none" d="M.5.5h23v23H.5z" />
+    </svg>
   );
 }

@@ -57,6 +57,35 @@ npm run dev
 - Supabase Dashboard → Table Editor에 `orgs`, `org_members`, `user_keys`, `lab_sessions` 4개 테이블 보임
 - Authentication → Settings → "Confirm email" OFF (개발 편의 — 운영 시 ON)
 
+## (선택) Google OAuth 활성화 — 5분
+
+이메일 매직 링크 외에 "Google로 계속" 버튼을 활성화하려면:
+
+### A. Google Cloud Console
+1. [console.cloud.google.com](https://console.cloud.google.com) → 새 프로젝트 (또는 기존)
+2. **APIs & Services → OAuth consent screen** → External 선택 → 앱 이름 입력
+3. **APIs & Services → Credentials → Create Credentials → OAuth client ID**
+4. Application type: **Web application**
+5. **Authorized redirect URIs**에 다음 추가:
+   ```
+   https://YOUR-PROJECT-REF.supabase.co/auth/v1/callback
+   ```
+   (Supabase Dashboard → Authentication → Providers → Google에 정확한 URL이 표시됨)
+6. **Create** → Client ID + Client Secret 복사
+
+### B. Supabase Dashboard
+1. **Authentication → Providers → Google** 클릭
+2. **Enable Sign in with Google** 토글 ON
+3. Client ID + Secret 붙여넣기 → **Save**
+
+### C. 검증
+- `/login` 페이지 새로고침 → "Google로 계속" 버튼 클릭 가능
+- Google 계정 선택 → `/auth/callback` → 첫 로그인이면 `/onboarding/1`로, 재방문이면 `/dashboard`로
+
+> Google OAuth는 비즈니스 검토가 필요 없습니다 (Kakao OAuth와 차이). External 모드는 100명까지 무검토 사용 가능.
+
+---
+
 ## W1 완료 시그널
 
 다음 모두 ✅:
