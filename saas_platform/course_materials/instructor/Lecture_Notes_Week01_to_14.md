@@ -4,6 +4,10 @@
 > - 수강생용 Notion 대시보드 링크 준비 및 공유
 > - `02_Master_Prompts.md` 열어두기
 > - (Week 10 이후) Make.com 템플릿(Blueprint) 사전 세팅 및 테스트 완료
+>
+> **수강생 자기주도 학습 인프라 (모든 주차 공통 안내)**
+> - 학습 진척: [Supplement 11 자가 진단 시스템](../Supplement_11_Self_Assessment_and_Progress_Tracker.md) — Week 0 Pre-flight + 매주 일요일 22시 5문항 작성. Week 1 종료 시 첫 Checkpoint 안내.
+> - 용어 참조: [Appendix E 용어집](../Appendix_E_Glossary.md) — ROAS·CVR·DDP·HTS·CoT·RAG 등 90+ 용어. 매 주차 옆 탭에 띄워두라고 1주차에 강조.
 
 ---
 

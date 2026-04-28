@@ -22,6 +22,11 @@ export default function CurriculumIndex() {
 
   const supplements: Item[] = [
     {
+      title: '📋 자가 진단 & 학습 진척 추적 시스템 (매주 10분)',
+      file: 'Supplement_11_Self_Assessment_and_Progress_Tracker',
+      subtitle: 'Week 0 시작점 — 매주 일요일 22시 작성',
+    },
+    {
       title: '이메일 자동화 플레이북 (Klaviyo + 시퀀스 4종)',
       file: 'Supplement_01_Email_Automation_Playbook',
       subtitle: 'Week 13 직후 권장',
@@ -94,6 +99,11 @@ export default function CurriculumIndex() {
       title: '🎯 첫 100명 고객 확보 90일 플레이북',
       file: 'Appendix_D_First_100_Customers',
       subtitle: 'Week 6 직후 권장 — 졸업 후 6개월 생존율 결정',
+    },
+    {
+      title: '📖 용어집 (Glossary) — ROAS·CVR·DDP·HTS·CoT·RAG 등 90+ 용어',
+      file: 'Appendix_E_Glossary',
+      subtitle: '매 주차 옆 탭에 띄워두기 — 한국 학습자 필수',
     },
   ];
 

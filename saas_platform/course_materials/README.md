@@ -21,6 +21,9 @@
 ## 🆕 보충 강의 (옵션 트랙)
 정규 14주 외 깊이 있게 다루는 옵션 강의입니다. 정식 출시 후 운영 단계에서 1회독 권장.
 
+### 학습 진척 추적 (시작점)
+- 🔗 [Supplement 11: 자가 진단 & 학습 진척 추적 시스템 (Pre-flight + 14주 Weekly + 졸업 루브릭)](./Supplement_11_Self_Assessment_and_Progress_Tracker.md) ← **매주 일요일 22시 작성**
+
 ### 운영·법적·이메일 트랙
 - 🔗 [Supplement 01: 이메일 자동화 플레이북 (Klaviyo + 환영/장바구니/Win-back 시퀀스)](./Supplement_01_Email_Automation_Playbook.md)
 - 🔗 [Supplement 02: 광고 예산 계산기 (4 시나리오 CSV)](./Supplement_02_Ad_Budget_Calculator.csv)
@@ -51,6 +54,7 @@
 - 🔗 [Appendix B: 상품 페이지 SEO 체크리스트](./Appendix_B_SEO_Checklist.md)
 - 🔗 [Appendix C: 배송 옵션 분석 (DDP/DDU + 캐리어 비교)](./Appendix_C_Shipping_Carriers_DDP_DDU.md)
 - 🔗 [Appendix D: 첫 100명 고객 확보 90일 플레이북 (Seed → Validate → Accelerate → Scale)](./Appendix_D_First_100_Customers.md)
+- 🔗 [Appendix E: 용어집 (ROAS·CVR·DDP·HTS·CoT·RAG 등 90+ 용어)](./Appendix_E_Glossary.md) ← **매 주차 옆 탭에**
 
 ---
 
