@@ -62,32 +62,28 @@ L1 Triangulation에 Perplexity Sonar 4번째 소스 추가. 키 미입력 시 Cl
 
 ---
 
-## (d) Margin Shield 배치 스캔 — ~1.5h
+## ~~(d) Margin Shield 배치 스캔~~ ✅ 완료 (커밋 예정)
 
-**가치**: 시장 조사 속도 5x. 현재 Margin Shield는 1개 URL씩. 배치 = 10개 URL 붙여넣기 → 병렬 평가 → 정렬된 표.
+CSV 형식으로 최대 20개 상품을 한 번에 평가. 5개씩 chunk + 1초 delay로 rate-limit 회피.
 
-**구현 범위**:
-1. `/margin/batch` 신규 라우트
-2. Form: textarea로 URL 10개 입력 (한 줄에 1개)
-3. Server Action: `runBatchMarginScan` — Promise.all로 10개 병렬 호출 (단, Anthropic rate limit 고려해서 batch size 5 + 1초 delay)
-4. 결과 페이지: 정렬 가능한 표 (verdict, margin %, landed cost) — TanStack Table v8
-5. 표 행 클릭 → 기존 `/margin/[id]` detail 이동
-6. 모든 행을 `lab_sessions`에 개별 저장
+**산출물**:
+- `src/lib/business/margin-engine.ts` — 핵심 스캔 로직을 `runMarginEngine()` headless 함수로 추출 (단일/배치 공유)
+- `src/app/margin/batch/{page,BatchForm,BatchResultsTable,actions}.tsx` — CSV textarea + sortable TanStack Table v8 결과 표
+- `src/app/margin/actions.ts` — 엔진 함수 사용하도록 리팩터 (인라인 로직 100+ 줄 제거)
+- `src/app/margin/page.tsx` — 헤더에 "배치 스캔" 진입 버튼
 
-**의존성 추가**:
-```json
-"@tanstack/react-table": "^8.20.6"
+**CSV 형식**:
 ```
+url, 상품명, 소싱가, 배송비, 무게(g), 판매가
+```
+URL 없으면 5개 필드만도 OK. 헤더 행 자동 감지.
 
-**파일**:
-- `src/app/margin/batch/page.tsx`
-- `src/app/margin/batch/BatchForm.tsx`
-- `src/app/margin/batch/actions.ts`
-- `src/app/margin/batch/[batchId]/page.tsx` (선택 — batch grouping)
+**결과 표**:
+- Sortable: verdict (GO/HOLD/FAIL), margin %, landed cost
+- 행 클릭 → 기존 `/margin/[id]` detail
+- 실패·스킵 행은 별도 카드에 사유 표시
 
-**제약**:
-- Anthropic Tier 1 무료 키는 5 RPM. 배치 5개씩 분할 + retry-after 헤더 존중.
-- Tier 2+ 키는 50 RPM 가능.
+**의존성 추가**: `@tanstack/react-table@^8.20.6`
 
 ---
 

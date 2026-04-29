@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { Calculator, ArrowRight } from "lucide-react";
+import { Calculator, ArrowRight, Layers } from "lucide-react";
 import { db } from "@/lib/db";
 import { labSessions } from "@/lib/db/schema";
 import { and, desc, eq } from "drizzle-orm";
 import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ScanForm } from "./ScanForm";
 
@@ -24,17 +25,25 @@ export default async function MarginPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-12">
-      <div className="mb-10 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary/10 text-primary">
-          <Calculator className="h-5 w-5" />
+      <div className="mb-10 flex items-start justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary/10 text-primary">
+            <Calculator className="h-5 w-5" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Margin Shield</h1>
+            <p className="text-sm text-muted-foreground">
+              CJ URL → 7-필터 Kill Criteria + Landed Cost + GO/HOLD/FAIL.
+              연계: W2 · W3 · Master Prompts §1.
+            </p>
+          </div>
         </div>
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Margin Shield</h1>
-          <p className="text-sm text-muted-foreground">
-            CJ URL → 7-필터 Kill Criteria + Landed Cost + GO/HOLD/FAIL.
-            연계: W2 · W3 · Master Prompts §1.
-          </p>
-        </div>
+        <Button asChild variant="outline" size="sm">
+          <Link href="/margin/batch">
+            <Layers className="mr-2 h-4 w-4" />
+            배치 스캔
+          </Link>
+        </Button>
       </div>
 
       <Card>
