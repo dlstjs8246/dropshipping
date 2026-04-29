@@ -1,10 +1,84 @@
 # SaaS Setup — 환경 준비
 
-코드는 준비 완료. 다음 4단계로 환경을 설정하면 첫 가입이 가능합니다.
+두 가지 경로 중 선택:
+- **🚀 빠른 경로 (Vercel 배포 환경)**: 로컬 부팅 없이 단일 SQL 파일 + Vercel env vars 설정 → 운영 즉시 가동 (15분)
+- **🔧 로컬 경로**: 본인 머신에서 npm run dev로 검증 → Vercel 나중에
 
 ---
 
-## 1. Supabase 프로젝트 생성 (~5분)
+## 🚀 빠른 경로 — Vercel 배포 환경 (권장)
+
+### A. Supabase에서 4개 값 수집 (~3분)
+
+Dashboard → **Settings → API**:
+- `Project URL` → 환경변수 `NEXT_PUBLIC_SUPABASE_URL`
+- `Project API keys → anon public` (eyJ로 시작하는 긴 문자열) → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+Dashboard → **Settings → Database → Connection string** 탭에서 **Transaction (port 6543)** 복사 + `[YOUR-PASSWORD]` 치환:
+- → `DATABASE_URL`
+
+`ENCRYPTION_KEY` 생성 (32-byte hex):
+
+```bash
+# Mac/Linux
+openssl rand -hex 32
+
+# Windows PowerShell
+[byte[]] $bytes = New-Object byte[] 32; (New-Object System.Security.Cryptography.RNGCryptoServiceProvider).GetBytes($bytes); ($bytes | ForEach-Object { $_.ToString('x2') }) -join ''
+```
+
+### B. Vercel 환경변수 등록 (~2분)
+
+Vercel Dashboard → 본 프로젝트 → **Settings → Environment Variables** → 4개 변수 추가:
+
+| Key | Value | Environment |
+|---|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | A 단계 1번 값 | All |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | A 단계 2번 값 | All |
+| `DATABASE_URL` | A 단계 3번 값 (password 치환됨) | All |
+| `ENCRYPTION_KEY` | A 단계 4번 64자 hex | All |
+
+저장 후 **Deployments → 최근 deploy → ⋮ → Redeploy** 클릭 (env vars 반영 위해 재빌드 필수).
+
+### C. Supabase에 단일 SQL 적용 (~2분)
+
+Dashboard → **SQL Editor → New query** → 다음 파일 내용 통째로 붙여넣고 **Run**:
+
+→ [`src/lib/db/manual/0000_init_all.sql`](src/lib/db/manual/0000_init_all.sql)
+
+이 한 파일이 다음 모두 적용:
+- 3개 enum (org_role, lab_module, verdict)
+- 5개 테이블 (orgs, org_members, user_keys, lab_sessions, progress)
+- RLS 활성화 + 16개 정책
+- handle_new_user 트리거 (auth.users insert 시 자동 org+membership)
+
+Idempotent — 두 번 실행해도 안전.
+
+### D. Supabase Auth 설정 (~1분)
+
+Dashboard → **Authentication → URL Configuration**:
+- **Site URL**: `https://YOUR-VERCEL-DOMAIN.vercel.app` (또는 커스텀 도메인)
+- **Redirect URLs**: `https://YOUR-VERCEL-DOMAIN.vercel.app/**` 추가
+
+Dashboard → **Authentication → Providers → Email**:
+- **Confirm email**: 개발 편의로 OFF (운영 시 ON)
+
+### E. 검증
+
+브라우저로 본인 Vercel URL 접속:
+- 랜딩 페이지 → "시작하기" → `/login` → 매직 링크 또는 Google → `/onboarding/1`
+- 온보딩에서 Anthropic API 키 입력 → `/dashboard` 도달
+- Supabase Dashboard에서 `auth.users` + `orgs` + `org_members` + `user_keys` 각 1행 자동 생성 확인
+
+✅ 모든 시그널 통과 → [FIRST_RUN.md](./FIRST_RUN.md) 9-Step 모듈 검증으로 진행.
+
+---
+
+## 🔧 로컬 경로 (선택 — 운영 가동 후 디버깅용)
+
+운영이 가동된 뒤 로컬에서도 동일하게 띄우려면:
+
+### 1. Supabase 프로젝트 생성 (~5분)
 
 1. [supabase.com](https://supabase.com)에서 무료 계정 가입
 2. **New project** 클릭 → 이름 `command-center` (또는 본인 선호) → Region `Northeast Asia (Seoul)` → DB password 안전하게 저장
