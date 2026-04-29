@@ -5,6 +5,7 @@ const PROTECTED_PREFIXES = [
   "/dashboard",
   "/margin",
   "/lab",
+  "/progress",
   "/settings",
   "/onboarding",
 ];

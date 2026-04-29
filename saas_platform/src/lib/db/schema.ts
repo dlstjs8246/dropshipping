@@ -53,6 +53,23 @@ export const userKeys = pgTable("user_keys", {
     .defaultNow(),
 });
 
+export const progress = pgTable("progress", {
+  userId: uuid("user_id").primaryKey(),
+  data: jsonb("data").notNull().default({}),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+export type ProgressData = {
+  preflight?: Record<string, boolean>;
+  weeks?: Record<string, Record<string, boolean>>;
+  l1Assessment?: Record<string, boolean>;
+  l2Assessment?: Record<string, boolean>;
+  l3Assessment?: Record<string, boolean>;
+  rubric?: { revenue: number; system: number; ai: number };
+};
+
 export const labSessions = pgTable("lab_sessions", {
   id: uuid("id").primaryKey().defaultRandom(),
   orgId: uuid("org_id")
@@ -74,6 +91,7 @@ export type OrgMember = typeof orgMembers.$inferSelect;
 export type UserKeys = typeof userKeys.$inferSelect;
 export type LabSession = typeof labSessions.$inferSelect;
 export type NewLabSession = typeof labSessions.$inferInsert;
+export type Progress = typeof progress.$inferSelect;
 
 // Reserved for raw SQL hooks (RLS policies + auth trigger) applied via migration files.
 export const _migrationHints = sql`-- See ./migrations/0001_rls_and_triggers.sql`;

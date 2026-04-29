@@ -10,6 +10,7 @@ import {
   Settings,
   Sparkles,
   Workflow,
+  ClipboardCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,7 @@ const NAV: NavItem[] = [
   { href: "/lab/l1", label: "L1 Triangulation", icon: Sparkles, group: "labs" },
   { href: "/lab/l2", label: "L2 Assistant Builder", icon: Bot, group: "labs" },
   { href: "/lab/l3", label: "L3 Agent Sandbox", icon: Workflow, group: "labs" },
+  { href: "/progress", label: "Progress", icon: ClipboardCheck, group: "learn" },
   { href: "/curriculum", label: "Curriculum", icon: BookOpen, group: "learn" },
   { href: "/settings/account", label: "Settings", icon: Settings, group: "account" },
 ];

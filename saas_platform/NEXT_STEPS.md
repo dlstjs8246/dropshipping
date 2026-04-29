@@ -23,42 +23,25 @@ L1 Triangulation에 Perplexity Sonar 4번째 소스 추가. 키 미입력 시 Cl
 
 ---
 
-## (c) Self-Assessment Hub `/progress` — ~4h
+## ~~(c) Self-Assessment Hub `/progress`~~ ✅ 완료 (커밋 예정)
 
-**가치**: 강의 정체성 직격. Supplement 11 (Self-Assessment 시스템)이 현재 정적 마크다운 체크리스트인데, 인터랙티브 SaaS 기능으로 진화 → 단일 학생 자기주도 학습의 척추.
+Supplement 11이 정적 마크다운 → 인터랙티브 SaaS 기능으로 진화.
 
-**구현 범위**:
-1. 스키마 추가: `progress` 테이블 1개
-   ```sql
-   progress (
-     user_id uuid pk references auth.users(id),
-     data jsonb not null default '{}', -- {preflight, weeks, l1_assessment, l2, l3, rubric}
-     updated_at timestamptz
-   )
-   ```
-   + RLS 정책 (`user_keys`와 동일 패턴 — self만 read/write)
-   + 마이그레이션 `0003_add_progress_table.sql`
+**산출물**:
+- `progress` 테이블 (user_id pk + JSONB data + updated_at) + RLS self-only 4 정책
+- 마이그레이션 `0003_add_progress_table.sql`
+- `src/lib/progress/structure.ts` — 단일 출처: PREFLIGHT 20 + WEEKS 14×5 + L1/L2/L3 자가 진단 28문항 + rubric 3축
+- `/progress` Tabs (Pre-flight / 14주 / L1 / L2 / L3 / 루브릭) + sticky 저장 버튼 + 진척 배지
+- RubricRadar — Recharts radar chart (3축 매출/시스템/AI)
+- Server action `saveProgress` — Zod 검증 + JSONB upsert
+- Sidebar Learn 그룹에 Progress 항목 추가, proxy.ts 보호 prefix에 `/progress` 추가
 
-2. `/progress` 페이지 — Supplement 11 §1~§4를 인터랙티브 폼으로:
-   - Pre-flight 20문항 체크박스 (4 카테고리)
-   - 14주 Weekly Checkpoint (각 5문항, 아코디언 또는 탭)
-   - L1/L2/L3 졸업 자가 진단 통합 (10/8/10 문항)
-   - 졸업 루브릭 3축 (매출/시스템/AI) — 자가 평가 슬라이더 또는 라디오
+**의존성 추가**: `recharts@^2.15.0`
 
-3. 시각화: 졸업 루브릭 3축을 **Recharts radar chart**로
-   - `npm install recharts`
-   - `src/components/progress/RubricRadar.tsx`
-
-4. Server Action: `src/app/progress/actions.ts` — savePreflightItem, saveWeeklyCheckpoint, saveAssessment, saveRubric (debounced auto-save)
-
-5. Sidebar에 `/progress` 추가 (Learn 그룹)
-
-6. lab_sessions 자동 연동:
-   - L1 세션 생성 시 → progress.l1_assessment에 카운트 +1
-   - Margin 세션 GO 결과 → 해당 주차 체크포인트 자동 체크 (예: W3.2 23점 룰)
-   - L2 비서 빌드 완료 → L2 자가 진단 #2 자동 체크
-
-**연계 강의**: Supplement 11 전체 + L1/L2/L3 §10
+**다음 라운드 후보** (lab_sessions 자동 연동):
+- L1 세션 생성 시 → l1_assessment 카운트 자동
+- Margin GO 결과 → W3.2 자동 체크
+- L2 빌드 완료 → L2 자가 진단 #2 자동
 
 ---
 
