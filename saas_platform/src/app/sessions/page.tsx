@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Search, Calculator, Sparkles, Bot, Workflow, ArrowRight } from "lucide-react";
 import { db } from "@/lib/db";
 import { labSessions } from "@/lib/db/schema";
-import { and, desc, eq, gte, ilike, sql } from "drizzle-orm";
+import { and, desc, eq, gte, or, sql } from "drizzle-orm";
 import type { SQL } from "drizzle-orm";
 import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -82,7 +82,15 @@ export default async function SessionsPage({
   const conditions: SQL<unknown>[] = [eq(labSessions.orgId, orgId)];
   if (mod) conditions.push(eq(labSessions.module, mod));
   if (verdict) conditions.push(eq(labSessions.verdict, verdict));
-  if (q) conditions.push(ilike(labSessions.title, `%${q}%`));
+  if (q) {
+    // Match title OR any text inside output JSONB (input/question/decision/etc).
+    // Cast jsonb to text via ::text — fast enough for single-student dataset.
+    const pattern = `%${q}%`;
+    const titleMatch = sql`${labSessions.title} ILIKE ${pattern}`;
+    const outputMatch = sql`${labSessions.output}::text ILIKE ${pattern}`;
+    const orExpr = or(titleMatch, outputMatch);
+    if (orExpr) conditions.push(orExpr);
+  }
   if (days !== "all") {
     const since = new Date();
     since.setDate(since.getDate() - Number(days));

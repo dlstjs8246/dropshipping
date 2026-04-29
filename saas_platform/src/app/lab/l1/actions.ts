@@ -7,6 +7,7 @@ import { labSessions } from "@/lib/db/schema";
 import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { getAnthropicForUser, MODELS, BYOKMissingError } from "@/lib/anthropic";
 import { getPerplexityKeyForUser, callPerplexity } from "@/lib/perplexity";
+import { markProgress, marksForL1 } from "@/lib/progress/auto-mark";
 
 const schema = z.object({
   question: z.string().min(10).max(2000),
@@ -250,6 +251,9 @@ export async function runTriangulation(
       output,
     })
     .returning({ id: labSessions.id });
+
+  const usedPerplexity = perspectives.some((p) => p.source === "perplexity");
+  await markProgress(user.id, marksForL1(usedPerplexity));
 
   redirect(`/lab/l1/${inserted[0].id}`);
 }

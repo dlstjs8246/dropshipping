@@ -92,10 +92,34 @@ URL 없으면 5개 필드만도 OK. 헤더 행 자동 감지.
 
 ## ✅ NEXT_STEPS (b)~(e) 모두 완료
 
-다음 라운드 후보:
-- **lab_sessions 자동 연동 → Progress** (L1 세션 → l1_assessment 카운트, Margin GO → W3.2 자동, L2 빌드 → L2 자가 진단)
-- **외부 통합 트랙** (Inngest cron, Resend email, Stripe billing, Shopify, Browser Use OSS)
-- **Output JSONB 검색** — 현재 title만 검색. l1.question, l3.decision 등 JSONB 필드도 검색하려면 Postgres `jsonb_path_ops` GIN 인덱스 추가
+---
+
+## ~~Round 2: 자동 연동 + JSONB 검색~~ ✅ 완료 (커밋 예정)
+
+### lab_sessions → Progress 자동 체크
+
+`src/lib/progress/auto-mark.ts` — 모듈별 매핑 룰 + idempotent merge upsert (실패 시 silent — UX 보조 기능). 각 모듈 server action 끝에서 호출.
+
+매핑:
+- **Margin scan** (any) → W3.1. **GO** verdict 추가 → W3.2.
+- **Margin batch** → W3.1. 행 중 GO 1+ 있으면 W3.2.
+- **L1 Triangulation 1회 실행** → W1.1, W1.2, L1-3, L1-5. Perplexity 사용 시 추가 → L1-9.
+- **L2 빌드** (카피/DM/CS) → L2-1 + 비서 타입별 (L2-2/3/4) + W11.4.
+- **L3 Order Agent** → L3-1, L3-3, W13.4.
+
+### /sessions JSONB 검색
+
+기존 `title` ilike → `title OR output::text ilike` (OR 조건). `l1.question`, `l3.decision.reasoning`, `l2.spec.brandName`, `margin.rationale` 등 모두 검색. 단일 학생 dataset(<1000 rows)에서 충분히 빠름. GIN 인덱스는 100+ 사용자 시점에 추가.
+
+---
+
+## 다음 라운드 후보 (외부 의존)
+
+- **Inngest cron + Resend email** — 가격 모니터링 정기 실행 + "스캔 완료" 이메일. 5분 가입 × 2.
+- **Stripe billing** — Cohort 1 무료 → 일반 $19/월. Stripe 비즈니스 계정 필요.
+- **Shopify Custom App** — 진짜 주문 → L3 Agent 가동. Shopify dev store 등록.
+- **Browser Use OSS deploy** — Supplement 10 §4 Build 2 (경쟁사 가격 모니터링). Render/Railway 호스팅.
+- **Recharts 확장** — Profit Dashboard mock 컴포넌트 부활 (Phase A에서 archive). Shopify 연결 후.
 
 ---
 

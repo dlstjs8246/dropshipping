@@ -7,6 +7,7 @@ import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { getAnthropicForUser, BYOKMissingError } from "@/lib/anthropic";
 import { runMarginEngine, type MarginScanInput } from "@/lib/business/margin-engine";
 import type { ScanResult } from "@/lib/business/kill-criteria";
+import { markProgress, marksForMargin } from "@/lib/progress/auto-mark";
 
 const rowSchema = z.object({
   url: z
@@ -203,6 +204,11 @@ export async function runBatchMarginScan(
       await sleep(CHUNK_DELAY_MS);
     }
   }
+
+  // Auto-mark Progress for the whole batch — best verdict wins.
+  // (If any row was GO, W3.2 fires once; W3.1 fires whenever anything ran.)
+  const anyGo = results.some((r) => r.ok && r.verdict === "GO");
+  await markProgress(user.id, marksForMargin(anyGo ? "GO" : "HOLD"));
 
   return { status: "done", results, skipped };
 }

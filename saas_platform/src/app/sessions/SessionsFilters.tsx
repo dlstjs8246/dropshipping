@@ -55,7 +55,7 @@ export function SessionsFilters({
           id="q"
           name="q"
           defaultValue={initialQ}
-          placeholder="제목 부분 일치 (예: 거북목)"
+          placeholder="제목 + 출력(질문·결정문 등) 부분 일치"
         />
       </div>
       <div className="grid gap-2">

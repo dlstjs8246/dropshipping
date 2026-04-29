@@ -7,6 +7,7 @@ import { labSessions } from "@/lib/db/schema";
 import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { getAnthropicForUser, BYOKMissingError } from "@/lib/anthropic";
 import { runMarginEngine } from "@/lib/business/margin-engine";
+import { markProgress, marksForMargin } from "@/lib/progress/auto-mark";
 
 const scanSchema = z.object({
   url: z
@@ -86,6 +87,8 @@ export async function runMarginScan(
       verdict: scanResult.verdict,
     })
     .returning({ id: labSessions.id });
+
+  await markProgress(user.id, marksForMargin(scanResult.verdict));
 
   redirect(`/margin/${inserted[0].id}`);
 }

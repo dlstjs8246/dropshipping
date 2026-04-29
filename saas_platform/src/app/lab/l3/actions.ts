@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { labSessions } from "@/lib/db/schema";
 import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { getAnthropicForUser, MODELS, BYOKMissingError } from "@/lib/anthropic";
+import { markProgress, marksForL3 } from "@/lib/progress/auto-mark";
 
 const orderSchema = z.object({
   orderId: z.string().min(1),
@@ -271,6 +272,8 @@ export async function runOrderAgent(
       output,
     })
     .returning({ id: labSessions.id });
+
+  await markProgress(user.id, marksForL3());
 
   redirect(`/lab/l3/${inserted[0].id}`);
 }

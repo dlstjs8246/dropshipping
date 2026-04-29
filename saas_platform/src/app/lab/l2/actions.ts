@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { labSessions } from "@/lib/db/schema";
 import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { getAnthropicForUser, MODELS, BYOKMissingError } from "@/lib/anthropic";
+import { markProgress, marksForL2 } from "@/lib/progress/auto-mark";
 
 const ASSISTANT_TYPES = ["copy", "dm", "cs"] as const;
 type AssistantType = (typeof ASSISTANT_TYPES)[number];
@@ -197,6 +198,8 @@ Stage 4 테스트 플랜은 5트라이얼 (각 다른 입력으로 일관성 검
         output,
       })
       .returning({ id: labSessions.id });
+
+    await markProgress(user.id, marksForL2(parsed.data.type));
 
     redirect(`/lab/l2/${inserted[0].id}`);
   } catch (err) {
