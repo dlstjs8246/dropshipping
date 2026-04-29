@@ -76,8 +76,15 @@ function Step2Key() {
           아래에 붙여넣으세요. 1-token 검증 후 암호화 저장됩니다.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-4">
         <OnboardingKeyForm />
+        <p className="text-xs text-muted-foreground">
+          (선택) L1 Triangulation에 출처 URL 포함 4번째 소스를 추가하려면 가입 후
+          <Link href="/settings/api-keys" className="px-1 text-primary hover:underline">
+            Settings → API Keys
+          </Link>
+          에서 Perplexity 키도 입력할 수 있습니다.
+        </p>
       </CardContent>
     </Card>
   );

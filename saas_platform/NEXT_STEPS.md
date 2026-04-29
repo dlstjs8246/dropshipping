@@ -7,30 +7,19 @@
 
 ---
 
-## (b) L1 Perplexity 4번째 소스 — ~2h
+## ~~(b) L1 Perplexity 4번째 소스~~ ✅ 완료 (커밋 예정)
 
-**가치**: AI 깊이 +. 현재 L1은 Claude 3-temperature 시뮬레이션. Perplexity 추가 = **진짜로 다른 AI 모델 + 출처 URL** 포함 → Supplement 08 §6.5 "Perplexity로 출처 확인" 강의와 직접 정렬.
+L1 Triangulation에 Perplexity Sonar 4번째 소스 추가. 키 미입력 시 Claude 3-temp만으로 graceful fallback.
 
-**구현 범위**:
-1. `package.json`에 추가 의존성 0 (Perplexity는 Anthropic SDK처럼 별도 SDK 없이 fetch로 호출 가능)
-2. 스키마: `user_keys.perplexityKeyEncrypted` 컬럼 이미 존재 → 추가 마이그레이션 X
-3. Settings/api-keys에 Perplexity 키 입력 폼 추가 (validateAnthropicKey 패턴 복제)
-4. `src/lib/perplexity.ts` — `getPerplexityForUser(userId)` + `validatePerplexityKey()`
-5. `src/app/lab/l1/actions.ts` — Perplexity 호출 추가 (대신 contrarian 자리에 또는 4번째 perspective로)
-6. L1 결과 페이지: 3-column → 4-column grid + Perplexity 답변에 출처 URL 렌더링
-7. Synthesis 프롬프트에 4-source 인지 추가
+**산출물**:
+- `src/lib/perplexity.ts` — BYOK 키 fetch + `callPerplexity()` + `validatePerplexityKey()`
+- `src/app/settings/api-keys/{page,actions,PerplexityKeyForm}.tsx` — 선택 입력 폼 + 키 제거 액션
+- `src/app/lab/l1/actions.ts` — Perplexity 4번째 perspective (실패 시 graceful degrade)
+- `src/app/lab/l1/[id]/page.tsx` — 4-source 모드 시 4-col grid + 출처 URL 클릭 가능 + .md export에 sources 섹션 포함
+- `src/app/lab/l1/page.tsx` — "3 sources" / "4 sources" 배지 + Settings 안내
+- `src/app/onboarding/[step]/page.tsx` — Perplexity 선택사항 안내
 
-**Phase A에서 만든 BYOK 패턴 재사용**:
-- `src/lib/crypto/byok.ts` (encrypt/decrypt 그대로)
-- `src/lib/anthropic.ts` 패턴 (Perplexity는 OpenAI 호환 API)
-- `src/app/onboarding/actions.ts` saveAnthropicKey 패턴 → savePerplexityKey
-
-**Perplexity API 엔드포인트** (참고):
-- Base: `https://api.perplexity.ai/chat/completions`
-- Model: `sonar-pro` (검색 + 출처 포함) 또는 `sonar` (저렴)
-- 응답 `citations` 배열에 출처 URL 포함
-
-**연계 강의**: Supplement 08 §6.5
+**모델**: `sonar` (cheapest with citations)
 
 ---
 

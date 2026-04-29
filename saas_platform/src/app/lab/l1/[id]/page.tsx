@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Sparkles, Copy as CopyIcon } from "lucide-react";
+import { ArrowLeft, Sparkles, Copy as CopyIcon, ExternalLink, Globe } from "lucide-react";
 import { db } from "@/lib/db";
 import { labSessions } from "@/lib/db/schema";
 import { and, eq } from "drizzle-orm";
@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import type { L1Output } from "../actions";
+import type { L1Output, Perspective } from "../actions";
 import { CopyButton } from "./CopyButton";
 import { DownloadBundleButton } from "../../l2/[id]/DownloadBundleButton";
 import { DeleteSessionButton } from "@/components/layout/DeleteSessionButton";
@@ -74,19 +74,13 @@ export default async function L1ResultPage({
         </CardHeader>
       </Card>
 
-      <div className="grid gap-4 md:grid-cols-3">
-        {output.perspectives.map((p) => (
-          <Card key={p.persona}>
-            <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-sm">{personaLabel(p.persona)}</CardTitle>
-                <Badge variant="outline">T={p.temperature}</Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="whitespace-pre-wrap text-sm">{p.text}</p>
-            </CardContent>
-          </Card>
+      <div
+        className={`grid gap-4 md:grid-cols-2 ${
+          output.perspectives.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+        }`}
+      >
+        {output.perspectives.map((p, idx) => (
+          <PerspectiveCard key={`${p.source}-${idx}`} perspective={p} />
         ))}
       </div>
 
@@ -166,8 +160,71 @@ function personaLabel(p: string): string {
       return "생성 (창의)";
     case "contrarian":
       return "반대 (위험)";
+    case "research":
+      return "Perplexity (출처)";
     default:
       return p;
+  }
+}
+
+function PerspectiveCard({ perspective: p }: { perspective: Perspective }) {
+  const isPerplexity = p.source === "perplexity";
+
+  return (
+    <Card className={isPerplexity ? "border-primary/40" : undefined}>
+      <CardHeader className="pb-3">
+        <div className="flex items-center justify-between">
+          <CardTitle className="flex items-center gap-2 text-sm">
+            {isPerplexity ? (
+              <Globe className="h-4 w-4 text-primary" />
+            ) : null}
+            {personaLabel(p.persona)}
+          </CardTitle>
+          <Badge variant="outline">
+            {p.source === "claude" ? `T=${p.temperature}` : "Sonar"}
+          </Badge>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        <p className="whitespace-pre-wrap text-sm">{p.text}</p>
+        {isPerplexity && p.citations.length > 0 ? (
+          <div className="space-y-1 border-t pt-2">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              출처 ({p.citations.length})
+            </p>
+            <ul className="space-y-1">
+              {p.citations.slice(0, 6).map((url, i) => (
+                <li key={i}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                  >
+                    <ExternalLink className="h-3 w-3 shrink-0" />
+                    <span className="truncate">{prettyHost(url)}</span>
+                  </a>
+                </li>
+              ))}
+              {p.citations.length > 6 ? (
+                <li className="text-xs text-muted-foreground">
+                  외 {p.citations.length - 6}건
+                </li>
+              ) : null}
+            </ul>
+          </div>
+        ) : null}
+      </CardContent>
+    </Card>
+  );
+}
+
+function prettyHost(url: string): string {
+  try {
+    const u = new URL(url);
+    return u.hostname.replace(/^www\./, "") + u.pathname.slice(0, 30);
+  } catch {
+    return url.slice(0, 40);
   }
 }
 
@@ -192,14 +249,21 @@ function renderL1BundleMd(output: L1Output): string {
 
 ---
 
-## 3-AI Perspectives
+## ${output.perspectives.length}-Source Perspectives
 
 ${output.perspectives
-  .map(
-    (p) => `### ${personaLabel(p.persona)} (T=${p.temperature})
-
-${p.text}`
-  )
+  .map((p) => {
+    const header =
+      p.source === "perplexity"
+        ? `### ${personaLabel(p.persona)} (Perplexity Sonar)`
+        : `### ${personaLabel(p.persona)} (Claude T=${p.temperature})`;
+    const body = p.text;
+    const citations =
+      p.source === "perplexity" && p.citations.length > 0
+        ? `\n\n**Sources:**\n${p.citations.map((u) => `- ${u}`).join("\n")}`
+        : "";
+    return `${header}\n\n${body}${citations}`;
+  })
   .join("\n\n")}
 
 ---

@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { labSessions } from "@/lib/db/schema";
 import { requireSessionUser, requireCurrentOrgId } from "@/lib/auth/session";
 import { getAnthropicForUser, MODELS, BYOKMissingError } from "@/lib/anthropic";
+import { getPerplexityKeyForUser, callPerplexity } from "@/lib/perplexity";
 
 const schema = z.object({
   question: z.string().min(10).max(2000),
@@ -13,15 +14,25 @@ const schema = z.object({
 
 export type L1State = { status: "idle" } | { status: "error"; message: string };
 
-interface PerspectiveOutput {
+interface ClaudePerspective {
+  source: "claude";
   persona: "analytic" | "generative" | "contrarian";
   temperature: number;
   text: string;
 }
 
+interface PerplexityPerspective {
+  source: "perplexity";
+  persona: "research";
+  text: string;
+  citations: string[];
+}
+
+export type Perspective = ClaudePerspective | PerplexityPerspective;
+
 export interface L1Output {
   question: string;
-  perspectives: PerspectiveOutput[];
+  perspectives: Perspective[];
   synthesis: {
     pattern: "consensus" | "partial" | "conflict";
     consensus_points: string[];
@@ -76,31 +87,61 @@ export async function runTriangulation(
     throw err;
   }
 
-  // 1. Three parallel calls with different personas/temperatures.
-  const perspectivesP = PERSONAS.map(async ({ persona, temperature, instruction }) => {
-    const message = await anthropic.messages.create({
-      model: MODELS.fast,
-      max_tokens: 800,
-      temperature,
-      system: [
-        {
-          type: "text",
-          text: `너는 한국 드랍쉬핑 학습자의 질문에 답하는 분석가다. 페르소나: ${persona}. ${instruction}\n\n답변은 간결하게 (200~400자). 핵심 주장 3개 + 숫자 1개 + 출처 가능성 1줄.`,
-          cache_control: { type: "ephemeral" },
-        },
-      ],
-      messages: [{ role: "user", content: question }],
-    });
-    const text = message.content
-      .filter((b) => b.type === "text")
-      .map((b) => (b.type === "text" ? b.text : ""))
-      .join("\n");
-    return { persona, temperature, text } as PerspectiveOutput;
-  });
+  // 1. Three parallel Claude calls with different personas/temperatures.
+  const claudePerspectivesP = PERSONAS.map<Promise<ClaudePerspective>>(
+    async ({ persona, temperature, instruction }) => {
+      const message = await anthropic.messages.create({
+        model: MODELS.fast,
+        max_tokens: 800,
+        temperature,
+        system: [
+          {
+            type: "text",
+            text: `너는 한국 드랍쉬핑 학습자의 질문에 답하는 분석가다. 페르소나: ${persona}. ${instruction}\n\n답변은 간결하게 (200~400자). 핵심 주장 3개 + 숫자 1개 + 출처 가능성 1줄.`,
+            cache_control: { type: "ephemeral" },
+          },
+        ],
+        messages: [{ role: "user", content: question }],
+      });
+      const text = message.content
+        .filter((b) => b.type === "text")
+        .map((b) => (b.type === "text" ? b.text : ""))
+        .join("\n");
+      return { source: "claude", persona, temperature, text };
+    }
+  );
 
-  let perspectives: PerspectiveOutput[];
+  // 1b. Optional 4th source: Perplexity Sonar (only if key configured).
+  const perplexityKey = await getPerplexityKeyForUser(user.id);
+  const perplexityP: Promise<PerplexityPerspective | null> = perplexityKey
+    ? callPerplexity(
+        perplexityKey,
+        question,
+        "한국 드랍쉬핑 학습자의 질문이다. 실시간 출처를 인용하며 200~400자로 답한다. 숫자·통계는 가능하면 출처 URL과 함께 제시한다."
+      )
+        .then(
+          (r): PerplexityPerspective => ({
+            source: "perplexity",
+            persona: "research",
+            text: r.text,
+            citations: r.citations,
+          })
+        )
+        .catch((): null => {
+          // Perplexity failure shouldn't kill the entire L1 run — degrade gracefully.
+          return null;
+        })
+    : Promise.resolve(null);
+
+  let perspectives: Perspective[];
   try {
-    perspectives = await Promise.all(perspectivesP);
+    const [claudeResults, perplexityResult] = await Promise.all([
+      Promise.all(claudePerspectivesP),
+      perplexityP,
+    ]);
+    perspectives = perplexityResult
+      ? [...claudeResults, perplexityResult]
+      : claudeResults;
   } catch (err) {
     return {
       status: "error",
@@ -168,7 +209,10 @@ export async function runTriangulation(
             { type: "text", text: `[Question] ${question}` },
             ...perspectives.map((p) => ({
               type: "text" as const,
-              text: `\n[${p.persona} (T=${p.temperature})] ${p.text}`,
+              text:
+                p.source === "perplexity"
+                  ? `\n[Perplexity research (with citations)] ${p.text}\n(Sources: ${p.citations.join(", ") || "n/a"})`
+                  : `\n[Claude ${p.persona} (T=${p.temperature})] ${p.text}`,
             })),
           ],
         },
