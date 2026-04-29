@@ -70,30 +70,32 @@ URL 없으면 5개 필드만도 OK. 헤더 행 자동 감지.
 
 ---
 
-## (e) 글로벌 세션 검색·필터 — ~1.5h
+## ~~(e) 글로벌 세션 검색·필터~~ ✅ 완료 (커밋 예정)
 
-**가치**: 데이터 누적 시 필수. 100+ 세션 쌓이면 dashboard 최근 5개로는 부족.
+모든 모듈 (Margin / L1 / L2 / L3) 세션을 한 페이지에서 통합 검색·필터.
 
-**구현 범위**:
-1. `/sessions` 신규 라우트 — 모든 모듈 세션 통합 뷰
-2. 검색: `title` + `output` JSONB의 핵심 필드 (verdict, decision, question)
-3. 필터:
-   - 모듈: margin / l1 / l2 / l3 / 전체
-   - Verdict: GO / HOLD / FAIL / 무관
-   - 날짜 범위: 지난 7일 / 30일 / 90일 / 전체
-4. URL search params (`nuqs`로) — 공유·북마크 가능
-5. 페이지네이션 — TanStack Table v8 + 서버 사이드 (Drizzle limit/offset)
-6. Sidebar에 `/sessions` 항목 추가
+**산출물**:
+- `/sessions` server component — searchParams 받아 Drizzle conditional where 빌드
+- `SessionsFilters.tsx` (client) — 검색 input + 3개 Select (모듈/Verdict/기간) + URL push
+- 페이지네이션: page-based (PAGE_SIZE=25), prev/next 버튼
+- 행 클릭 → 모듈별 detail 라우트로 자동 매핑 (Margin/L1/L2/L3)
 
-**의존성 추가**:
-```json
-"nuqs": "^2.2.3"
-```
+**필터·검색 조건**:
+- Title `ilike` 부분 매치 (Drizzle ilike helper)
+- Module enum exact 매치
+- Verdict enum exact 매치
+- Days = 7 / 30 / 90 / all (default 30)
 
-**파일**:
-- `src/app/sessions/page.tsx`
-- `src/app/sessions/SessionsTable.tsx`
-- `src/app/sessions/Filters.tsx`
+**의존성**: nuqs 사용 안 함 — `searchParams` prop + `URLSearchParams` 조합으로 충분.
+
+---
+
+## ✅ NEXT_STEPS (b)~(e) 모두 완료
+
+다음 라운드 후보:
+- **lab_sessions 자동 연동 → Progress** (L1 세션 → l1_assessment 카운트, Margin GO → W3.2 자동, L2 빌드 → L2 자가 진단)
+- **외부 통합 트랙** (Inngest cron, Resend email, Stripe billing, Shopify, Browser Use OSS)
+- **Output JSONB 검색** — 현재 title만 검색. l1.question, l3.decision 등 JSONB 필드도 검색하려면 Postgres `jsonb_path_ops` GIN 인덱스 추가
 
 ---
 
