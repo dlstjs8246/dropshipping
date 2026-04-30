@@ -757,7 +757,7 @@ Anthropic Computer Use는 **본인 PC 화면 전체**를 제어합니다 (마우
 | **대화 엔진** | **Sonnet 4.6 + 본인 RAG** | $3 / $15 (캐싱 90% 할인) |
 | TTS (텍스트→음성) | ElevenLabs v3 (Voice Cloning) | $5/월 Starter |
 | 통합 플랫폼 | **ElevenLabs Convai** (전 스택 1-click) | $11/월~ |
-| 전화번호 | Twilio US local | $1/월 + $0.01/분 |
+| 전화번호 | Twilio US local | $1.15/월 + $0.0085/분 inbound · $0.014/분 outbound |
 | 라이브챗 위젯 | Tidio / Crisp + Convai SDK | 무료~ |
 
 ### 9.5-3. ElevenLabs Convai 셋업 (45분)
@@ -800,7 +800,7 @@ Anthropic Computer Use는 **본인 PC 화면 전체**를 제어합니다 (마우
 | 항목 | 비용 |
 |---|---|
 | ElevenLabs Convai Starter | $11/월 |
-| Twilio 번호 + 통화비 (1,000건 × 2분) | $1 + $20 = $21 |
+| Twilio 번호 + 통화비 (1,000건 × 2분, inbound 가정) | $1.15 + $17 = $18 |
 | Sonnet 4.6 + 캐싱 (RAG 매뉴얼 캐시) | ~$5 |
 | Whisper API | ~$10 |
 | **총** | **~$50/월** |

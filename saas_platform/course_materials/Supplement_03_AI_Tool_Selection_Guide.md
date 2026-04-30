@@ -232,20 +232,20 @@ ChatGPT 무료 + Claude 무료 + Gemini 무료를 같이 쓰면 일일 한도를
 | Midjourney | ✗ | **$10** (Basic) | Week 7 (옵션) |
 | Runway Gen-4 | 한도 내 | **$15** (Standard) | Week 7 (옵션) |
 | Suno | 50곡/일 | **$10** (Pro) | Week 7 (옵션) |
-| HeyGen | 1분/월 | **$30** (Creator) | Week 7 (옵션) |
+| HeyGen | 1분/월 | **$29/월 (Creator) / $24 (연간)** | Week 7 (옵션) |
 | CapCut | 무료 | $8 (Pro) | Week 7 |
 
 #### 📧 마케팅·CRM
 | 도구 | 무료 | 유료 | 강의 진입 |
 |---|:--:|:--:|---|
-| Klaviyo | ~250 연락처 | **$20~** (1K), $45 (5K) | Week 7 |
+| Klaviyo | ~250 active profiles 무료 | **$30~** (1K, Email plan), $45 (5K) — 2025.2~ active-profile 과금 전환 | Week 7 |
 | Track123 | 50 추적/월 | **$9** (1K) | Week 6 |
-| Goaffpro | 무료 (10 affiliate) | $24 (50) | Week 8 |
+| Goaffpro | 무료 (affiliate 무제한) | Premium $49+ (multi-level, 이메일 마케팅 추가 시) | Week 8 — **무료 플랜으로 시작 충분** |
 
 #### ⚙️ 자동화
 | 도구 | 무료 | 유료 | 강의 진입 |
 |---|:--:|:--:|---|
-| Make.com | 1K Operations/월 | **$10** (10K), $30 (40K) | Week 10 |
+| Make.com | 무료 1K credits/월 (2025.8 Operations → Credits 모델 전환) | **Core $10.59** (10K credits), Pro $18.82 (10K + 추가 기능, 2025.11 인상) | Week 10 |
 | Anthropic API (Claude) | 첫 $5 크레딧 | 사용량 (캐싱 90% 할인) | Week 10 |
 | Browser Use OSS | 무료 (Claude API 비용만) | — | Phase 4 |
 
@@ -253,20 +253,23 @@ ChatGPT 무료 + Claude 무료 + Gemini 무료를 같이 쓰면 일일 한도를
 | 도구 | 비용 | 강의 진입 |
 |---|:--:|---|
 | Shopify Markets Pro (IOSS·UK VAT 자동) | $50+ + 거래당 | Phase 5 |
-| Doola / Stripe Atlas (미국 LLC) | $500 셋업 + $200/년 | Phase 5 |
+| Stripe Atlas (미국 LLC) | $500 셋업 (1년차 RA 포함), 2년차+ ~$100/년 | Phase 5 |
+| Doola (미국 LLC) | $297~ 셋업 + $199/년 (Total Compliance plan) | Phase 5 — Doola는 5472·BOI 등 신고 포함 |
 | Wise Business | 무료 (환전 0.4%) | Phase 1~ |
 
-### 7-3. "월 $80 첫 매출 셋업" 추천 조합
+### 7-3. "월 ~$103 첫 매출 셋업" 추천 조합
 
 ```
-Shopify Basic         $39  (프로모 후 $1 → $39)
-Klaviyo (1K)          $20
+Shopify Basic         $39  (프로모 후 $1 → $39, 신규 한정)
+Klaviyo (1K)          $30  (Email plan, 2025.2~ active-profile 과금)
 Track123              $9
 ChatGPT Plus          $20  (Sora 2 + DALL-E)
 ElevenLabs Starter    $5   (영상 음성)
                     ─────
-                     $93/월
+                     $103/월
 ```
+
+> ⚠️ **가격 verify 필수**: 위 표는 2026.4 시점 기준. SaaS 가격은 분기마다 변동 — 본인 셋업 직전 각 공식 사이트에서 최신 가격 직접 확인. 학생 직접 결제니까 추정치로 예산 잡으면 ±$20 차이 발생 가능.
 
 광고비는 별도 (일 $5 → 월 $150). 매출 $500 손익분기.
 

@@ -13,7 +13,7 @@
 | **세그먼트 기능** | 매우 제한적 | 강력 (LTV·구매 횟수·태그 등) |
 | **자동화 시나리오** | 5개 템플릿만 | 무제한 + If/Then 분기 |
 | **A/B 테스트** | 없음 | 있음 (subject + body) |
-| **유료 시작점** | $25/월 (10K건 초과 시) | $20/월 (500 contacts 초과) |
+| **유료 시작점** | $25/월 (10K건 초과 시) | **$30/월** (500 active profiles 초과, 1K 기준 — 2025.2~ active-profile 과금 전환) |
 | **학습 곡선** | 1시간 | 4~6시간 |
 | **권장 시점** | 월 매출 < $3K | **월 매출 ≥ $3K 또는 LTV 추적 필요** |
 
@@ -228,7 +228,7 @@ Save → 세그먼트 자동 갱신 (실시간)
 2. **Pop-up 전략**: 사이트 첫 방문 시 즉시 이메일 받지 말고, **5초 체류 후** 또는 **20% 스크롤 후** 팝업. 의도가 있는 방문자만 수집.
 3. **다중 도메인 분리**: 무료 250개 한도가 부족하면 서브 브랜드별로 별도 Klaviyo 계정 운영 (각각 250개씩).
 
-> **마이그레이션 트리거**: 컨택트가 220개를 넘으면 1주일 내에 유료 플랜($20/월)로 업그레이드. Suppress된 컨택트는 무료 플랜에서 자동 청소되지 않으므로 수동 정리 필요.
+> **마이그레이션 트리거**: active profile이 220명을 넘으면 1주일 내에 유료 플랜($30/월, 1K 기준 — 2025.2 active-profile 과금 전환 후 가격)로 업그레이드. Suppress된 컨택트는 active profile에서 제외되므로 적극 청소.
 
 ---
 
@@ -245,11 +245,11 @@ Save → 세그먼트 자동 갱신 (실시간)
 | **DCA** (Direct Connect Aggregator) | 캐리어 직접 연동 | Klaviyo/Postscript 자동 | 포함 |
 
 **Brand 등급별 처리량 (Throughput)**:
-- Sole Proprietor (개인사업자): T-Mobile 75/일, 다른 캐리어 정상
+- Sole Proprietor 2.0 (2024 이후): **1,000 segments/day** (모든 캐리어), 분당 1 segment. 이전 75건/일 한도는 outdated
 - Standard Brand (법인 + EIN): 분당 60건+
 - Enterprise (Vetted, 추가 검증): 분당 6,000건
 
-> **본 강의 권장 등급**: Standard Brand. Sole Proprietor는 T-Mobile 75건/일 한도 때문에 사실상 불가. **EIN 보유 미국 LLC** 또는 **한국 사업자번호로 Klaviyo 우회 등록** 둘 중 하나 필요.
+> **본 강의 권장 등급**: Standard Brand (분당 60+ segments). Sole Proprietor 2.0도 1,000/일이라 매출 작은 셀러는 충분 — 단 분당 1 segment 한도라 캠페인 시간 분산 필요. 매출 $5K+ 도달 시 EIN 보유 미국 LLC로 Standard Brand 전환.
 
 ### 7-2. Klaviyo SMS 셋업 (10DLC 자동)
 
@@ -295,7 +295,7 @@ Phase 5 (월 매출 $20K+): SMS Premium ($60/월~) + RVM/MMS 시도
 
 ### 7-5. Sole Proprietor·KR 사업자 우회
 
-KR 사업자번호로 **Sole Proprietor 등급 등록 가능**하지만 T-Mobile 75건/일 한도 → 매출 검증 후 미국 LLC 셋업 강력 권장 (Doola/Stripe Atlas, [Appendix A §8-5-bis](./Appendix_A_Refund_Legal_Checklist.md) 참조).
+KR 사업자번호로 **Sole Proprietor 2.0 등급 등록 가능** (1,000 segments/일, 분당 1) → 첫 매출 단계엔 충분. 분당 처리량(throughput)이 본격 마케팅 캠페인엔 부족하므로 매출 $5K+ 도달 시 미국 LLC + Standard Brand로 전환 권장 (Doola/Stripe Atlas, [Appendix A §8-5-bis](./Appendix_A_Refund_Legal_Checklist.md) 참조).
 
 > ⚠️ **불확실**: Klaviyo가 한국 EIN 없는 셀러를 Standard Brand로 등록 처리해 주는지 케이스별. 직접 Klaviyo 지원에 영문 메일로 문의해 확인 필수.
 

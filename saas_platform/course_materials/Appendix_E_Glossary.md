@@ -253,7 +253,7 @@ Visa 분쟁 자동 적격 부여 표준. 5가지 증거(이전 거래·device·I
 - 등장: Supplement 01 §7
 
 **FTC Fake Reviews Rule** (16 CFR Part 465)
-2024-10-21 시행. 가짜 리뷰·인센티브·억제·hijacking 모두 금지. 위반당 $51,744.
+2024-10-21 시행. 가짜 리뷰·인센티브·억제·hijacking 모두 금지. 위반당 $53,088 (2026 인플레 조정 — 매년 변동).
 - 등장: Appendix A §6.3
 
 **CPSIA** (Consumer Product Safety Improvement Act)

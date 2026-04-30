@@ -73,7 +73,7 @@ Shopify Apps → Loox 검색 → Install
 → 다시 Rich Results Test 실행 → "Review" ✓ 확인
 ```
 
-> ⚠️ **FTC Fake Reviews Rule (2024-10-21 시행, 위반당 $51,744)**: 리뷰 위젯 설정 시 [Appendix A §6.3](./Appendix_A_Refund_Legal_Checklist.md) 안전 SOP 필독. "★4-5 자동 게시 / ★1-3 검수" 같은 부정 리뷰 억제 설정 금지. AI 생성 후기 절대 X. **모든 후기 자동 게시 + 24h 이내 사장 답글** 패턴 권장.
+> ⚠️ **FTC Fake Reviews Rule (2024-10-21 시행, 2026 위반당 $53,088 — 인플레 조정 매년)**: 리뷰 위젯 설정 시 [Appendix A §6.3](./Appendix_A_Refund_Legal_Checklist.md) 안전 SOP 필독. "★4-5 자동 게시 / ★1-3 검수" 같은 부정 리뷰 억제 설정 금지. AI 생성 후기 절대 X. **모든 후기 자동 게시 + 24h 이내 사장 답글** 패턴 권장.
 
 > 🤖 **Image SEO 자동 (월 1회)**: 모든 상품 이미지에 alt text·파일명을 페르소나·키워드 매칭 자동 생성. [Master Prompts §43 (Image SEO + Alt Text 자동)](./02_Master_Prompts.md). Shopify Bulk Editor 또는 Matrixify로 100개+ 일괄 적용. Google Image Search 노출 + Shopify SEO 점수 직접 영향.
 
