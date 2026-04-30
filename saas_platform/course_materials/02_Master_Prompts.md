@@ -1,10 +1,11 @@
 # 🧠 마스터 프롬프트 컬렉션 (Master Prompts)
 
-> **수강생 사용 안내**: 본 컬렉션은 14주 동안 반복적으로 사용할 핵심 프롬프트 39종을 모아둔 것입니다. 변수(`[괄호]`) 부분만 본인 상품·브랜드 정보로 바꿔 AI(Claude, ChatGPT, Gemini)에 그대로 입력하세요. 각 프롬프트의 사용 시점은 제목 옆 `(Week N)` 표기를 참고하세요.
+> **수강생 사용 안내**: 본 컬렉션은 14주 동안 반복적으로 사용할 핵심 프롬프트 46종을 모아둔 것입니다. 변수(`[괄호]`) 부분만 본인 상품·브랜드 정보로 바꿔 AI(Claude, ChatGPT, Gemini)에 그대로 입력하세요. 각 프롬프트의 사용 시점은 제목 옆 `(Week N)` 표기를 참고하세요.
 >
 > **구조**:
 > - **Part 1 (§1~§28)**: 콘텐츠 생성 AI — 카피·DM·이미지·영상·번역
 > - **Part 2 (§29~§39)**: 운영·진단·메타 AI — Cart Abandonment·Fatigue·Pivot·EAT·Cohort·멘탈·Router
+> - **Part 3 (§40~§46)**: 매주 운영 결단 AI — Weekly Priority·Cross-sell·Fraud·Image SEO·Pricing·Creator Score·Brief
 
 ---
 
@@ -1813,3 +1814,449 @@ F. REJECT — 거절 또는 무응답
 | 🧭 Meta — 어떤 §N? | 39 (Router) |
 
 > **학생 사용 팁**: 막힐 때 [§39 Router](#39-master-prompt-router--어떤-n을-써야-하나-meta)에 본인 상황 입력 → AI가 자동 §N 추천. 또는 위 표에서 카테고리 직접 점프.
+
+---
+
+# 🎯 Part 3: 매주 운영 깊은 결단 AI (§40~§46)
+
+§29~§39가 "월~분기 운영 진단"이라면 Part 3는 **매주 월요일 09:00 본인 데이터 dump → AI 결단** 영역. 1인 셀러가 진짜 매주 5분 만에 의사결정 끝내는 도구.
+
+---
+
+## 40. 📋 이번 주 우선순위 자동 — KPI → 5가지 액션 (매주 월요일)
+
+본인 KPI dashboard + 본인 시간 + 본인 의욕을 AI에 던지면 "이번 주 5개"가 나옴.
+
+```text
+[Role]
+너는 1인 D2C 셀러의 시간 매니저야. 1주일에 사용 가능한 시간 안에서 매출·리스크·학습의 우선순위를 결단하는 코치.
+
+[Input — 매주 월요일 09:00 작성]
+지난 주 KPI:
+- 매출: $[X] (전주 대비 ±%)
+- 광고비: $[X] (ROAS [X.X])
+- 신규 후기: [N건] (평균 별점 [X])
+- 미발송 주문: [N건]
+- CS 미응답: [N건]
+- 광고 분쟁률: [X%]
+- 구독자 신규: [N명]
+
+본인 자원:
+- 이번 주 사용 가능 시간: [N시간]
+- 의욕: 1~10
+- 가장 답답한 1가지 (한 줄): [...]
+
+본인 단계:
+- Day [N] (Day 0 = 오픈)
+- 누적 매출: $[X]
+
+[프롬프트]
+
+"위 데이터로 이번 주 우선순위 5개 액션 결단:
+
+원칙:
+1. 시간 N시간 안에 끝나는 액션만
+2. 매출에 직접 영향 ≥ 학습 ≥ 정비 (긴급도 순)
+3. 답답함 1줄을 1~2번 액션 안에서 직접 해결
+4. 의욕 5↓이면 작은 한 발만 (1시간 작업 5개)
+
+[Output 형식]
+
+== 이번 주 핵심 진단 ==
+[KPI에서 가장 큰 신호 1줄]
+
+== 5가지 액션 (시간순 + 예상 효과) ==
+1. [작업명] — 예상 X시간 — 효과: [매출/리스크/학습] [수치]
+2. ...
+
+== 각 액션의 첫 한 발 (월요일 09:30 시작용) ==
+- 액션 1 첫 한 발: [구체 동작 1줄]
+- ...
+
+== Master Prompts 연결 ==
+- 액션 N → §M 사용 권장
+
+== 함정 신호 (해당하면 1순위 변경) ==
+- (있으면 1줄)
+
+== 다음 월요일 KPI 가이드 ==
+- 위 5개 액션 후 어떤 KPI가 어떻게 변해야 정상?"
+
+[검증 루틴]
+- 매주 일요일 22시 [Sup11 자가 진단](./Supplement_11_Self_Assessment_and_Progress_Tracker.md)과 함께 본 프롬프트
+- 액션 5개 중 3개+ 실행 = 정상. 2개 이하면 §38 멘탈 코치 동시 실행
+```
+
+---
+
+## 41. 🛒 Cross-sell / Basket Affinity 자동 — AOV 늘리기 (월 1회)
+
+Shopify 주문 데이터 → "A 산 사람의 70%는 B도 살 수 있다" AI 자동 발굴.
+
+```text
+[Role]
+너는 D2C basket affinity 분석가야.
+
+[Input — Shopify Orders export (CSV)]
+- order_id, customer_id, line_items (list of SKU+qty), order_value, order_date
+
+100건 이상 주문 데이터 입력.
+
+[프롬프트]
+
+"위 주문 데이터로 cross-sell 기회 자동 발굴:
+
+Step 1 — Basket affinity 매트릭스:
+| 상품 A | 상품 B | A 구매 시 B 동시 구매율 | A 구매 후 30일 내 B 구매율 |
+| neckband | desk-lamp | 12% | 28% |
+| neckband | back-pillow | 8% | 35% |
+...
+
+Step 2 — Top 5 cross-sell 기회 (동시 구매 또는 30일 내):
+[Affinity 20%+인 페어 5개]
+
+Step 3 — 각 페어별 액션:
+A. 상품 페이지에 "Frequently bought together" 위젯 (Shopify 무료 앱)
+B. Email Welcome 시퀀스 5번째에 "[A] 사용자가 자주 함께 사는 [B]" 발송
+C. 결제 후 thank-you 페이지에 [B] 추천 + 10% 단발 할인
+D. Shopify Bundle 자동 생성 ([A] + [B] = $XX, 정가 $YY 절약 명시)
+
+Step 4 — Bundle 가격 자동 결정:
+- A $39 + B $29 = bundle $58 (10% 절약 노출)
+- 본인 마진 보호: 합산 마진 ≥ 30% 유지
+
+Step 5 — 실행 시 예상 효과:
+- AOV 변화: $[X] → $[Y] (예측)
+- 마진 변화: 페어별 ±%
+- 우선 적용 SKU: [Top 1]"
+
+[검증 루틴]
+- 첫 100건 미만이면 데이터 부족 — 무시
+- 1개 페어부터 1개월 시도 → AOV +5%+ 확인 후 Top 5 모두 적용
+- 매월 1회 갱신 (시즌별 affinity 변화)
+```
+
+---
+
+## 42. 🚫 Repeat Refunder Fraud — 자동 차단 + 1차 진단 (매주 점검)
+
+마진 가장 직접적으로 갉아먹는 운영 누수. AI 1차 분류 → Shopify 자동 태깅.
+
+```text
+[Role]
+너는 e-commerce fraud 분석가야.
+
+[Input — Shopify Customers + Returns export]
+- customer_id, email, first_order_date, total_orders, total_refunds,
+  refund_value_total, refund_reasons (list), shipping_addresses (list),
+  payment_methods (last 4 digits hash), ip_addresses (list)
+
+[프롬프트]
+
+"각 고객을 다음 5단계 위험도로 분류:
+
+Tier 0 — Clean (0~1 환불, 정상 사유)
+Tier 1 — Watch (2 환불 / 1.5+ 년 거래)
+Tier 2 — Warning (3+ 환불 / 1년 / 동일 사유 반복)
+Tier 3 — Block (4+ 환불 / 6개월 / 다중 주소·결제)
+Tier 4 — Fraud Ring (동일 IP·주소·이름 패턴 + 다중 계정 신호)
+
+[검증 신호 5개]
+1. 환불 비율 (refund_value / order_value) > 25% = Tier 1
+2. '받지 못함 (item not received)' 환불 + 결국 추적 OK = Tier 2
+3. 6개월 내 3+ 환불 + 다른 결제수단 = Tier 3
+4. 동일 IP에 다른 이메일 주문 = Tier 4
+5. 환불 후 Reddit·Trustpilot에 부정 리뷰 = Tier 2
+
+[Output 형식]
+
+== Tier 분포 ==
+Tier 0: N명 (정상)
+Tier 1: N명 (관찰)
+Tier 2: N명 (경고 — 결제 차단 검토)
+Tier 3: N명 (즉시 차단)
+Tier 4: N명 (Stripe 사기 신고 권장)
+
+== 즉시 액션 (Tier 2~4) ==
+[고객별]
+- email: [hash] | tier: [N] | 사유: [1줄] | 액션: [Shopify Tag 'fraud-watch' / 결제 차단 / Stripe 신고]
+
+== 본인 결제 정책 보강 추천 ==
+- '연 환불 3회+ 시 신규 주문 거부' 약관 추가
+- 결제 페이지에 '동일인 다중 주문 자동 검증' 1줄 명시 (psychological deterrent)
+- Klaviyo Suppress 자동 적용 (Tier 3+)"
+
+[검증 루틴]
+- 매주 월요일 점검 (10분)
+- AI 분류 → 본인이 30개 spot-check → 매칭률 80%+ 확인
+- Tier 4 = 즉시 Stripe Disputes 페이지에 "Fraud Ring" 신고
+- 본 프롬프트로 매월 1~3% 마진 회복 가능 (보수적)
+```
+
+---
+
+## 43. 🖼 Image SEO + Alt Text 자동 최적화 (W4~W6, 월 1회)
+
+상품 이미지를 페르소나·키워드 매칭한 alt text·파일명 자동 생성. Shopify bulk 적용 SOP.
+
+```text
+[Role]
+너는 e-commerce image SEO 전문가야.
+
+[Input]
+- 상품 이미지 (URL 또는 파일 첨부)
+- 본인 상품: [PRODUCT + 강점 3개]
+- 타겟 페르소나 (§27): [선택 1개]
+- 핵심 SEO 키워드 5개: [본인 GSC 데이터 또는 추측]
+
+[프롬프트]
+
+"각 이미지에 대해:
+
+Step 1 — 이미지 분석:
+- 무엇이 보이는가 (객관적)
+- 어떤 분위기·시나리오 (페르소나 관점)
+- 핵심 시각 요소 3개
+
+Step 2 — Alt text 자동 생성 (8~12 단어):
+- 이미지 객관 설명 + 페르소나 관점 + 키워드 1~2개 자연스럽게
+- 예: 'NeckEase posture corrector worn at WFH desk by 30-something professional'
+- 키워드 stuffing X — 검색 엔진 패널티
+
+Step 3 — 파일명 자동 (10~15자):
+- kebab-case + 키워드
+- 예: 'neckease-posture-corrector-wfh-desk.jpg'
+
+Step 4 — Shopify bulk 적용 SOP:
+1. Shopify Admin → Products → 본인 상품 선택
+2. 이미지 호버 → Edit alt text → 위 Step 2 결과 붙여넣기
+3. 100개 이상 시 Shopify Bulk Editor 사용
+4. 또는 Matrixify / EZ Importer 앱 ($25/월)으로 CSV bulk 업로드
+
+Step 5 — 누락 점검:
+- 모든 상품에 alt text 있는가?
+- 빈 alt text = 'image' 디폴트로 채워지는데 이게 SEO 손해
+- (있으면) 누락 SKU 리스트"
+
+[검증 루틴]
+- 적용 후 1개월 → Google Image Search에서 본인 상품 검색량 측정
+- alt text 적용 SKU 100% 권장 (Shopify SEO 점수)
+- [Appendix B SEO Checklist](./Appendix_B_SEO_Checklist.md) 보강 항목
+```
+
+---
+
+## 44. 💰 Tiered Pricing 3-Tier 결정 — Anchoring 심리학 (W4 / W12)
+
+Basic / Standard / Pro 3-tier 가격 결정. 페르소나·LTV·마진 종합.
+
+```text
+[Role]
+너는 D2C 가격 전략가야 — Anchoring 심리학 + Cohort LTV 데이터로 3-tier 결정.
+
+[Input]
+- 메인 상품: [PRODUCT + 단품 가격 $X]
+- 마진 (단품): [X%]
+- 페르소나 3종 (§27): demographics + 가격 민감도
+- 평균 객단가: $[X]
+- 재구매율: [X%]
+- 경쟁사 가격대: [low $X / mid $Y / high $Z]
+
+[프롬프트]
+
+"3-tier 가격 자동 결정:
+
+[Tier 명칭 + 구성]
+Basic ($X1): 단품 1개
+Standard ($X2): 단품 2개 또는 단품 + 액세서리
+Pro ($X3): 3개 묶음 또는 풀 패키지 + 케어 가이드
+
+[Anchoring 원칙]
+- Standard 가격을 '심리적 sweet spot'에 위치 (Pro 대비 30~40% 낮음)
+- Pro 가격은 '있어야 하는 anchor' (60~70%는 Standard 선택)
+- Basic은 '비교 baseline' (실제 매출 비중 ~15% 정도)
+
+[페르소나별 매칭]
+- 가격 민감 (페르소나 A) → Basic 60% 선택
+- 일반 (페르소나 B) → Standard 70% 선택
+- 프리미엄 (페르소나 C) → Pro 30% 선택
+
+[Output]
+
+== 3-tier 가격 ==
+Basic: $X1 (단품, 마진 X%)
+Standard: $X2 (2개, 마진 X% — 본 강의 권장 sweet spot)
+Pro: $X3 (3개 + 가이드, 마진 X%)
+
+== 페르소나 분포 예상 ==
+Basic 15% / Standard 65% / Pro 20% — AOV $[X] 예상
+
+== Shopify 셋업 ==
+- Bundle 옵션 또는 Variant로 구성
+- 'Most Popular' 배지를 Standard에 (시각 anchoring)
+- Pro에 'Best Value' 라벨 (per-unit 가격 명시)
+
+== 1주 A/B 테스트 권장 ==
+- 단품만 vs 3-tier → AOV +30~50% 보통
+
+== 주의 ==
+- 3-tier 너무 비싸지면 단품 매출도 감소 — Pro 너무 가깝지 않게
+- 마진 < 30% 티어 절대 X (광고비·환불 흡수 불가)"
+
+[검증 루틴]
+- 단품 평균 매출 1주 baseline → 3-tier 적용 후 1주 비교
+- 동일 페르소나·동일 광고로 비교 (다른 변수 통제)
+```
+
+---
+
+## 45. 🔍 Creator Authenticity Score — 가짜 인플루언서 사전 필터 (W8)
+
+크리에이터 100명 발굴 후 DM 전 필터. 시간 + 샘플 비용 절감.
+
+```text
+[Role]
+너는 인플루언서 마케팅 분석가로 fake engagement를 탐지하는 전문가야.
+
+[Input — 크리에이터별]
+- 핸들: @username
+- 팔로워: N
+- 평균 조회수: N
+- 평균 좋아요: N
+- 평균 댓글: N
+- 최근 영상 5개 (URL + 댓글 5개씩)
+- 가입일·국가·언어
+
+[프롬프트]
+
+"각 크리에이터에 대해 6 신호 점검 + Authenticity Score (0~100):
+
+신호 1: Engagement 비율 (좋아요 ÷ 조회수)
+- 정상: 3~10%
+- 의심: <2% (가짜 조회수) 또는 >15% (가짜 engagement)
+
+신호 2: 댓글 품질
+- 정상: 3+ 단어, 실제 의견·질문
+- 의심: 'Wow!', '🔥', '@user1 @user2' 같은 generic 댓글 70%+
+
+신호 3: 팔로워 패턴
+- 정상: 1년+ 점진 성장
+- 의심: 1주에 +10K (가짜 구매)
+
+신호 4: 영상 일관성
+- 정상: 같은 niche, 일정 빈도
+- 의심: 5개 영상이 5개 niche (가짜 영향력 만들기)
+
+신호 5: 댓글-팔로워 비율
+- 정상: 평균 댓글 / 팔로워 = 0.05~0.3%
+- 의심: <0.02% (조용한 봇 팔로워)
+
+신호 6: Reply 패턴
+- 정상: 영상 댓글에 5%+ 답글
+- 의심: 0% (소통 X = 봇 운영)
+
+[Output 형식]
+
+== Authenticity Score ==
+@username: [점수] / 100
+- 신호 1: [정상/의심] [근거]
+- 신호 2: ...
+...
+
+[등급]
+- 90~100: GO (DM 1순위)
+- 70~89: ACCEPTABLE (DM OK, 샘플 조심)
+- 50~69: WATCH (소통 시도, 샘플 X)
+- <50: SKIP (가짜 가능성)
+
+[Risk warnings]
+- 신호 1 + 5 동시 의심 → 100% 가짜 봇 팔로워
+
+[1인 셀러 액션]
+- 50점 이하는 즉시 CRM에서 SKIP 마크
+- 50~70점은 첫 답신 후 결정
+- 70+만 샘플 발송 ($15+ 비용 보호)"
+
+[검증 루틴]
+- 첫 50명에 적용 → 본인 직감과 매칭률 점검
+- 매칭률 80%+ → 자동화
+- HypeAuditor·Modash 같은 유료 도구 ($20~$200/월) 대안
+```
+
+---
+
+## 46. 📝 Creator Content Brief — 크리에이터 톤 + 본인 톤 결합 (W8)
+
+크리에이터에게 영상 브리프를 보낼 때 — 그들의 자연스러운 톤을 유지하면서 본인 브랜드 메시지를 자연스럽게 녹이는 브리프.
+
+```text
+[Role]
+너는 인플루언서 마케팅 디렉터로 크리에이터의 톤을 유지하면서 본인 브랜드 메시지를 자연스럽게 녹이는 영상 브리프 작성자야.
+
+[Input]
+- 크리에이터 핸들 + 최근 영상 3개 (transcript)
+- 본인 상품: [PRODUCT + 강점 3개]
+- 본인 페르소나 매칭 (§27): [페르소나 1개]
+- 메시지 우선순위: [무조건 포함 1개 + 가능하면 포함 2개]
+- 영상 길이: 15초 (TikTok) / 30초 (Reels) / 60초 (YouTube Shorts)
+
+[프롬프트]
+
+"Step 1 — 크리에이터 톤 분석:
+- 평소 사용 단어 패턴 (인용 5개)
+- 영상 구조 (Hook → Body → CTA의 평균 분배)
+- 카메라 위치·앵글 패턴
+- 전형적인 마무리 문구
+- 시청자 호칭 ('guys' / 'fam' / 'you' 등)
+
+Step 2 — 본인 메시지 매핑:
+- 무조건 포함 메시지를 크리에이터 톤으로 의역
+- 가능하면 포함 메시지 2개 — 자연스러운 위치 추천
+- 강제로 끼워넣지 말 것 — 톤 깨면 영상 실패
+
+Step 3 — 영상 브리프 (크리에이터에게 보낼 영문):
+
+Brief: [제목]
+
+What we love about your style: [크리에이터 톤 특징 2~3개 인용]
+
+What this product does: [상품 1줄 — 페르소나 관점]
+
+Story idea (your style):
+0~3sec: [Hook — 크리에이터 톤 그대로]
+3~10sec: [Body — 자연스러운 시연]
+10~15sec: [CTA — 강요 X, 'I'd genuinely recommend' 톤]
+
+Must say (in your own words): [무조건 메시지 1개]
+
+Nice to have: [메시지 2개]
+
+What NOT to say: ['Sponsored'·'Promo'·'Buy now' 등]
+[FTC #ad·#sponsored 명시 의무]
+
+Creative freedom: 이 브리프는 가이드일 뿐 — 너의 진짜 스타일이 가장 중요해.
+
+Step 4 — 본인용 검증 체크리스트:
+- 크리에이터가 평소 안 쓰는 단어 강요 X
+- '대본 읽는 느낌' 단서 0
+- FTC #ad 명시 (FTC Endorsement Guides)"
+
+[검증 루틴]
+- 크리에이터에게 브리프 발송 후 첫 반응 — '자유롭게' vs '너무 디테일'
+- '너무 디테일' 답이면 다음엔 30% 줄여서 발송
+- 영상 게시 후 평소 영상 vs 본 영상 engagement 비교 — 80%+ 유지면 톤 잘 보존
+```
+
+---
+
+## 📑 Master Prompts §40~§46 카테고리 (Quick Reference)
+
+| §N | 사용 빈도 | 카테고리 |
+|:--:|---|---|
+| 40 | **매주 월요일** | 운영 우선순위 |
+| 41 | 월 1회 | 매출 (cross-sell) |
+| 42 | **매주 점검** | 마진 보호 (fraud) |
+| 43 | 월 1회 | SEO (image alt) |
+| 44 | 분기 1회 | 가격 전략 |
+| 45 | DM 발송 전 | 크리에이터 검증 |
+| 46 | 협업 시 매번 | 크리에이터 브리프 |

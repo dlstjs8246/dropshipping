@@ -86,6 +86,8 @@
 5. **STOP doing immediately** 1가지
 
 > 💡 **Phase 4 진입 시 (월 매출 $5K+)**: 위 단순 ROAS 분석을 넘어 [Master Prompts §35 (Cohort LTV 자동 분석)](./02_Master_Prompts.md)으로 **월별 코호트 30/60/90/180일 LTV + 채널별 LTV/CAC + 6개월 예측** 자동. 코호트 12개월 누적 후 본격 활용 권장.
+>
+> 💡 **AOV +30~50% 자동 발굴**: 100건+ 주문 누적 후 [Master Prompts §41 (Cross-sell / Basket Affinity)](./02_Master_Prompts.md)으로 "A 산 사람의 70%는 B도 살 수 있다" 자동 발굴 + Bundle 가격·시퀀스 자동 결정. 1개 페어 1개월 시도 → AOV +5%+ 확인 후 Top 5 적용.
 
 ### Step 2. 병목 진단 의사결정 트리 (40분)
 

@@ -277,6 +277,8 @@ Email [PRIVACY_EMAIL] for any privacy-related questions.
 | PayPal | 1.0% | 1.5% |
 | Shopify Payments | 1.0% | 1.5% |
 
+> 💡 **Repeat Refunder Fraud 자동 차단 (매주 점검)**: 동일 고객이 3회+ 환불하면 마진을 직접 갉아먹음. [Master Prompts §42 (Repeat Refunder Fraud Triage)](./02_Master_Prompts.md)로 Tier 0~4 자동 분류 + Shopify 자동 태깅 + Stripe Fraud Ring 신고. 매월 1~3% 마진 회복 가능.
+
 > **결론**: 분쟁률 0.5% 이하를 유지하지 못하면 결제 처리사 계정이 정지됩니다. 환불 정책을 명확히 하고 배송 기간을 정직하게 표시하는 것이 가장 싸게 분쟁을 줄이는 방법입니다.
 
 ### 카드사 Surcharge 합법화 — 주별 차이 (2026 기준)

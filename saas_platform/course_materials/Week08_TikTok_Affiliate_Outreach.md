@@ -75,6 +75,10 @@
 
 > **합산 17점 미만 → 드롭, 17~22점 → DM 발송, 23점 이상 → 우선 컨택**
 
+> 🤖 **23점+ 후보를 DM 발송 전 — Authenticity Score 1차 필터**: [Master Prompts §45 (Creator Authenticity Score)](./02_Master_Prompts.md)로 가짜 팔로워·봇 engagement 자동 탐지 (50점 미만 SKIP, 70+만 샘플). 시간 + 샘플비 ($15+) 절감.
+
+> 🤖 **샘플 발송 후 영상 협업 시 — Content Brief AI**: [Master Prompts §46 (Creator Content Brief)](./02_Master_Prompts.md)로 크리에이터 톤 분석 + 본인 메시지 결합 + FTC #ad 명시 영문 브리프 자동 생성. 톤 깨면 영상 실패 — AI가 가장 자연스러운 결합 자동.
+
 ### Step 2. AI 초개인화 DM 대량 생성 (30분)
 
 이번 주 핵심은 **2단계 프롬프트 파이프라인**입니다. 채널 분석 → DM 생성을 분리해 품질을 극대화합니다.
