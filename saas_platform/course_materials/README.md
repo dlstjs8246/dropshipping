@@ -53,8 +53,9 @@
 - 🔗 [Appendix A: 환불정책 + 법적 체크리스트 (한 → 미)](./Appendix_A_Refund_Legal_Checklist.md)
 - 🔗 [Appendix B: 상품 페이지 SEO 체크리스트](./Appendix_B_SEO_Checklist.md)
 - 🔗 [Appendix C: 배송 옵션 분석 (DDP/DDU + 캐리어 비교)](./Appendix_C_Shipping_Carriers_DDP_DDU.md)
-- 🔗 [Appendix D: 첫 100명 고객 확보 90일 플레이북 (Seed → Validate → Accelerate → Scale)](./Appendix_D_First_100_Customers.md)
+- 🔗 [Appendix D: 첫 100명 고객 확보 90일 플레이북 (Seed → Validate → Accelerate → Scale + 졸업 직후 7일 Sprint)](./Appendix_D_First_100_Customers.md)
 - 🔗 [Appendix E: 용어집 (ROAS·CVR·DDP·HTS·CoT·RAG 등 90+ 용어)](./Appendix_E_Glossary.md) ← **매 주차 옆 탭에**
+- 🔗 [Appendix F: 흔한 실수 10선 — 매주 일요일 자가 검열](./Appendix_F_Common_Mistakes_10.md)
 
 ---
 

@@ -25,6 +25,44 @@
 
 ---
 
+## 🏁 0.5. 졸업 직후 7일 셋업 스프린트 (Week 14 → Day 0)
+
+수료식 다음 월요일 = **Sprint Day 1**. 7일 안에 14주 동안 흩어져 있던 셋업을 모아 "오픈 가능한 스토어"로 압축합니다. 이 스프린트를 건너뛰고 바로 §1로 들어가지 마세요 — 빈 스토어로 트래픽을 받으면 신뢰 시그널 0% 상태에서 CVR이 박살납니다.
+
+### Sprint Day별 작업 (각 1.5~2시간)
+
+| Day | 작업 | 산출물 | 참조 |
+|:--:|---|---|---|
+| **D1 (월)** | 사업자등록 + 통신판매업 결정 | 등록증 사진 또는 면제 사유 정리 | [Appendix A §3 + §3.5](./Appendix_A_Refund_Legal_Checklist.md) |
+| **D1 (월)** | PG 정산 경로 1개 셋업 | PayPal Business / Wise 계정 | [Appendix A §8-1](./Appendix_A_Refund_Legal_Checklist.md) |
+| **D2 (화)** | 위닝 상품 1개 최종 확정 (스코어카드 23+) | [03_Scorecard CSV](./03_Scorecard_Template.csv) 채워진 시트 | [Week 3](./Week03_Landed_Cost_Scorecard.md) |
+| **D3 (수)** | Shopify 스토어 + 결제 + Refund/Privacy 페이지 | Bogus Gateway 통과 + 정책 페이지 2장 | [Week 4·6](./Week06_Cursor_Coding_Optimization.md) |
+| **D4 (목)** | 상세페이지 PAS 카피 + 히어로 배너 + About Us | 상품 페이지 1개 완성 | [Master Prompts §2·§5](./02_Master_Prompts.md) |
+| **D5 (금)** | 영상 5개 (Unboxing / Problem / B-A / 창업 / FAQ) | 휴대폰 15초 5개, CapCut 자막 | [Week 7 + Supplement 06](./Supplement_06_AI_Asset_Generation_Stack.md) |
+| **D6 (토)** | 노션 대시보드 + Klaviyo 환영 시퀀스 1개 | 매출 추적 시트 + 자동 메일 1통 | [01_Notion + Supplement 01](./Supplement_01_Email_Automation_Playbook.md) |
+| **D7 (일)** | Day 0 체크리스트 8개 전체 통과 → 스토어 공개 | 친구 7명에게 링크 발송 | §A-1 진입 |
+
+### Sprint 종료 기준 (Day 7 일요일 22시)
+
+다음 8개를 **전부** 통과해야 §1 Stage A 진입. 하나라도 미달이면 **공개 금지**.
+
+- [ ] D1 사업자/통판 결정 완료 (운영 전 필수)
+- [ ] D1 PG 1개 살아있음 (테스트 결제 1회 통과)
+- [ ] D2 위닝 상품 1개 + 후보 보조 1개 (총 2개)
+- [ ] D3 Shopify 결제 테스트 통과 + Refund/Privacy 페이지 게시
+- [ ] D4 상품 페이지 1개 PAS 카피 + 히어로 배너 적용
+- [ ] D5 영상 5개 본인 틱톡/릴스 비공개 업로드 완료 (공개는 Day 0 이후)
+- [ ] D6 노션 대시보드 첫 입력 + Klaviyo 환영 메일 테스트 발송 통과
+- [ ] D7 본인 결제 테스트 1회 + 환불 테스트 1회 (실제 카드)
+
+### Sprint 실패 → 1주 연장 룰
+
+7일 안에 8개를 못 끝냈다고 절대 자책하지 마세요. **1주 연장**해 다시 도전. 단, 2주 연장은 금지 — 그 시점엔 §6 Stuck Recovery Tree로 진단해 "상품 또는 마진 구조 문제"를 의심합니다.
+
+> **핵심**: Sprint Week는 **새로운 학습 X**. 14주 동안 배운 걸 "오픈 가능 상태"로 묶는 작업만. 새 도구·새 카피·새 상품 검토 = 1주 안에 절대 안 끝남.
+
+---
+
 ## 🗺️ 1. 0 → 100명 마일스톤 매트릭스
 
 | 단계 | 일수 | 목표 | 핵심 무기 | KPI |

@@ -149,3 +149,90 @@ ChatGPT 무료 + Claude 무료 + Gemini 무료를 같이 쓰면 일일 한도를
 ├─ Claude API ($10~30) — 자동 응답·분류
 └─ Anthropic 프롬프트 캐싱 활용 → 비용 90% 절감
 ```
+
+---
+
+## 7. 도구·SaaS 월비용 통합표 (드랍쉬핑 전체 스택)
+
+본 강의에서 등장하는 모든 유료 도구의 월비용을 한 장에 정리. 본인 단계에 맞춰 ON/OFF 결정.
+
+### 7-1. 단계별 월 운영비 합계
+
+| 단계 | 월 합계 | 핵심 가정 |
+|---|:--:|---|
+| **Phase 1: 학습 (Week 1~6)** | **$0** | 모든 무료 한도 활용 |
+| **Phase 2: 오픈 직전 (Week 7~9)** | **$45~60** | Shopify $1 프로모 + 영상 도구 단기 결제 |
+| **Phase 3: 매출 검증 (Day 0~30)** | **$80~120** | + 광고 $5/일 + Klaviyo + 보조 도구 |
+| **Phase 4: 자동화 (월 매출 $1K+)** | **$200~350** | + Make.com + Stripe + Klaviyo Plus + API |
+| **Phase 5: 스케일 (월 매출 $5K+)** | **$500~1000+** | + Shopify Markets Pro + 광고 $50+/일 |
+
+### 7-2. 도구별 가격표 — 카테고리별
+
+#### 🛒 이커머스·결제 (필수)
+| 도구 | 무료/시작 | 기본 | 고급 | 강의 진입 시점 |
+|---|:--:|:--:|:--:|---|
+| Shopify | **$1×3개월** 프로모 | $39 (Basic) | $399 (Advanced) | Week 4 |
+| Shopify Payments | 무료 (수수료 2.9%+30¢) | — | — | Week 6 |
+| PayPal Business | 무료 (수수료 4.4%) | — | — | Week 6 (한국 셀러 우선) |
+| Stripe (미국 LLC 필요) | 무료 (수수료 2.9%+30¢) | — | — | Phase 4 |
+
+#### 🤖 AI 도구
+| 도구 | 무료 | 유료 | 강의 진입 |
+|---|:--:|:--:|---|
+| ChatGPT (Plus) | GPT-5-mini 무제한 | **$20** (Plus, Sora 2 포함) | Week 1 |
+| Claude (Pro) | 일 ~30회 | **$20** (Pro) | Week 1 |
+| Gemini (Advanced) | 2.5 Flash 한도 | **$20** (Adv, Veo 3 + Imagen 4) | Week 1 |
+| Perplexity (Pro) | 일 5회 Pro Search | **$20** (Pro) | Week 2 |
+| Cursor (Pro) | 월 2,000 completions | **$20** (Pro) | Week 6 |
+
+#### 🎬 콘텐츠 제작
+| 도구 | 무료 | 유료 | 강의 진입 |
+|---|:--:|:--:|---|
+| ElevenLabs | 10분/월 | **$5** (Starter) | Week 7 |
+| Midjourney | ✗ | **$10** (Basic) | Week 7 (옵션) |
+| Runway Gen-4 | 한도 내 | **$15** (Standard) | Week 7 (옵션) |
+| Suno | 50곡/일 | **$10** (Pro) | Week 7 (옵션) |
+| HeyGen | 1분/월 | **$30** (Creator) | Week 7 (옵션) |
+| CapCut | 무료 | $8 (Pro) | Week 7 |
+
+#### 📧 마케팅·CRM
+| 도구 | 무료 | 유료 | 강의 진입 |
+|---|:--:|:--:|---|
+| Klaviyo | ~250 연락처 | **$20~** (1K), $45 (5K) | Week 7 |
+| Track123 | 50 추적/월 | **$9** (1K) | Week 6 |
+| Goaffpro | 무료 (10 affiliate) | $24 (50) | Week 8 |
+
+#### ⚙️ 자동화
+| 도구 | 무료 | 유료 | 강의 진입 |
+|---|:--:|:--:|---|
+| Make.com | 1K Operations/월 | **$10** (10K), $30 (40K) | Week 10 |
+| Anthropic API (Claude) | 첫 $5 크레딧 | 사용량 (캐싱 90% 할인) | Week 10 |
+| Browser Use OSS | 무료 (Claude API 비용만) | — | Phase 4 |
+
+#### 🌍 글로벌 운영 (Phase 5)
+| 도구 | 비용 | 강의 진입 |
+|---|:--:|---|
+| Shopify Markets Pro (IOSS·UK VAT 자동) | $50+ + 거래당 | Phase 5 |
+| Doola / Stripe Atlas (미국 LLC) | $500 셋업 + $200/년 | Phase 5 |
+| Wise Business | 무료 (환전 0.4%) | Phase 1~ |
+
+### 7-3. "월 $80 첫 매출 셋업" 추천 조합
+
+```
+Shopify Basic         $39  (프로모 후 $1 → $39)
+Klaviyo (1K)          $20
+Track123              $9
+ChatGPT Plus          $20  (Sora 2 + DALL-E)
+ElevenLabs Starter    $5   (영상 음성)
+                    ─────
+                     $93/월
+```
+
+광고비는 별도 (일 $5 → 월 $150). 매출 $500 손익분기.
+
+### 7-4. "절약 강박" 함정
+
+❌ Shopify $1 프로모 끝나는 시점에 Wix/Cafe24로 도망 → 결국 결제 통합 깨지고 환불 폭주.
+✅ Phase 1~3은 도구비 아끼지 말고 **광고비**를 아껴라. 도구는 매출 늘면 자동 회수.
+
+> **결론**: 본 강의 14주 학습 동안엔 무료 도구 + Shopify $1 프로모 = 월 $1로 충분. **유료는 Week 7부터** 점진 ON. 손실 회피보다 학습 속도가 우선.
