@@ -268,6 +268,91 @@ Email [PRIVACY_EMAIL] for any privacy-related questions.
 
 ---
 
+## 6.4. FTC Click-to-Cancel / ROSCA — 정기구독·박스 판매 셀러 주의
+
+**현황 (2026.4 기준)**: FTC의 "Click-to-Cancel Rule"은 **2025년 7월 8th Cir.에 의해 무효** 판결. 단, FTC는 **ROSCA** (Restore Online Shoppers' Confidence Act) + **FTC Act §5** 기반 **개별 집행 강화 중** + 2026.3 ANPRM 재시동 ([Holland & Knight 2025.9](https://www.hklaw.com/en/insights/publications/2025/09/ftc-steps-up-subscription-enforcement-after-click-to-cancel-rule)).
+
+### 정기구독·박스 셀러 의무 (지금 시행 중)
+
+| 의무 | 내용 |
+|---|---|
+| 결제 전 명시적 동의 | 자동 결제·갱신 주기·금액·취소 방법을 결제 페이지 가시 영역에 표시 |
+| **"쉬운 취소"** | 가입과 동일한 채널·동일한 클릭 수 이내로 취소 가능해야 함 |
+| 취소 확인 메일 | 취소 즉시 확인 메일 자동 발송 |
+| 갱신 사전 알림 | 연간 결제는 갱신 30일 전 알림 메일 |
+
+### Shopify Subscription 앱별 컴플라이언스
+
+| 앱 | 자동 처리 | 셀러 추가 작업 |
+|---|---|---|
+| Shopify Subscriptions (네이티브) | 가입·취소 동일 UI | 갱신 알림 메일 수동 |
+| Recharge | 거의 자동 | DMARC 인증 (§Supplement 01 §1.5) |
+| Bold Subscriptions | 부분 자동 | 갱신 알림 메일 수동 |
+
+> **본 강의 권장**: 첫 12개월 = **단발 결제만** 운영 (정기구독 X). 월 매출 $5K+ + 위험관리 능력 확보 후 구독 진입.
+
+---
+
+## 6.5. California Prop 65 — 캘리포니아 화학물질 경고 라벨
+
+### 무엇이고 왜 무서운가
+
+캘리포니아 거주자에게 **암·생식독성·발달독성 유발 가능 화학물질**(900+ 종 리스트)에 노출 가능한 상품 판매 시 결제 전 **경고 표시 의무**. **위반 시 일당 $2,500 + 민사소송** ([P65Warnings.ca.gov](https://www.p65warnings.ca.gov/business-resources)).
+
+드랍쉬핑 셀러가 모르고 부닥치는 이유: **알리·CJ 공급자가 안 알려줌**. 대부분 카테고리 해당:
+
+| 카테고리 | Prop 65 트리거 화학물질 |
+|---|---|
+| 화장품·뷰티 | Lead, Talc, Phthalates |
+| 전자제품·케이블 | DEHP, BBP (PVC 가소제), Lead solder |
+| 플라스틱 (배터리·케이스) | BPA, BPS, Phthalates |
+| 가죽·합성가죽 | Chromium, Formaldehyde |
+| 보석·악세사리 | Lead, Cadmium, Nickel |
+| 주방용품 (코팅) | PFOA, PFAS (Teflon 계열) |
+| 핸드폰 케이스 | Phthalates |
+
+> **추정**: 드랍쉬핑 베스트셀러 카테고리의 **70%+가 Prop 65 영향 받음**.
+
+### 1인 셀러 결정 트리
+
+```
+캘리포니아 매출 비중이 전체의 5% 미만?
+  └─ YES → ❶ Shopify에서 CA 배송 차단 (Markets → Shipping zones → Exclude CA)
+            가장 단순, 매출 손실 ~5%
+  └─ NO  → ❷ Prop 65 경고 라벨 추가 (앱 활용)
+            매출 유지, 셋업 30분
+```
+
+### ❷ 경로 — Shopify 앱으로 자동 경고 표시 (30분)
+
+| 앱 | 가격 | 기능 |
+|---|---|---|
+| **Prop 65 Warnings** (Shopify App) | $9.99/월 | CA 주소 입력 시 결제 페이지에 자동 경고 표시 |
+| **Avalara CrossBorder** | $50+/월 | Prop 65 + 50개 주 컴플라이언스 통합 |
+
+수동 경고 문구 (제품 상세페이지·체크아웃):
+
+```
+⚠️ WARNING: This product can expose you to chemicals
+including [화학물질명], which is known to the State of
+California to cause cancer [and birth defects or other
+reproductive harm]. For more information go to
+www.P65Warnings.ca.gov.
+```
+
+### 카테고리별 일반 경고 문구
+
+CJ/AliExpress 공급자에게 SDS(Safety Data Sheet) 요청 → 받은 화학물질 리스트로 위 템플릿 채우기. 못 받으면 카테고리별 일반 경고 사용 (덜 정확하지만 위반은 면함).
+
+### 본 강의 권장
+
+**Phase 1~2 (월 매출 $3K 미만)**: ❶ CA 배송 차단 — 신경 쓸 거 줄임.
+**Phase 3+ (월 매출 $3K+)**: ❷ Prop 65 앱 도입 — CA 매출 회수가 $9.99 앱비 회수.
+
+> **체크리스트 추가**: §졸업 전 1회독 체크리스트에 "CA 정책 결정 (배송 차단 또는 Prop 65 앱)" 추가.
+
+---
+
 ## 7. EU·UK 향 발송 시 부가세 (IOSS / UK VAT)
 
 미국 외 EU·영국으로 직배송하는 순간 **수입 부가세 사전 징수 의무**가 발생합니다. 셀러가 사전 등록 안 하면 수취 고객이 통관 시점에 별도 청구되어 분쟁·반품 폭증.
@@ -291,6 +376,32 @@ Email [PRIVACY_EMAIL] for any privacy-related questions.
 | 등록 방법 | HMRC VAT Registration (해외 셀러는 NETP 트랙) |
 | 신고 주기 | 분기별 |
 | £135 초과 | 정식 통관 (수입자 = 고객) |
+
+### 7-2-bis. EU DSA Article 30 — 거래자 지위 신고 (2025.2.17~)
+
+EU 전 회원국에 적용되는 **Digital Services Act (DSA)** Article 30. 미신고 거래자는 EU 마켓플레이스(Apple/Google/Etsy 등)에서 **노출 차단**, Shopify D2C도 사이트에 "trader" 표시 의무 ([EU Commission DSA](https://digital-strategy.ec.europa.eu/en/policies/digital-services-act)).
+
+| 항목 | 내용 |
+|---|---|
+| 의무 표시 항목 | 거래자명·주소·이메일·전화·사업자등록번호·자가 인증 ("I am a trader" 선언) |
+| Shopify 적용 | Settings → Policies → Trader Information 페이지 추가 |
+| EU 매출 0이라도 EU 사용자 접근 가능하면 적용 | 별도 신고 절차 없음, 사이트 표시만 의무 |
+
+> **본 강의 권장**: §7-1 IOSS 안 하고 EU 미배송 정책이라도 **사이트는 EU에서 보임** → DSA Trader 페이지는 게시. 5분 작업.
+
+### 7-2-ter. GA4 + Google Consent Mode v2 (EEA·UK 트래픽 시)
+
+2024년 3월부터 **EEA·UK 사용자에게 광고를 노출하려면 Google Consent Mode v2 필수** ([Google 공식](https://support.google.com/tagmanager/answer/13695607)). 미적용 시 Google Ads·Analytics 데이터 처리 자체 중단.
+
+```
+Shopify 권장 셋업:
+1. CookieYes 또는 SimpleCookie (무료 플랜) 설치
+2. GTM 또는 GA4 자동 통합
+3. Consent Mode v2 신규 파라미터 (ad_user_data, ad_personalization) 자동 전달
+4. EU 사용자 = 동의 전 cookieless 측정으로 운영 (전환 모델링)
+```
+
+> EU 매출 비중 5% 미만이면 §7-1 결정트리의 "EU 미배송"으로 우회 — Consent Mode 신경 쓸 필요 없음.
 
 ### 7-3. 1인 셀러 실용 결정 트리
 
@@ -382,6 +493,7 @@ EU·UK 매출 비중이 전체의 5% 이하?
 | ☐ | Shopify Privacy Policy 페이지에 §4 템플릿 붙여넣었는가? |
 | ☐ | 한국 통신판매업 신고 면제 조건을 본인에게 적용했는가? (§3) |
 | ☐ | Stripe/PayPal Dispute 대응 SOP를 노션에 저장했는가? (§6) |
+| ☐ | CA 정책을 결정했는가? (§6.5) — 배송 차단 또는 Prop 65 앱 |
 | ☐ | EU·UK 발송 정책을 결정했는가? (§7) — 미배송 또는 IOSS 중개자 |
 | ☐ | PG 정산 경로를 셋업했는가? (§8-1) — PayPal/Wise/미국 LLC 중 택1 |
 | ☐ | 매출·환차손 자동 기록 시트를 만들었는가? (§8-6) |

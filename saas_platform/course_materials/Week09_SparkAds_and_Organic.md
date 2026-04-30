@@ -141,6 +141,60 @@ BEP_CPA = 판매가 - Landed_Cost - 기타수수료
 
 > **결단 규칙**: 실제 CPA가 BEP CPA를 **2일 연속 초과**하면 광고를 끄고 새 소재로 재시작합니다.
 
+### Step 3. Meta Ads 보조 채널 + Conversions API (CAPI) (옵션 — Spark Ads 검증 후)
+
+**왜 단일 채널 의존이 위험한가**: Spark Ads 1개 채널만 쓰면 TikTok Shop 위반 1건 → 광고 계정 정지 → 매출 0 직행. **Meta Ads(Facebook + Instagram)를 보조로 켜두면 채널 분산 + 동일 영상 자산을 광고로 바로 재활용** 가능.
+
+#### 3-A. Shopify ↔ Meta CAPI 1-click 연동 (10분)
+
+**iOS 14.5 ATT** 이후 Meta Pixel 단독은 전환의 **20~40% 손실** ([Triple Whale CAPI 2026](https://www.triplewhale.com/blog/facebook-capi)). Conversions API(CAPI)는 서버사이드로 직접 Meta에 이벤트 전송 → ATT 우회. Shopify는 네이티브 커넥터 무료 + 1-click.
+
+```
+1. Shopify Admin → Apps → "Facebook & Instagram" 설치 (Meta 공식)
+2. Meta Business Manager 로그인 → Pixel + CAPI 자동 생성
+3. [Data Sharing] → "Maximum" 선택 (Pixel + CAPI 동시 활성)
+4. [Events Manager] → Test Events 탭 → 본인 스토어 PageView 1회
+5. 30초 안에 "Server" 컬럼에 이벤트 들어오면 CAPI 정상
+6. Aggregated Event Measurement (AEM) 도메인 검증 → 8개 이벤트 우선순위 설정
+   (1) Purchase (2) AddToCart (3) ViewContent ... (8) Lead
+```
+
+> ✅ **검증 포인트**: Events Manager의 "Event Match Quality" 점수 7.0+ → 매칭 양호. 6.0 미만이면 도메인 검증 또는 Customer Information Parameters 누락.
+
+#### 3-B. Meta Ads 첫 캠페인 — Spark Ads 영상 그대로 재사용
+
+```
+1. ads.facebook.com → [Create Campaign]
+2. Objective → "Sales" (Advantage+ 캠페인 추천 — AI 자동 최적화)
+3. Conversion Location → Website
+4. Pixel + Conversion Event → "Purchase"
+5. Audience: 미국 18+, Detailed Targeting 비워두기
+6. Placements → Advantage+ Placements (Auto)
+7. Budget: $20/일 (TikTok과 동일 예산으로 시작)
+8. Ad Creative:
+   - Spark Ads에서 가장 잘된 영상의 MP4 다운로드 (Identity 권한 필요)
+   - 또는 크리에이터에게 raw 영상 받기
+9. Primary Text + Headline → AI로 5종 생성 (Step A 동일 방법)
+10. CTA → "Shop Now" → UTM 파라미터:
+    ?utm_source=meta&utm_medium=advantage_plus&utm_campaign=[캠페인명]
+```
+
+#### 3-C. TikTok vs Meta — 어디에 더 태울까?
+
+```
+[1주 동시 운영 후 결단 트리]
+
+TikTok ROAS > Meta ROAS × 1.3?
+  └─ YES → TikTok 80% : Meta 20%로 예산 재분배
+  └─ NO  → Q2로
+
+Meta ROAS > TikTok ROAS × 1.3?
+  └─ YES → Meta 70% : TikTok 30%
+  └─ NO  → 50:50 유지 (분산 가치)
+```
+
+> **본 강의 권장**: 첫 30일 = TikTok 단일. 영상 자산 5+개 검증 후 Meta CAPI 보조 진입. **두 채널 동시 시작은 비추** — 학습 부담 + 광고비 분산으로 둘 다 어중간하게 됨.
+
 ---
 
 ## 🤖 [AI 활용 심화] 광고 카피 5종 동시 + Self-Critique (20분 추가)

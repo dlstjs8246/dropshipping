@@ -26,6 +26,15 @@
 
 절대 하지 말아야 할 짓이 알리익스프레스에 있는 "방수 규격 IPX4, 배터리 3000mAh, 플라스틱 재질" 같은 설명과 조잡한 사진을 그대로 복사해서 올리는 겁니다. **고객은 스펙을 사지 않습니다. 자기 문제의 '해결책'을 삽니다.**
 
+> ⚠️ **FTC "Made in USA" 라벨링 함정**: 한국 셀러가 무심코 "Designed in Korea, Made in USA"·"American-made quality" 같은 카피를 쓰면 **FTC Made in USA Labeling Rule 위반** (2024 시행, 부당이득의 최대 50,000% 벌금). "All or virtually all" 미국산 기준 미달 시 즉시 이의 제기. **CJ/AliExpress 직발송 상품은 99% 중국산** → 다음 표현 절대 금지:
+>
+> | ❌ 금지 | ✅ 안전 대안 |
+> |---|---|
+> | "Made in USA" / "American-made" | (생략 또는) "Ships from China"·"Made in China" |
+> | "American craftsmanship" | "Premium build quality" |
+> | "Designed for the American lifestyle" | "Designed for everyday use" |
+> | 미국 국기 emoji 🇺🇸 (원산지 암시) | 일반 디자인 요소만 |
+
 **PAS 공식**:
 - **P (Problem)**: 당신, 아침마다 허리 아파서 일어나기 힘들죠?
 - **A (Agitation)**: 그거 놔두면 디스크 터져서 병원비 천만 원 깨집니다.

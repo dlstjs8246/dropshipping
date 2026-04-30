@@ -213,8 +213,12 @@ EU 개인정보 보호 규정. 위반 시 매출 4% 과태료.
 - 등장: [Appendix A §6](./Appendix_A_Refund_Legal_Checklist.md), [S10 §7.1](./Supplement_10_L3_AI_Agent_Building.md)
 
 **De Minimis**
-미국 관세 면제 한도 ($800/일/수입자). 2025년 폐지로 125% 관세 부과.
+미국 관세 면제 한도 ($800/일/수입자). 2025년 폐지 — 모든 소포가 정식 통관 + 관세 부과 대상.
 - 등장: W3
+
+**IEEPA 무효 판결** (Learning Resources v. Trump, 2026.2.20)
+대법원 6-3으로 IEEPA 기반 관세 권한 무효화. 중국발 평균 실효 관세율 약 2/3 감소. 대체로 Section 122(10% 글로벌) + Section 301 + Section 232 4-Layer 적층 구조가 표준. 본 강의는 보수적으로 "소싱가의 50%"를 관세로 가정.
+- 등장: W3 §2-2
 
 **HTS** (Harmonized Tariff Schedule)
 미국 관세 분류 코드. 상품마다 다른 관세율 적용.

@@ -27,7 +27,7 @@
 - 제품 재질: [실리콘, 플라스틱]
 
 [7가지 평가 기준]
-1. 마진율 ≥ 30%: ((판매가 - 소싱가 - 배송비 - 소싱가의 125% 관세) / 판매가) 가 30% 이상인가? (계산식 결과 포함할 것)
+1. 마진율 ≥ 30%: ((판매가 - 소싱가 - 배송비 - 소싱가의 50% 관세) / 판매가) 가 30% 이상인가? (계산식 결과 포함할 것 — 50%는 2026 Q2 IEEPA 무효 후 Section 122+301+232 보수적 가정)
 2. 무게 ≤ 500g: 500g 이하로 가벼운가?
 3. 부피 소형: 30x30x15cm 이내로 DIM Weight 할증을 피할 수 있는가?
 4. 판매가 $25~$80: 충동구매가 가능하며 마진이 확보되는 가격대인가?
@@ -302,7 +302,7 @@ give me 3 ranked actions for next week.
 == Unit Economics ==
 - Sourcing cost per unit:    $[X]
 - Shipping per unit:         $[X]
-- Tariff (125% of sourcing): $[X]
+- Tariff (50% of sourcing — 2026 Q2): $[X]
 - Shopify fee (2.9% + $0.30): auto-calc
 - Selling price:             $[X]
 - Break-even CPA:            $[auto-calc]
@@ -648,7 +648,7 @@ DALL-E로 4 시드 = 총 8 변형 받아 최종 1개를 선택하세요.
 다음 상품에 대해:
 1. 가장 가능성 높은 HTS 6자리 코드 3개 후보 (확률 순)
 2. 각 코드의 일반 관세율 (Column 1 General)
-3. 중국 원산지 시 추가 관세 (Section 301 + IEEPA 125%)
+3. 중국 원산지 시 추가 관세 적층 (Section 122 10% + Section 301 7.5~100% + Section 232 if 철강·알루미늄 — 2026.2 IEEPA 무효 이후 4-Layer 구조)
 4. 면세 한도 (de minimis 폐지 후 기준)
 5. 통관 시 추가 서류 (FCC, FDA, etc 해당 여부)
 

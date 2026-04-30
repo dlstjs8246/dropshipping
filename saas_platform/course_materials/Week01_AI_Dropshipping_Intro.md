@@ -31,9 +31,9 @@
 AliExpress → Shopify → 고객 → ✅ 이익
 
 [2026 현실]
-AliExpress → 관세 125% → Shopify → 고객 → ❌ 적자
+AliExpress → De Minimis 폐지 + 관세 적층(122+301+232) → Shopify → 고객 → ❌ 적자
                 ↑
-            여기서 무너짐
+            여기서 무너짐 (모든 소포 통관 + 카테고리별 25~50%+ 관세)
 ```
 
 ### 3. AI의 3대장과 할루시네이션 (환각)

@@ -22,6 +22,24 @@
 
 고객이 스토어에 들어와서 "여기서 사도 안전할까?"를 판단하는 데 걸리는 시간은 **3초**입니다. 중국 직구 느낌이 나는 촌스러운 빨간색, 깨진 이미지, 어색한 폰트는 당장 지갑을 닫게 만듭니다. 우리는 **'미국 현지에 있는 깔끔한 프리미엄 브랜드'**처럼 보여야 합니다.
 
+### 1.5. 2026 Shopify — Sidekick AI 활용 (Editions Winter '26)
+
+[Shopify Editions Winter '26](https://www.shopify.com/editions/winter2026)에서 출시된 **Sidekick AI**는 Shopify Admin 안에 내장된 자연어 어시스턴트입니다. 학생들이 강의 후 Shopify 들어가면 우측 상단 ✨ 아이콘이 보일 겁니다.
+
+**1인 셀러용 Sidekick 활용 5선**:
+
+| 활용 | 자연어 명령 예시 |
+|---|---|
+| 테마 자연어 편집 | "Make the hero banner darker and increase the font size of the headline" |
+| 상품 추가 자동화 | "Add the product from this URL with title, description, 3 images, and tags" |
+| 마진율 분석 | "Show me products with margin under 30% and suggest price increases" |
+| 환불 처리 | "Refund order #1234 with reason 'customer request' and notify them" |
+| 신상품 카피 생성 | "Write a PAS-format product description for [상품명]" |
+
+> **결정 규칙**: 단순 쿼리·테마 수정·반복 작업은 Sidekick. 깊은 추론·전략·교차 검증은 [Claude Projects](./Supplement_07_AI_Agent_Builder_Comparison.md). Sidekick은 Shopify 데이터에 직접 접근 → 외부 도구 대비 속도 ↑.
+
+> ⚠️ **Sidekick 한계**: 2026.4 기준 영어 프롬프트가 정확도 ↑. 한국어로 명령 시 데이터 매칭 실패 가끔 발생. 복잡한 명령은 영어 권장.
+
 ### 2. 브랜드 톤앤매너 & 컬러 제한의 법칙
 
 초보자가 가장 많이 하는 디자인 실수는 무지개색을 쓰는 겁니다. 오늘은 **메인 컬러 1개와 폰트 1개**(예: Inter, Roboto)만 정하세요.

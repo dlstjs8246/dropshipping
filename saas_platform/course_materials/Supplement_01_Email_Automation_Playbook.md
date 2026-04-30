@@ -21,6 +21,60 @@
 
 ---
 
+## 1.5. 발송자 인증 (SPF·DKIM·DMARC) — Gmail/Yahoo/Microsoft 의무 요건
+
+### 왜 이 단계를 건너뛰면 매출이 0인가
+
+2024년 2월 Google·Yahoo가 시행, **2025년 11월부터 Microsoft까지 합류** + **임시 지연 → 영구 거부로 격상**. 인증 미설정 시 Welcome Flow·Abandoned Cart 메일이 **인박스 진입 자체 실패** (스팸함 또는 거부 반송). 발송 5,000건/일 이상 도메인은 **반드시** 다음 4가지 충족:
+
+1. **SPF** 레코드 (DNS TXT) — 발송 서버 IP 화이트리스트
+2. **DKIM** 서명 (DNS TXT) — 메일 본문 위변조 검증
+3. **DMARC** 정책 (`p=none` 최소, `p=quarantine` 권장)
+4. **One-click List-Unsubscribe** 헤더 (RFC 8058) — Klaviyo 자동 처리
+5. **스팸률 0.3% 이하** 유지 — Postmaster Tools에서 모니터링
+
+### Klaviyo "Branded Sending Domain" 셋업 (1회, 30분)
+
+```
+1. Klaviyo Dashboard → Account → Settings → Domains
+2. [Set up branded sending domain] 클릭
+3. 본인 도메인 입력 (예: brand.com → send.brand.com)
+4. Klaviyo가 6개 DNS 레코드 표시:
+   - 1× CNAME (Branded Domain)
+   - 2× CNAME (DKIM 키 1·2)
+   - 1× TXT (SPF — 기존 SPF가 있으면 병합)
+   - 1× TXT (DMARC: v=DMARC1; p=none; rua=mailto:dmarc@brand.com)
+   - 1× CNAME (Bounce 처리 도메인)
+5. Cloudflare/Gabia/Cafe24 등 도메인 관리 페이지에서 6개 레코드 추가
+6. Klaviyo로 돌아와 [Verify] → 24시간 내 인증 통과
+7. [Use branded sending domain] 토글 ON → 모든 발송이 send.brand.com 경유
+```
+
+### Shopify Email 사용 시
+
+Shopify Email은 자동으로 SPF·DKIM 처리되지만 **발신 주소가 `@store.shopify.com`** → 신뢰도 낮음. 졸업 전에 [Sender Authentication](https://help.shopify.com/en/manual/promoting-marketing/email-marketing/getting-started-with-email-marketing#sender-authentication) 활성화로 본인 도메인 발송 권장.
+
+### 4-주차 모니터링 시그널
+
+| 신호 | 정상 | 위험 |
+|---|:--:|:--:|
+| Klaviyo Open Rate | 25%+ (Apple MPP 영향 포함) | <15% → 인증 의심 |
+| Bounce Rate | <2% | >5% → 즉시 발송 중지 |
+| Spam Complaint | <0.1% | >0.3% → 도메인 신뢰도 추락, Recovery 1개월+ |
+| Postmaster Tools | "Domain Reputation: High" | "Medium/Low" → DMARC 강화 |
+
+### 흔한 실수 (한국 셀러)
+
+| 실수 | 결과 |
+|---|---|
+| 가비아·카페24 DNS UI에서 Klaviyo CNAME 그대로 복붙 (`v=DMARC1...`) | TXT를 CNAME으로 잘못 등록 → 인증 실패 |
+| 기존 SPF (`v=spf1 include:_spf.google.com ~all`) 무시하고 Klaviyo SPF 단독 등록 | Gmail 발송 깨짐 |
+| DMARC `p=reject` 즉시 적용 | Welcome Flow 첫 발송에 자기 메일도 차단 |
+
+> **권장 단계**: `p=none` 1주 → `p=quarantine` 1주 → `p=reject` 영구 (DMARC 점진 강화).
+
+---
+
 ## 2. 5통 환영 시퀀스 (Welcome Flow) 설계
 
 신규 구독자에게 10일 동안 자동 발송되는 5통의 이메일입니다. **`02_Master_Prompts.md` §11 프롬프트**로 한 번에 생성합니다.
