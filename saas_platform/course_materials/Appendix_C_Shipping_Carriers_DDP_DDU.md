@@ -152,6 +152,71 @@
 
 ---
 
+## 6. 3PL 모델 — Pure Dropship vs 현지 창고 Hybrid (Phase 4~5)
+
+본 강의 Day 0~Phase 3 표준은 **Pure Dropship**(CJ 직발송, 12~18일). 매출 $5K+ 안정 후 **3PL Hybrid**로 진화하면 **배송 3~7일 + 분쟁률 1/3 + Niche Brand 전환**이 가능.
+
+### Pure Dropship vs 3PL Hybrid
+
+| 차원 | Pure Dropship | **3PL Hybrid** | Full 3PL |
+|---|---|---|---|
+| 베스트셀러 SKU | CJ 직발송 | **3PL 입고** | 3PL 입고 |
+| Long-tail SKU | CJ 직발송 | CJ 직발송 (그대로) | 3PL 입고 |
+| 평균 배송일 | 12~18일 | 베스트는 3~7일, 외는 12일 | 모두 3~7일 |
+| 자본 소요 | 0 (재고 X) | $500~$3K (베스트 1~3개월치) | $5K+ |
+| 마진 영향 | 표준 | -2~5%p (3PL 수수료) | -5~10%p |
+| CVR 영향 | 표준 | **+15~30%** (배송일 짧음 = 결제 망설임 ↓) | +30~40% |
+| 본 강의 진입 시점 | Day 0 | **Phase 4 (월 $5K+)** | Phase 5 (월 $20K+) |
+
+### 1인 셀러용 3PL 비교 (2026)
+
+| 3PL | 셋업 | 월 최소 | Pick & Pack | 보관비 (1ft³/월) | 한국 셀러 친화 |
+|---|---|---|:--:|:--:|:--:|
+| **ShipBob** | Free | $0 | $3.50/주문 | $2.5 | ✓ (영문 UI + Shopify 1-click) |
+| **ShipMonk** | Free | $250 | $3.00/주문 | $2.0 | ✓ |
+| **ShipHero** | $50/월 | $50 | $2.50/주문 | $2.0 | △ (영문 UI 복잡) |
+| **CJ Dropshipping US Warehouse** | Free | $0 | $2.00/주문 | $1.5 | ✓ (CJ 통합) |
+
+> **본 강의 권장**: 첫 3PL 진입은 **CJ US Warehouse** (이미 CJ 사용 중이므로 통합 단순). 매출 $20K+ 도달 후 다른 3PL 비교 검토.
+
+### 3PL 진입 결정 트리
+
+```
+월 매출 $5K+ 안정 12개월?
+  └─ NO → Pure Dropship 유지
+  └─ YES → 베스트셀러 SKU 1~2개 식별
+            (전체 매출의 50%+ 차지하는 SKU)
+                  │
+                  ▼
+        해당 SKU 첫 1개월 재고 분량을 CJ US Warehouse로 이동
+                  │
+                  ▼
+        Shopify에서 SKU별 발송지 분리 (CJ US vs CJ China)
+                  │
+                  ▼
+        1개월 후 측정:
+          - 평균 배송일: 12일 → ?
+          - 배송 분쟁: 5% → ?
+          - CVR: X% → ?
+                  │
+                  ▼
+        CVR +10%+ 확인 시 → SKU 2~3개 추가
+        CVR 변화 < 5%p → Pure Dropship 복귀 (자본 회수)
+```
+
+### 한국 셀러용 3PL 셋업 SOP
+
+1. 미국 LLC 보유 ([Appendix A §8-5-bis](./Appendix_A_Refund_Legal_Checklist.md) 필수)
+2. 3PL 계정 영문 가입 + Stripe·Wise·Mercury 결제 연결
+3. CJ에 "US Warehouse 입고 견적" 메일 (Master Prompts §3 활용)
+4. Shopify Locations 추가 + SKU별 default location 설정
+5. Klaviyo Order Confirmation에 "Ships from US — 3-7 business days" 자동 변수
+6. 첫 입고 후 1주일 spot-check (분실·지연 모니터링)
+
+> 💡 **3PL → Niche Brand 전환의 진짜 가치**: Pure Dropship 마진 10% → 3PL Hybrid 마진 25%로 진화 가능 ([Week 12 사업 모델 3가지](./Week12_Data_Driven_ScaleUp.md)). 광고비 흡수 여유 + 재구매율 +15~20%p.
+
+---
+
 ## 📌 캐리어 선택 1회독 체크리스트
 
 | ☐ | 항목 |

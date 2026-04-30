@@ -364,6 +364,18 @@ Basic/Standard/Pro 가격대를 페르소나·LTV·마진 기준 자동 결정. 
 크리에이터 평소 톤 분석 + 본인 메시지 결합 + FTC #ad 명시 영문 브리프 자동. 톤 깨면 영상 실패 — 자연스러운 결합.
 - 등장: Master Prompts §46, Week 8
 
+**IOR** (Importer of Record)
+미국 통관 시 관세 납부 + 제품 안전·인증 데이터에 대한 최종 법적 책임자. CJ 직발송 = 고객 IOR / 본인 LLC 통관 = 본인 IOR. 본인 LLC IOR이면 CPSC·MoCRA·FDA·HTS 모든 책임.
+- 등장: Week 3 §2-2-bis
+
+**Pure Dropship vs 3PL Hybrid vs Full 3PL**
+배송 모델 3단계 진화. Pure(Day 0, CJ 직발송) → Hybrid(Phase 4, 베스트셀러만 미국 창고) → Full(Phase 5, 모든 SKU). 마진 -2~10%p, CVR +15~40%.
+- 등장: Appendix C §6
+
+**Low-Ticket / Niche Brand / High-Ticket** (사업 모델 3가지)
+가격대·마진·운영 모델 차이. Low(5~15%) / Niche(15~35%) / High(20~45%). Day 0 = Low(표준), Phase 4 = Niche, Phase 5 = High 진화.
+- 등장: Week 12 [심화]
+
 **HTS** (Harmonized Tariff Schedule)
 미국 관세 분류 코드. 상품마다 다른 관세율 적용.
 - 등장: W3, [Master Prompts §18](./02_Master_Prompts.md)

@@ -84,6 +84,32 @@ Landed Cost = 소싱가 + 국제 배송비 + 통관 수수료 + 관세(Tariff)
 
 > ⚠️ **불확실성 경고**: 2026.4 현재 트럼프 행정부가 **Section 232 신규 발동·확대**를 시사 + Congress의 새 관세 입법 가능성도 있음. 매월 본인 카테고리 HTS 률을 [USITC.gov](https://hts.usitc.gov) 직접 검증 필수. **본 수치가 2026 Q3에 또 바뀔 수 있음**.
 
+#### 2-2-bis. ⚠️ Importer of Record (IOR) — 한국 셀러가 자주 모르는 법적 책임
+
+미국으로 상품이 들어올 때 **세관 통관 + 관세 납부 + 제품 안전·인증 데이터에 대한 최종 법적 책임자**를 IOR이라고 부릅니다. 1인 셀러가 가장 많이 헷갈리는 영역.
+
+| 시나리오 | IOR | 법적 책임 |
+|---|---|---|
+| **CJ Dropshipping 직발송 + 고객 명의 통관** | 고객 (개인 IOR) | 셀러 책임 X — 단 $800 이하 De Minimis 시대 끝나서 **고객이 통관 거부 가능** |
+| **CJ → 본인 미국 LLC 명의 통관 → 고객 발송** | 본인 LLC (Business IOR) | **본인이 모든 법적 책임** — HTS·CPSC·MoCRA·FDA 위반 시 본인 LLC 벌금 |
+| **3PL 창고 (ShipBob 등)에 미리 입고 → 미국 내 발송** | 본인 LLC | 동일 (3PL은 운영자, 법적 책임 X) |
+
+**1인 셀러 결정 트리**:
+```
+Phase 1~3 (월 매출 $5K 미만, 미국 LLC 없음)
+  └─ 고객 명의 IOR (CJ 직발송) — 셀러 법적 노출 적음
+            단점: 고객이 통관 거부·관세 항의 가능
+
+Phase 4+ (월 매출 $5K+, 미국 LLC 있음)
+  └─ 본인 LLC IOR — 통관 안정·고객 경험 ↑
+            단점: 본인이 CPSC·FDA·MoCRA·HTS 모든 책임
+            필수: §6.6 MoCRA·§6.5 Prop 65 등 미리 컴플라이언스 셋업
+```
+
+> ⚠️ **2026.7.8 CPSC eFiling 의무화 영향**: CPSC 규제 제품(어린이용품·전자제품·일부 가정용품) 수입 시 **IOR이 직접 또는 customs broker 통해 적합성 인증서(GCC/CPC)를 전자 제출** 의무. 본인 LLC IOR이면 본인 책임 — 컴플라이언스 외주 ($300~$800/년) 또는 Registrar Corp 같은 US Agent 위임 ($600~$2K/년).
+
+> 💡 **Phase 1~3 권장**: 고객 IOR 모델 유지 + 본인은 [Master Prompts §1 Kill Criteria #8](./02_Master_Prompts.md)으로 CPSC·MoCRA·FDA 규제 카테고리 회피. 본인 LLC IOR은 매출 검증 + 컴플라이언스 셋업 후 진입.
+
 #### 2-3. IEEPA 환급 기회
 
 2025년 4월 2일 ~ 2026년 2월 20일 사이 IEEPA 관세를 납부한 경우 **환급 절차** 진행 중:

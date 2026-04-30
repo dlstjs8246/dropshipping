@@ -130,6 +130,70 @@
 
 ---
 
+## 🎯 [심화] 사업 모델 3가지 — Low-Ticket / Niche Brand / High-Ticket (Phase 4~5 결정)
+
+본 강의 14주는 **저가($25~80) sweet spot**을 표준으로 가르침. 단 매출 $5K+ 안정 후 **사업 모델 자체를 진화**시킬 수 있음. 2026 시점 1인 셀러용 3가지 모델 + 마진 구조.
+
+### 모델 비교
+
+| 차원 | **Low-Ticket** ($15~50) | **Niche Brand** ($30~120) | **High-Ticket** ($150+) |
+|---|---|---|---|
+| **순마진** | 5~15% | 15~35% | 20~45% |
+| **객단가 ($)** | $25~50 | $50~120 | $150~$1,500 |
+| **본 강의 진입 시점** | Day 0 (표준 모델) | Phase 4 (월 $5K+) | Phase 5 (월 $20K+) |
+| **사업 모델** | Pure dropship (CJ 직발송) | 3PL hybrid (현지 창고) | 3PL hybrid + 컨설팅 판매 |
+| **고객 결정 시간** | 30초 충동 | 1~3일 비교 | 1~2주 검토 |
+| **광고 채널** | TikTok organic + Spark | Meta + TikTok 병행 | Google Ads + 콘텐츠 SEO |
+| **CS 빈도** | 높음 (고객 다수, 객단가 낮음) | 중간 | 낮음 (고객 적음, 객단가 높음) |
+| **재구매율** | 20~30% | 35~50% | 5~15% (단발 고가) |
+| **광고비 흡수** | 마진 낮아 어려움 | 안정 | 높은 마진으로 여유 |
+| **법적 컴플라이언스** | 카테고리 회피 (Kill #8) | 일부 적용 | **본인 LLC IOR 필수** |
+
+### 모델별 진화 경로
+
+```
+Day 0 (강의 표준): Low-Ticket Pure Dropship
+                 │
+                 ▼
+                 매출 검증 (월 $5K+)
+                 │
+                 ├─ 같은 카테고리 심화 → Niche Brand
+                 │   • 본인 영문 도메인 + 브랜딩 강화
+                 │   • 3PL 일부 도입 (베스트셀러 SKU만)
+                 │   • Klaviyo Win-back + 재구매 시퀀스
+                 │   • 마진 15~35% 확보
+                 │
+                 └─ 카테고리 전환 → High-Ticket
+                     • 본 강의 카테고리 외 (가구·홈·전자·B2B 액세서리 등)
+                     • 본인 LLC IOR + 3PL 필수
+                     • Google Ads + SEO 콘텐츠 클러스터
+                     • 마진 20~45% 안정
+                     • 단점: 학습 곡선 + 재고 자본 필요
+```
+
+### 마진 tier별 광고비 흡수 한계
+
+| 모델 | BEP_ROAS | 권장 광고비/매출 | 광고 1건 손익분기 |
+|---|:--:|:--:|:--:|
+| Low-Ticket (마진 10%) | **10×** | <8% (사실상 organic 의존) | 매우 빡빡 |
+| Niche Brand (마진 25%) | 4× | 15~20% | 안정 |
+| High-Ticket (마진 35%) | 2.85× | 25~35% | 여유 |
+
+> **핵심 진실**: Low-Ticket이 어려운 진짜 이유 = **광고비 흡수가 거의 불가능**. 마진 10%로 광고를 켜면 ROAS 10× 달성해야 본전. 그래서 본 강의가 **Day 0~Phase 3은 무조건 organic 영상 우선**으로 가르침. Phase 4 진입 = Niche Brand 전환 권장.
+
+### Phase 5 진입 조건 (High-Ticket으로 가도 되는가)
+
+다음 5개 모두 충족 시:
+- [ ] 월 매출 $20K+ 12개월 안정
+- [ ] 본인 LLC + Form 5472·FBAR·W-8BEN-E 셋업 ([Appendix A §8-5-bis](./Appendix_A_Refund_Legal_Checklist.md))
+- [ ] 3PL 운영 경험 ([Appendix C §6](./Appendix_C_Shipping_Carriers_DDP_DDU.md))
+- [ ] 이메일 리스트 5K+ (Klaviyo)
+- [ ] 본인 도메인 권위 (Google PA 30+)
+
+> 💡 **Master Prompts 활용**: [§31 Niche Pivot 3-Way](./02_Master_Prompts.md)으로 본인 데이터 기반 "Low-Ticket 유지 vs Niche 진화 vs High-Ticket 전환" AI 진단. 단발 결단이 아니라 분기마다 재평가 권장.
+
+---
+
 ## ❓ 자주 묻는 질문 (FAQ)
 
 **Q: 이 모든 데이터를 엑셀로 일일이 합쳐서 계산하려니 너무 힘든데요?**
