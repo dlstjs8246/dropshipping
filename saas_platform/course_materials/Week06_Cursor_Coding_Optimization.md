@@ -26,6 +26,18 @@
 
 예전엔 쇼피파이 테마(Liquid 코드)를 수정하려면 외주 개발자에게 수십만 원을 줬습니다. 하지만 지금은 **Cursor라는 AI 에디터**를 켜고 "장바구니 버튼 색깔을 깜빡거리는 빨간색으로 바꿔줘"라고 치면 1초 만에 코드를 고쳐줍니다. 오늘은 개발자의 뇌를 빌려 쓰는 법을 배웁니다.
 
+#### Cursor 3 (2026.4.2 출시) 핵심 신기능
+
+| 기능 | 설명 | 1인 셀러 활용 |
+|---|---|---|
+| **Composer 2** | 여러 파일 동시 편집 + 멀티스텝 작업 | "헤더 + 푸터 + checkout 페이지 톤 통일" 한 번에 |
+| **Agents Window** | 별도 창에서 백그라운드 Agent 실행 (`cursor-agent` CLI) | Theme 자동 리팩터·번역·SEO 메타 일괄 적용 |
+| **멀티모델 스위칭** | Sonnet 4.6 / Opus 4.7 / GPT-5 / Gemini 3 Pro 토글 | 단순 변경 = Sonnet, 복잡한 디버깅 = Opus |
+| **MCP 자동 로드** | `~/.cursor/mcp.json` Shopify·Klaviyo·GA4 통합 | 자연어로 Shopify 재고 조회·Klaviyo 세그먼트 생성 |
+| **Background Agent** | 메일·노션·Slack에서 트리거 → Cursor가 PR 생성 | 외주 개발자 0명, 본인이 PM이 됨 |
+
+> **본 강의 권장**: Week 6은 Cmd/Ctrl+K 단순 명령에 집중. Composer·Agents Window·MCP는 졸업 후 Phase 4 진입 시 학습. 단 **Sonnet 4.6 모델 선택은 첫날부터 권장** (디폴트가 GPT-5-mini로 변경됨).
+
 ---
 
 ## 💻 실습 파트 (0:50 - 2:10)

@@ -279,6 +279,36 @@ Email [PRIVACY_EMAIL] for any privacy-related questions.
 
 > **결론**: 분쟁률 0.5% 이하를 유지하지 못하면 결제 처리사 계정이 정지됩니다. 환불 정책을 명확히 하고 배송 기간을 정직하게 표시하는 것이 가장 싸게 분쟁을 줄이는 방법입니다.
 
+### 카드사 Surcharge 합법화 — 주별 차이 (2026 기준)
+
+학생이 결제수수료(2.9%+30¢)를 고객에게 전가하려고 Stripe Surcharge 자동 기능을 켜는 경우 **CA·NY·NJ·MA·TX·OK·CO에서 즉시 위반** ([PaymentCloud 가이드](https://paymentcloudinc.com/blog/credit-card-surcharge-laws-by-state/)).
+
+| 주 | Surcharge | Cash Discount | Convenience Fee | 비고 |
+|---|:--:|:--:|:--:|---|
+| **CA** | ❌ separate line item 금지 | ✓ | ✓ | Dual pricing OK (단일 가격 표시 후 옵션 선택) |
+| **NY** | △ Dual pricing만 OK | ✓ | ✓ | 실제 비용 한도 (~3.5%) |
+| **TX** | ❌ | ✓ | ✓ | Surcharge 100% 금지 |
+| **MA** | ❌ | ✓ | ✓ | 동일 |
+| **NJ·OK·CO** | ❌ | ✓ | ✓ | 동일 |
+| **35개 주** | ✓ (한도 4%) | ✓ | ✓ | 일반 허용 |
+
+**1인 셀러 안전 운영**: Stripe Surcharge 자동 기능 **OFF 유지**. 가격에 결제수수료 미리 반영(상품가 +3% 인상)하는 게 50개 주 동시 합법.
+
+> ⚠️ **위반 시**: NY State Attorney General 2024-2025 enforcement 사례 다수 — 위반당 $500~$10K + 환불 명령. Shopify default는 surcharge OFF이므로 **건드리지 않으면 안전**.
+
+### Stripe 2025-2026 신규 — Adaptive Acceptance + Network Tokens
+
+Stripe가 ML 기반 **Adaptive Acceptance** + **Network Tokens** 자동 활성화 ([Stripe 블로그](https://stripe.com/blog/ai-enhancements-to-adaptive-acceptance)) — 카드 발급사 거절을 자동 retry하여 **승인율 1~2%p 상승**. 1인 셀러 무설정으로 자동 적용.
+
+**Shopify 셀러 활성 확인**:
+```
+Shopify Admin → Settings → Payments → Shopify Payments
+→ "Enhanced acceptance" 토글 ON (디폴트 ON)
+→ Network Tokens 자동 처리
+```
+
+→ Klaviyo 구독자 결제 실패율 감소, Apple Pay 거절율 감소.
+
 ### Visa CE 3.0 (Compelling Evidence 3.0) — 2025-10-17 글로벌 자동 적용
 
 Visa의 신규 분쟁 방어 표준. **Reason Code 10.4 (Other Fraud) 분쟁에서 자동 적격 부여**되면 Visa가 머천트 승소 처리 ([Chargebacks911](https://chargebacks911.com/prevent-chargebacks/prevent-visa-disputes/visa-compelling-evidence-3-0/)).
@@ -518,6 +548,17 @@ CJ/AliExpress 공급자에게 SDS(Safety Data Sheet) 요청 → 받은 화학물
 | 신고 주기 | 분기별 |
 | £135 초과 | 정식 통관 (수입자 = 고객) |
 
+### 7-1-bis. EU CBAM (Carbon Border Adjustment Mechanism) — 1인 셀러 면제 명확화
+
+EU CBAM은 2026.1.1부터 정식 발효 (이전 2023-2025는 transitional phase). 시멘트·철·알루미늄·비료·전기·수소 카테고리 수출 시 탄소세 사전 징수 ([BSI 가이드](https://www.bsigroup.com/en-US/insights-and-media/insights/blogs/preparing-for-eu-cbam-the-20262027-transition-explained/)).
+
+**1인 드랍쉬핑 셀러 영향**: **사실상 무관**.
+- CBAM은 **연 50톤 미만 수입자 면제** (de minimis)
+- 본 강의 카테고리(폴리머·실리콘·전자제품)는 CBAM 적용 카테고리 외
+- 50톤은 컨테이너 ~2개 분량 — 1인 셀러 첫 5년간 도달 불가
+
+> **핵심**: CBAM 뉴스를 보고 EU 진출을 포기할 필요 없음. **§7-1 IOSS만 신경 쓰면 1인 셀러는 끝**.
+
 ### 7-2-bis. EU DSA Article 30 — 거래자 지위 신고 (2025.2.17~)
 
 EU 전 회원국에 적용되는 **Digital Services Act (DSA)** Article 30. 미신고 거래자는 EU 마켓플레이스(Apple/Google/Etsy 등)에서 **노출 차단**, Shopify D2C도 사이트에 "trader" 표시 의무 ([EU Commission DSA](https://digital-strategy.ec.europa.eu/en/policies/digital-services-act)).
@@ -569,12 +610,19 @@ EU·UK 매출 비중이 전체의 5% 이하?
 | 결제사 | 한국 셀러 직접 사용 | 정산 통화 | 정산 주기 | 한국 입금 경로 |
 |---|---|---|---|---|
 | **Shopify Payments** | △ (한국 사업자 직접 X — 미국 LLC 필요) | USD | 2~7일 | Wise / Payoneer 경유 |
-| **Stripe** | ✗ (한국 비즈니스 미지원) | USD | 7일 | 미국 LLC + Wise |
+| **Stripe** | ✗ (한국 비즈니스 미지원) | USD | 7일 | 미국 LLC + Wise/Airwallex |
 | **PayPal Business** | ○ | USD | 즉시 | PayPal → 한국 원화 환전 (수수료 ~3.5%) |
-| **Wise Business** | ○ | USD/multi | 보유 후 환전 | 한국 원화 계좌 직접 |
+| **Wise Business** | △ (2025 KYC 강화 — 한국 신규 가입 어려움) | USD/multi | 보유 후 환전 | 한국 원화 계좌 직접 |
+| **Airwallex** | ○ (2025 한국 진출 + 빠른 KYC) | USD/multi | 보유 후 환전 | 한국 원화 계좌 |
 | **Payoneer** | ○ | USD | 즉시 | Payoneer → 원화 입금 |
 
-> **추천 셋업** (한국 셀러, 미국 LLC 없음): Shopify Payments 대신 **PayPal Business + Shop Pay**. 매출 검증 후 Doola/Stripe Atlas로 미국 LLC → Stripe로 전환.
+> ⚠️ **2025-2026 현실 업데이트**:
+> - **Wise Business** 한국 신규 가입은 KYC 검토 강화로 70%+ 거절. 기존 가입자는 정상 사용.
+> - **Mercury** (미국 LLC 은행) 2025부터 Doola·Stripe Atlas의 Registered Agent 주소 거절. 미국 실주소 또는 Mail Forwarding 주소 필요.
+> - **Airwallex** (호주 본사, 2024 한국 진출)가 Wise 대안으로 부상. KR 사업자 가입 24h 승인.
+> - **Relay** (미국 LLC용) — Mercury 거절 시 대안. $3M FDIC sweep 보장.
+
+> **추천 셋업** (한국 셀러, 미국 LLC 없음): Shopify Payments 대신 **PayPal Business + Shop Pay**. 매출 검증 후 Doola/Stripe Atlas + **Relay 또는 Airwallex** → Stripe로 전환.
 
 ### 8-2. 매출 인식 시점 + 환율 적용
 

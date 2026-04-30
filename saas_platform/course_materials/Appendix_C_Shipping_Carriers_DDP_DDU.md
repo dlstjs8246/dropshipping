@@ -38,12 +38,14 @@
 
 | 캐리어 | 평균 도착일 | 추적 | 가격 (500g 기준) | DDP 지원 | 분쟁률 |
 |---|:--:|---|:--:|:--:|:--:|
-| **CJ Packet (USPS Ground Advantage)** | 12~18일 | 부분 추적 | $4.50 | ✓ | 보통 |
-| **Yanwen Special Line** | 10~15일 | 전구간 추적 | $5.20 | ✓ | 낮음 |
-| **USPS Ground Advantage (직발송)** | 8~14일 | 전구간 추적 | $7.80 | ✓ | 낮음 |
-| **DHL eCommerce** | 6~10일 | 전구간 추적 | $9.50 | ✓ | 매우 낮음 |
-| **DHL Express** | 3~5일 | 실시간 추적 | $24.00 | ✓ | 거의 없음 |
-| **FedEx International** | 4~6일 | 실시간 추적 | $22.00 | ✓ | 거의 없음 |
+| **CJ Packet (USPS Ground Advantage)** | 12~18일 | 부분 추적 | $4.80 | ✓ | 보통 |
+| **Yanwen Special Line** | 10~15일 | 전구간 추적 | $5.50 | ✓ | 낮음 |
+| **USPS Ground Advantage (직발송)** | 8~14일 | 전구간 추적 | $8.30 | ✓ | 낮음 |
+| **DHL eCommerce** | 6~10일 | 전구간 추적 | $10.20 | ✓ | 매우 낮음 |
+| **DHL Express** | 3~5일 | 실시간 추적 | $26.00 | ✓ | 거의 없음 |
+| **FedEx International** | 4~6일 | 실시간 추적 | $24.00 | ✓ | 거의 없음 |
+
+> 📌 **2026 GRI 반영**: FedEx/UPS는 2026.1.6부터 GRI 5.9%(헤드라인) 적용, 단 fuel·peak·oversize 등 부가서비스 포함 시 **실효 인상 8~12%** ([Supply Chain Dive](https://www.supplychaindive.com/news/fedex-2026-gri-shipping-rate-increase/760011/)). USPS Ground Advantage도 2026.1.19 평균 5.4% 인상. 위 표는 보수적 평균치 — **분기별로 본인 카드사·CJ·Pirate Ship 견적 재산정 필수**. 마진 계산식(Week 3)에 ±10% 변동 가정하고 운영.
 
 ### 가격대별 권장 조합
 

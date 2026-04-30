@@ -83,7 +83,7 @@
 TikTok Ads Manager 메뉴 경로:
 1. ads.tiktok.com → Login (BC 권한 필요)
 2. 좌측 사이드바 → [Campaign] → [Create]
-3. Advertising Objective → "Website Conversions" 선택
+3. Advertising Objective → "Website Conversions" 선택. **2026.2 TikTok Smart+ 통합** ([Segwise](https://segwise.ai/blog/tiktok-smart-campaigns-guide-benefits)): Sales/LeadGen/App + Traffic까지 Smart+ 자동 최적화 디폴트 ON. **첫 캠페인은 Smart+ 토글 OFF로 수동 시작 권장** — 학습 곡선 + 예산 폭주 방지. 매출 검증 후 Smart+ ON 전환.
 4. Campaign budget → "No limit" (캠페인 단위 무제한, 광고그룹에서 제한)
 5. [Continue] → Ad Group 화면
 

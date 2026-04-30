@@ -260,6 +260,26 @@ Visa 분쟁 자동 적격 부여 표준. 5가지 증거(이전 거래·device·I
 12세 이하 어린이용품 의무 — 3rd-party lab 테스트 + CPC 발행 + Lead 100ppm·페인트 90ppm·Phthalate 0.1% 한도. 2026-07-08부터 e-Filing.
 - 등장: Week 2 Kill Criteria #8
 
+**MCP** (Model Context Protocol)
+Anthropic 발표(2024.11) → Linux Foundation 이관(2025.12). Agent와 외부 도구·데이터 소스를 연결하는 벤더 중립 표준. 2026.4 기준 75+ Claude connector + Cursor·Claude Desktop 통합.
+- 등장: Supplement 10 §4-6-bis
+
+**Section 232 확장**
+2025-2026 트럼프 정부가 발동한 추가 관세 — 구리(2025.8.1, 50%) + 반도체 + 목재 + 의약품. 기존 철강·알루미늄에 더해 공급망 핵심 카테고리 직격.
+- 등장: Week 3 §2-2
+
+**Reciprocal Tariffs** (Trump 2.0)
+국가별 차등 관세. 2026.1.27 한국 25%, 일본·EU 등 별도. 본 강의 중국 소싱 모델은 직접 영향 없음 (KR 원산지 아니므로).
+- 등장: Week 3 §2-2
+
+**EU CBAM** (Carbon Border Adjustment Mechanism)
+2026.1.1 정식 발효. 시멘트·철·알루미늄·비료·전기·수소 카테고리만 적용 + 50톤/년 미만 면제. 1인 드랍쉬핑 셀러 무관.
+- 등장: Appendix A §7-1-bis
+
+**Visa CE 3.0** (Compelling Evidence 3.0)
+2025-10-17 글로벌 자동 적용. 5가지 증거 보관 시 Reason Code 10.4 분쟁 자동 승소.
+- 등장: Appendix A §6 끝
+
 **HTS** (Harmonized Tariff Schedule)
 미국 관세 분류 코드. 상품마다 다른 관세율 적용.
 - 등장: W3, [Master Prompts §18](./02_Master_Prompts.md)

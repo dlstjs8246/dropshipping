@@ -408,6 +408,65 @@ print(result)
 - ✅ 매 요청 사이 5초+ 지연 (서버 부담 X)
 - ✅ User-Agent 명시 ("Brand-Name competitor monitoring")
 
+### 4-6-bis. MCP (Model Context Protocol) — Agent 표준 도구 프로토콜
+
+[Anthropic이 2024.11에 발표한 MCP](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)는 Agent와 외부 도구·데이터 소스를 연결하는 **OpenAPI 같은 표준 프로토콜**. 2025.12 Linux Foundation으로 이관되어 **벤더 중립 표준**이 됨. 2026.4 기준 75+ Claude 공식 connector + Cursor·Windsurf·Zed 등 IDE 통합.
+
+#### MCP 핵심 개념
+
+```
+┌─ MCP Client (Cursor / Claude Desktop / 본인 Agent SDK 앱)
+│
+├─ MCP Server 1: Shopify (상품·주문·재고 read/write)
+├─ MCP Server 2: GA4 (analytics 쿼리)
+├─ MCP Server 3: Klaviyo (CRM 세그먼트 + 메일 발송)
+├─ MCP Server 4: Slack (알림 발송)
+└─ MCP Server N: 본인 커스텀 (CJ 발주 + Order DB)
+```
+
+각 server가 **tool 목록 + 입력 스키마 + 핸들러**를 정의. Client는 LLM 컨텍스트에 자동 노출. **한 번 연결 → 모든 Agent에서 재사용**.
+
+#### 1인 셀러용 MCP 활용 5선
+
+| 활용 | MCP Server | 사용 사례 |
+|---|---|---|
+| Shopify 주문 자동 조회 | `@shopify/mcp-server` | "오늘 미발송 주문 목록" → 자동 발송 |
+| GA4 분석 자동 | `@google/ga4-mcp` | "어제 ROAS 채널별 분석" |
+| Slack 알림 통합 | `@modelcontextprotocol/server-slack` | 분쟁/재고 부족 즉시 알림 |
+| 자체 CJ 발주 봇 | 본인 작성 (FastMCP Python) | 주문 → CJ → 송장 발급 |
+| 가격 모니터링 | `@modelcontextprotocol/server-puppeteer` | §4 Browser Use 대안 |
+
+#### 셋업 — Claude Desktop 기준 (5분)
+
+```json
+// ~/.claude/claude_desktop_config.json
+{
+  "mcpServers": {
+    "shopify": {
+      "command": "npx",
+      "args": ["-y", "@shopify/mcp-server"],
+      "env": { "SHOPIFY_API_KEY": "..." }
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"]
+    }
+  }
+}
+```
+
+**Claude Desktop 재시작 → 우측 사이드바에 도구 자동 등록**. Claude에 자연어로 "오늘 매출 100$ 이상 주문을 Slack #orders 채널에 정리해 보내줘" → 자동 실행.
+
+#### Tool Search + Programmatic Tool Calling (2026.2 신규)
+
+Claude API에 추가된 두 기능:
+- **Tool Search**: LLM이 100+ 도구 중 작업에 맞는 도구를 동적으로 검색
+- **Programmatic Tool Calling**: Tool 응답을 Code Interpreter처럼 변환하여 chained 호출
+
+> **본 강의 권장 진입 경로**: §3 Make.com → 검증 후 §4-7 Claude Agent SDK → 6개월 운영 후 MCP 표준화. MCP는 **여러 Agent + 도구 재사용** 시점에 가치 폭발 — 1인 셀러 단일 Agent 단계엔 over-engineering.
+
+---
+
 ### 4-7. 코드 우선 옵션 — Agent SDK (Claude Agent SDK / OpenAI Agents SDK)
 
 §3 Make.com·§4 Browser Use는 노코드/저코드 빠른 셋업에 최적. 하지만 **Agent를 본격적으로 빌드한다면** (멀티 도구 호출 + 메모리 + 서브 에이전트 + 스트리밍 + 구조화 출력) 2025년 출시된 Agent SDK가 골격 없이 직접 만드는 것보다 압도적으로 빠릅니다.
