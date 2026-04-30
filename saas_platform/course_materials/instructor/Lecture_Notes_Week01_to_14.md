@@ -15,6 +15,29 @@
 
 ---
 
+## 🕒 모든 주차 공통 — [2:00 - 2:30] 마무리 30분 템플릿
+
+각 주차 본문은 [2:00]까지만 타임라인 명시. 마지막 30분은 모든 주차 동일 구조:
+
+**[2:00 - 2:15] Q&A 라이브 (15분)**
+* 수강생 막힘 → [Master Prompts §39 Router](../02_Master_Prompts.md)에 자유 글쓰기 시연 — AI가 §1~§47 자동 추천
+* 가장 자주 나오는 3개 Q를 다음 주 오프닝에 미리 답변 (학습 누적)
+* 본 주차 산출물(스코어카드·로고·DM 등)을 1~2명 즉석 spot-check
+
+**[2:15 - 2:25] 다음 주 과제 안내 (10분)**
+* Notion 대시보드의 본 주차 체크리스트 함께 확인
+* 본 주차 핵심 신규 Master Prompt 1~2개 시연 (각 Week별 본문에 명시)
+* 자가 진단: 일요일 22시 [Supplement 11](../Supplement_11_Self_Assessment_and_Progress_Tracker.md) §1~§5 작성 → 월요일 [§40 Weekly Priority](../02_Master_Prompts.md) 1회 실행 권장
+
+**[2:25 - 2:30] 멘탈·동기 부여 (5분)**
+* "이번 주 가장 작은 한 발 1개" 발표 라운드 (전원, 30초씩)
+* 의욕 5/10 미만 응답자 → [§38 멘탈 코치](../02_Master_Prompts.md) 본인 데이터 입력 권장
+* 다음 주에 보자는 멘트 + Slack/단톡 즉시 질문 가능 환기
+
+> **강사 운영 팁**: 본 30분이 강의의 진짜 가치 생성 구간. 이론·실습은 자료로 self-study 가능하지만, Q&A·자가 진단·동기 부여는 라이브에서만 완성. **절대 단축 금지**.
+
+---
+
 ## 🟢 Phase 1: 기초 + 비즈니스 설계 (Week 1~3)
 
 ### Week 1: AI의 세계 + 드랍쉬핑 아키텍처 🌍
@@ -46,6 +69,8 @@
 **[0:30 - 2:00] 실습: 스코어카드 작성 및 최종 니치 확정**
 * **실습 가이드**: `03_Scorecard_Template.csv`를 열어 수강생들이 자신의 후보 상품을 기입하게 합니다. 23점을 넘는 상품이 나올 때까지 반복합니다.
 * **심화 자료 안내**: DDP/DDU와 캐리어 비교는 [Appendix C](../Appendix_C_Shipping_Carriers_DDP_DDU.md)를 졸업 전 1회독 권장.
+* **🆕 본 주차 신규 Master Prompt 시연**: [§47 IP & Photography Risk Pre-Check](../02_Master_Prompts.md) — Week 5 신상품 등록 전 매번 사용 자동화. 신규 SKU 1개당 5분 투자가 1년 1회 IP 위반 시 $5K+ 변호사비 회피. **W3에서 미리 시연하고 W5에서 실전 적용**.
+* **🆕 IOR 결정 트리 안내**: [Week 3 §2-2-bis](../Week03_Landed_Cost_Scorecard.md)의 Phase 1~3 (고객 IOR) vs Phase 4+ (본인 LLC IOR) 분기를 강사가 화이트보드에 그려서 설명. 학생이 카테고리 선택 시 IOR 책임을 미리 인지해야 카테고리 자가 회피([Kill #8](../Week02_Prompt_Engineering_Kill_Criteria.md))가 작동.
 
 ---
 
@@ -87,6 +112,8 @@
 **[0:30 - 2:00] 실습: 마케팅 에셋 생성**
 * **실습 가이드**: 이번 달만 ChatGPT Plus를 결제하게 하여 DALL-E로 이미지를 30장 뽑습니다. CapCut 템플릿에 맞춰 빠르게 영상을 편집하는 노하우 전수.
 * **심화 자료 안내**: DALL-E/Midjourney 5종 프롬프트 팩은 [Master Prompts §5](../02_Master_Prompts.md)를 띄워두고 변수만 바꾸게 지도. 음성·영상·음악 통합 스택은 [Supplement 06](../Supplement_06_AI_Asset_Generation_Stack.md) — ElevenLabs/Runway/Suno 활용으로 영상 1개 30분 제작.
+* **🆕 본 주차 신규 Master Prompt 시연**: [§26 콘텐츠 Atomization](../02_Master_Prompts.md) — 영상 1개 → TikTok 5/Reels 5/Shorts 5/이메일 3/블로그 1/광고 5/Pinterest 3 = 30개 자산 한 번 호출. 매주 영상 3개 발행 시 월 90개 자산. **시연: 본인 영상 transcript dump → 1분 안에 30개 자산 생성**.
+* **🆕 AI 광고 콘텐츠 법적 지뢰 5선**: [Week 7 §3](../Week07_AI_Creative_Factory.md) — California AB 1836 (사망 셀럽 likeness $10K/위반), EU AI Act Article 50 (2026.8 시행), C2PA/SynthID 워터마크 제거 금지 등. Sora 2/Veo 3 활용 시 강사가 안전 vs 위험 프롬프트 표 시연.
 
 ### Week 8: 제휴 마케팅 (오가닉 바이럴) 세팅 🤝
 **[0:00 - 0:40] 이론: 무료 트래픽의 핵심, 제휴 구조**
@@ -96,6 +123,10 @@
 * **실습 가이드**: AI를 활용해 각 인플루언서의 최근 영상 내용을 언급하는 맞춤형 DM 100개를 순식간에 작성하는 법을 보여줍니다.
 * **심화 자료 안내**: 채널 분석은 [Master Prompts §6](../02_Master_Prompts.md), DM 풀 프롬프트는 [§7](../02_Master_Prompts.md). 2단계 파이프라인으로 운영.
 * **L2 비서화 안내**: 채널 분석 + 개인화 DM을 매번 수동 호출하지 않고 어시스턴트 1개로 묶는 풀 빌드는 [Supplement 09 §8 DM 비서](../Supplement_09_L2_AI_Assistant_Building.md). 졸업 후 100명 자동 처리.
+* **🆕 본 주차 신규 Master Prompt 시연 2종**:
+  - [§45 Creator Authenticity Score](../02_Master_Prompts.md) — DM 발송 전 6 신호로 가짜 팔로워·봇 자동 탐지. 50점 미만 SKIP, 70+만 샘플. **시연**: 5명 핸들 입력 → 점수표 출력.
+  - [§46 Creator Content Brief](../02_Master_Prompts.md) — 크리에이터 톤 + 본인 메시지 결합 + FTC #ad 명시 영문 브리프 자동. 협업 시 매번 사용.
+* **🆕 TikTok Shop KR/US 구분**: [Week 8 §3 비교표](../Week08_TikTok_Affiliate_Outreach.md) — 미국 시장은 미국 LLC + PBR 필수, 한국 도메스틱은 2025-08~ KR 사업자 단독 OK. 학생 거주국별 진입 경로 명시 필요. **TikTok Shop 위반 48점 시스템**(§4-D)도 함께 강조.
 
 ### Week 9: 데이터 대시보드 + 유료 광고 소액 부스팅 📊
 **[0:00 - 0:30] 이론: ROAS의 함정과 광고 진입 조건**
@@ -104,6 +135,12 @@
 **[0:30 - 2:00] 실습: Spark Ads 집행**
 * **실습 가이드**: 반응이 좋았던 크리에이터 영상을 활용해 틱톡 Spark Ads 소액 캠페인을 세팅합니다. Ads Manager 18단계 메뉴 경로는 Week 9 본문 Step 2-B 참조.
 * **심화 자료 안내**: 일예산 결정은 [Supplement_02 CSV](../Supplement_02_Ad_Budget_Calculator.csv)에 본인 매출목표 입력 후 자동 산출.
+* **🆕 본 주차 신규 Master Prompt 시연 3종**:
+  - [§30 Creative Fatigue 4단계](../02_Master_Prompts.md) — 광고 CTR/CVR/Frequency 시계열 → Healthy/Warning/Decline/Dead 자동. 매주 월요일 09:00 자동 보고. 광고비 -15~25%.
+  - [§40 Weekly Priority](../02_Master_Prompts.md) — KPI dump → 5가지 액션 자동. 매주 월요일 09:00 5분 결단.
+  - [§29 Cart Abandonment 5 카테고리](../02_Master_Prompts.md) — Klaviyo 행동 데이터 → 가격/배송/환불/결제/보류 분류 → 개인화 복귀 메일. 복귀율 +30~50%.
+* **🆕 Meta Ads 보조 채널 + CAPI**: [Week 9 Step 3](../Week09_SparkAds_and_Organic.md) — TikTok 단일 의존 위험 분산. Shopify ↔ Meta CAPI 1-click 연동. iOS ATT 후 픽셀만으로 전환 20~40% 손실 방지.
+* **🆕 TikTok Smart+ 2026.2 통합**: 첫 캠페인은 Smart+ OFF 수동 시작 권장 (예산 폭주 방지). Meta Advantage+ 강제 전환(2026.1.15) 명시.
 
 ---
 
@@ -117,6 +154,8 @@
 * **실습 가이드**: 수강생이 직접 Make 시나리오를 짜면 100% 에러가 납니다. 강사가 미리 준비한 Blueprint URL을 주고 'Import' 버튼만 누르게 하여 API 키만 연결하도록 지도합니다.
 * **심화 자료 안내**: 환불·법적 이슈는 [Appendix A §6 Dispute SOP](../Appendix_A_Refund_Legal_Checklist.md) 참조.
 * **L3 무인 시스템 안내**: 진짜 무인 24/7 시스템 마스터 아키텍처는 [Supplement 10 §2](../Supplement_10_L3_AI_Agent_Building.md), Build 1 Single Agent 풀 코드(Make + Claude API)는 [§3](../Supplement_10_L3_AI_Agent_Building.md). 본 W10 Make 시나리오는 "Agent-lite" — Claude API 의사결정이 추가되어야 진짜 Agent가 됨.
+* **🆕 Voice Agent CS (Build 4) 안내**: [Supplement 10 §9.5](../Supplement_10_L3_AI_Agent_Building.md) — ElevenLabs Convai + Sonnet 4.6 + RAG로 잠자는 동안 음성·라이브챗 60% 자동 처리. 월 $50로 1,000건. shadow mode 1주 가드레일 명시.
+* **🆕 MCP 표준 + Cursor 3 안내**: [§4-6-bis MCP](../Supplement_10_L3_AI_Agent_Building.md) — Linux Foundation 2025.12 이관, 75+ Claude connector. Make.com 30+ 모듈 비대 시 Agent SDK + MCP 마이그레이션 시점.
 
 ### Week 11: 지능형 RAG & 모니터링 자동화 🧠
 **[0:00 - 0:50] 이론: RAG와 Agent 개념**
@@ -127,6 +166,8 @@
 * **심화 자료 안내**: Custom GPTs vs Claude Projects vs Gemini Gems 비교 + 5개 Agent 청사진은 [Supplement 07](../Supplement_07_AI_Agent_Builder_Comparison.md) (AI Mastery Track L3). 졸업 후 30일 내 5개 Agent 직접 구축.
 * **L2 비서 빌드 안내**: 본 시간에 만든 CS 봇을 본인 정책·과거 응대 50건·금지어로 확장한 카피·DM·CS 3종 비서 풀 빌드는 [Supplement 09](../Supplement_09_L2_AI_Assistant_Building.md). Supplement 07이 *비교*라면 09는 *빌드 매뉴얼*.
 * **L3 Browser Use 안내**: 정적 HTML로 안 잡히는 SPA·로그인 페이지까지 모니터링은 [Supplement 10 §4 Browser Use Agent](../Supplement_10_L3_AI_Agent_Building.md).
+* **🆕 본 주차 신규 Master Prompt 시연**: [§42 Repeat Refunder Triage](../02_Master_Prompts.md) — Tier 0~4 자동 분류 + Shopify 자동 태깅 + Stripe 신고. 매주 점검 = 매월 1~3% 마진 회복. **시연**: 본인 (또는 데모) Customers CSV → AI Tier 분류.
+* **🆕 RAG 강화 안내**: Claude Projects 외 [Anthropic Files API + Skills (2025.10)](../Supplement_07_AI_Agent_Builder_Comparison.md), [캐싱 RAG 비용 1/10](../Supplement_03_AI_Tool_Selection_Guide.md) 명시. CS 봇 = 매뉴얼 4개(Refund/Shipping/FAQ/Banned_Words) + 캐싱 ON.
 
 ### Week 12: 데이터 기반 스케일업 & 피벗 📈
 **[0:00 - 0:30] 이론: 데이터 기반 의사결정**
@@ -135,15 +176,39 @@
 **[0:30 - 2:00] 실습: 백엔드 데이터 분석**
 * **실습 가이드**: 스토어 1달 데이터를 CSV로 다운받아 Claude에 올리고 병목 구간(이탈률 등)을 도출하게 합니다.
 * **심화 자료 안내**: 분석 풀 프롬프트는 [Master Prompts §9](../02_Master_Prompts.md), 4시트 Sheets 구조는 Week 12 본문 Step 1-A 참조.
+* **🆕 본 주차 신규 Master Prompt 시연 3종**:
+  - [§31 Niche Pivot 3-Way](../02_Master_Prompts.md) — Day 30+ 게이트가 binary KILL이 아닌 Pivot/Persist/Pause 강도 점수 + 7일 행동.
+  - [§35 Cohort LTV](../02_Master_Prompts.md) — 월별 코호트 30/60/90/180일 LTV + 6개월 예측 + 채널별 LTV/CAC.
+  - [§41 Cross-sell Basket Affinity](../02_Master_Prompts.md) — 100건+ 주문 → "A 산 사람의 70% B" 자동 + Bundle 가격. AOV +30~50%.
+* **🆕 사업 모델 3가지 안내**: [Week 12 [심화]](../Week12_Data_Driven_ScaleUp.md) — Low-Ticket(5~15%) / Niche Brand(15~35%) / High-Ticket(20~45%) 진화 경로. Phase 4(월 $5K+) = Niche Brand 전환 권장 명시. **3PL Hybrid**([Appendix C §6](../Appendix_C_Shipping_Carriers_DDP_DDU.md))도 함께 시연.
 
 ---
 
 ## 🚀 Phase 5: 확장 & 종합 (Week 13~14)
 
 ### Week 13: 워크플로우 자동화 고도화 🏗️
-* **핵심 내용**: Make.com의 Router(분기점)를 이용해 VIP 고객과 일반 고객의 메일을 다르게 자동 발송하는 고도화 실습 진행. 후반 40분은 3-Agent 흐름(Watcher → Analyst → Communicator) 시연.
+**[0:00 - 0:10] 12주차 회고**
+* 12주 데이터 기반 KEEP/SCALE/KILL 결단 1~2명 spot-check.
+
+**[0:10 - 0:40] 이론: LTV(고객 생애 가치)와 리텐션 마케팅**
+* **멘트**: "신규 1명 광고비 $20 vs 기존 고객 재구매 메일 $0. 광고비 폭등 2026년에 살아남는 유일한 방법은 한 명이 두 번·세 번 사게 만드는 LTV 설계."
+* **조건부 자동화의 논리 (If/Then/Else)** 5분 설명 — VIP $100+ 산 고객엔 30% 시크릿, 장바구니 이탈엔 10%.
+
+**[0:40 - 0:50] ☕ 쉬는 시간**
+
+**[0:50 - 1:50] 실습: Make.com Router 활용 VIP 자동 분류 메일**
+* Shopify Customer 데이터 → Router 분기 → Klaviyo 세그먼트별 다른 메일 자동 발송 풀 빌드.
+* 가장 흔한 에러: Webhook 매핑 누락. 강사가 미리 준비한 Blueprint 임포트 → 본인 API 키만 연결.
+
+**[1:50 - 2:00] 후반 시연: 3-Agent 흐름 (Watcher → Analyst → Communicator)**
+* 1회성 사례를 졸업 후 모든 Multi-Agent에 재사용 가능한 골격으로 일반화 시연.
+
 * **심화 자료 안내**: Multi-Agent 분류는 [Master Prompts §10](../02_Master_Prompts.md), 5통 환영 이메일 시퀀스 자동 생성은 [§11](../02_Master_Prompts.md). 깊이 있는 이메일 자동화는 [Supplement 01](../Supplement_01_Email_Automation_Playbook.md).
 * **L3 패턴 일반화 안내**: Watcher → Analyst → Communicator 패턴을 재사용 가능 골격으로 일반화 + 핸드오프 JSON 스키마 표준 + 에러 회복 룰은 [Supplement 10 §5](../Supplement_10_L3_AI_Agent_Building.md). 본 W13의 1회성 사례를 졸업 후 모든 Multi-Agent에 재사용.
+* **🆕 코드 우선 진화 경로**: Make.com 30+ 모듈 비대 시 [Supplement 10 §4-7 Claude Agent SDK + §4-6-bis MCP](../Supplement_10_L3_AI_Agent_Building.md). 매월 매출 $20K+ 도달 후 마이그레이션 권장.
+* **🆕 매주 운영 결단 AI 도입 시점**: W13 종료 후엔 [§40 Weekly Priority](../02_Master_Prompts.md)·[§42 Repeat Refunder](../02_Master_Prompts.md)·[§29 Cart Abandonment](../02_Master_Prompts.md)을 매주 월요일 09:00 루틴화 (= [01_Notion_Dashboard 매주 운영 루틴](../01_Notion_Dashboard.md) 참조).
+
+[2:00 - 2:30] 공통 마무리 30분 ([상단 템플릿](#-모든-주차-공통----200---230-마무리-30분-템플릿) 적용)
 
 ### Week 14: 종합 리뷰 & SaaS 비전 제시 🎯
 **[0:00 - 1:00] 수강생 성과 리포트 발표**
@@ -152,3 +217,10 @@
 **[1:00 - 1:40] 피드백 수집 및 SaaS 비전 제시 (가장 중요)**
 * **강사 핵심 멘트**: "14주 동안 매번 트렌드 찾고 마진 계산하느라 힘들었죠? 그 고통을 해결할 **강사 자체 개발 스캐너/마진 계산기 SaaS**를 다음 달에 런칭합니다. 여러분은 1기니까 평생 무료로 쓰게 해드릴게요. 대신 피드백만 주세요."
 * **효과**: 수강생들이 스스로 불편함을 뼈저리게 느꼈기 때문에, SaaS 런칭 즉시 열성적인 베타 테스터로 전환됩니다.
+
+**[1:40 - 2:00] 다채널 확장 + 졸업 후 다음 90일**
+* [Week 14 [심화] 다채널](../Week14_Final_Review_SaaS_Pitch.md) — Shopify·TikTok Shop·Amazon·eBay·Etsy 정책 비교. Phase 4·5 진화 경로 시연.
+* **🆕 본 주차 신규 Master Prompt 시연**: [§36 Brand Voice Cross-Channel](../02_Master_Prompts.md) — 영상·이메일·DM·캡션·광고 5채널 톤 5축 자동 점수 + drift 추적. 분기마다 1회 권장.
+* [Appendix D 졸업 직후 7일 Sprint](../Appendix_D_First_100_Customers.md) §0.5를 화면에 띄우고 다음 월요일부터 D1~D7 강제 진입.
+
+[2:00 - 2:30] 공통 마무리 30분 — 단, **마지막 회차이므로 Q&A는 30분 풀 사용**. 졸업 후 단톡 운영 + 6개월 후 1기 동창회 일정 안내.

@@ -40,12 +40,43 @@ This version has breaking changes — APIs, conventions, and file structure may 
 ### Setup
 See [SETUP.md](./SETUP.md) for end-to-end environment provisioning.
 
-### Module map
+### Module map (Phase A — current)
 | Module | Route | Server Action | Sources from course |
 |---|---|---|---|
 | Margin Shield | `/margin` | `src/app/margin/actions.ts` | W2 Kill Criteria + W3 Landed Cost + Master Prompts §1·§18 |
 | L1 Triangulation | `/lab/l1` | `src/app/lab/l1/actions.ts` | Supplement 08 §6.2 |
 | L2 Assistant Builder | `/lab/l2` | `src/app/lab/l2/actions.ts` | Supplement 09 §3·§7~§9 |
+| L3 Agent Sandbox | `/lab/l3` | `src/app/lab/l3/actions.ts` | Supplement 10 §3 (Order Decision Agent) |
+| Sessions | `/sessions` | (read-only) | All modules' output JSONB search/filter |
+| Progress Hub | `/progress` | `src/app/progress/actions.ts` | Supplement 11 (Pre-flight + 14 Weekly + L1/L2/L3) |
+
+### Phase 2/3 roadmap (curriculum promised, not yet implemented)
+
+**Curriculum 14 commits expanded the lecture material (Master Prompts 11종 → 47종, new compliance/AI/operational frameworks). The following promised features are NOT yet in SaaS — they exist as Master Prompts the student copies into Claude/ChatGPT directly:**
+
+| Feature | Course ref | Suggested SaaS surface |
+|---|---|---|
+| **§39 Master Prompt Router** (학생 막힘 → §1~§47 자동 추천) | Master Prompts §39 | New `/router` page with chat UI — highest priority |
+| **§40 Weekly Priority** (월요일 09:00 KPI dump → 5 actions) | §40 + Sup11 §5.4 | `/dashboard` weekly insight card |
+| **§38 Mental Coach** (Day 30 데스파이러·번아웃 진단) | §38 + Sup11 §5.5 | `/progress` mental check tab |
+| **§42 Repeat Refunder Triage** (Tier 0~4 분류) | §42 + AppA §6 | `/sessions` filter or `/disputes` new module |
+| **§47 IP & Photography Risk Pre-Check** (신규 SKU 등록 전) | §47 + AppF #11 | `/margin` pre-scan integration |
+| **§35 Cohort LTV** (월별 코호트) | §35 + W12 | `/dashboard` LTV widget (requires Shopify connect) |
+| **§29 Cart Abandonment 5 카테고리** | §29 + Sup01 §3 | Klaviyo connect + behavior triage |
+| **Voice Agent CS** (ElevenLabs Convai) | Sup10 §9.5 | `/lab/voice` new module |
+| **사업 모델 3가지 selector** (Low/Niche/High-Ticket) | W12 [심화] | Onboarding 3rd step or `/dashboard` model badge |
+| **3PL Hybrid 라우팅** (베스트셀러 → US warehouse) | AppC §6 | `/inventory` with Shopify Locations integration |
+
+**Phase 2 priority** (build order):
+1. `/router` (§39) — single highest-leverage feature, ties everything together
+2. `/dashboard` weekly priority + LTV widgets (§40 + §35) — visible value
+3. `/disputes` Repeat Refunder (§42) — direct margin impact
+4. `/lab/voice` (Build 4) — last, requires ElevenLabs integration
+
+**Phase 3 priority**:
+- `/inventory` 3PL Hybrid + Cohort + Bundle (§41)
+- `/onboarding` Business Model selector
+- Klaviyo / Shopify deeper integrations
 
 ### Data persistence
 - All module outputs persist to `lab_sessions` (single table, JSONB `output`).

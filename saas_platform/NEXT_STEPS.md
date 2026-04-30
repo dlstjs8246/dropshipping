@@ -113,7 +113,28 @@ URL 없으면 5개 필드만도 OK. 헤더 행 자동 감지.
 
 ---
 
-## 다음 라운드 후보 (외부 의존)
+## ⚠️ Phase 2/3 — 강의 자료가 약속하지만 SaaS에 미구현된 영역
+
+**2026.4 시점 현실**: course_materials는 14 커밋 동안 대규모 확장 (Master Prompts 11종 → 47종, Voice Agent CS, IP 사전 점검, 사업 모델 3가지, 3PL Hybrid, Mental Coach, Weekly Priority 등). **SaaS Phase A는 Margin/L1/L2/L3/Sessions/Progress 6 라우트뿐** — 학생이 강의 자료의 §38~§47 보고 SaaS 들어가면 약속 기능 못 찾음.
+
+이 gap을 명확히 인정하고 진행 우선순위 정리. AGENTS.md "Phase 2/3 roadmap" 표 참조.
+
+### Phase 2 우선순위 (build order)
+
+| 순위 | 기능 | 예상 작업 |
+|:--:|---|---|
+| 1 | **`/router` Master Prompt Router (§39)** | 자유 글쓰기 → §1~§47 자동 추천 챗 UI. 가장 큰 leverage — 47종 모두 가시화 |
+| 2 | **`/dashboard` Weekly Priority + Cohort LTV widgets (§40 + §35)** | KPI dump → 5 액션 + 월별 코호트 LTV 곡선. Shopify connect 필요 |
+| 3 | **`/disputes` Repeat Refunder Triage (§42)** | Customer 데이터 → Tier 0~4 자동 분류 + Shopify auto-tag. 직접 마진 영향 |
+| 4 | **`/lab/voice` Voice Agent (Build 4)** | ElevenLabs Convai 통합. 마지막 — 외부 API 의존 |
+
+### Phase 3 우선순위
+- `/inventory` 3PL Hybrid + Bundle (§41 Cross-sell)
+- `/onboarding` Business Model selector (Low/Niche/High-Ticket)
+- Klaviyo / Shopify 깊은 integration (§29 Cart Abandonment 5-category triage)
+- `/disputes`에 Visa CE 3.0 evidence 자동 수집
+
+### 외부 의존 후보 (Phase 4)
 
 - **Inngest cron + Resend email** — 가격 모니터링 정기 실행 + "스캔 완료" 이메일. 5분 가입 × 2.
 - **Stripe billing** — Cohort 1 무료 → 일반 $19/월. Stripe 비즈니스 계정 필요.
