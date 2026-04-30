@@ -25,6 +25,10 @@
 
 모든 고객에게 똑같은 할인 쿠폰을 뿌리는 건 바보짓입니다. 이미 100달러어치를 산 큰손(VIP)에게는 30% VIP 시크릿 쿠폰을, 장바구니에 담고 나간 사람에게는 10% 쿠폰을 줘야 합니다. 오늘은 이 조건부 로직을 자동화 툴에 심어봅니다.
 
+> 💡 **2026 코드 우선 옵션**: Make.com Router로 30+ 모듈 비대해지면 [Supplement 10 §4-7 (Claude Agent SDK)](./Supplement_10_L3_AI_Agent_Building.md) + [§5 Multi-Agent (Watcher→Analyst→Communicator)](./Supplement_10_L3_AI_Agent_Building.md) + [§9.5 Voice Agent](./Supplement_10_L3_AI_Agent_Building.md)로 마이그레이션. 졸업 후 매월 매출 $20K+ 도달 시 적합. **MCP 표준**으로 Shopify·Klaviyo·GA4를 한 Agent에서 통합 제어 가능 ([§4-6-bis](./Supplement_10_L3_AI_Agent_Building.md)).
+>
+> 💡 **운영 결단 AI 매주 사용**: VIP 분류 외에 [Master Prompts §40 (이번 주 우선순위)](./02_Master_Prompts.md) + [§42 Repeat Refunder](./02_Master_Prompts.md) + [§29 Cart Abandonment](./02_Master_Prompts.md) 매주 월요일 09:00 루틴 권장.
+
 ---
 
 ## 💻 실습 파트 (0:50 - 2:10)

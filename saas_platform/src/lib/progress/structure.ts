@@ -21,7 +21,7 @@ export const PREFLIGHT: PreflightItem[] = [
   { id: "p9", category: "금전", label: "외국인 결제 가능 카드 1장" },
   { id: "p10", category: "금전", label: "PayPal 계정 (백업)" },
   { id: "p11", category: "금전", label: "첫 3개월 학습용 예산 ~$50 확보" },
-  { id: "p12", category: "금전", label: "관세 125% 인지" },
+  { id: "p12", category: "금전", label: "4-Layer 적층 관세 구조 인지 (Section 122+301+232)" },
   // 멘탈 4
   { id: "p13", category: "멘탈", label: "\"월 천만원\" 광고를 거부할 수 있다" },
   { id: "p14", category: "멘탈", label: "첫 30일 매출 0건도 정상이라는 것을 안다" },
@@ -47,7 +47,7 @@ export const WEEKS: WeekDef[] = [
     items: [
       { id: "1.1", label: "ChatGPT/Claude/Gemini 동일 프롬프트 비교 1회 실행" },
       { id: "1.2", label: "S08 §6.2 4단계 검증을 1번 손으로 적용" },
-      { id: "1.3", label: "De Minimis 폐지 + 125% 관세 의미 1줄 설명 가능" },
+      { id: "1.3", label: "De Minimis 폐지(2025) + IEEPA 무효(2026.2) → 122+301+232 4-Layer 의미 1줄 설명 가능" },
       { id: "1.4", label: "본인 후보 니치 카테고리 3개 메모" },
       { id: "1.5", label: "Week 2 Kill Criteria 미리보기 1회독" },
     ],

@@ -28,6 +28,8 @@
 - **Trigger**: 언제 작동할 것인가?
 - **Action**: 무슨 일을 할 것인가?
 
+> 💡 **Make.com 외 진화 경로 (졸업 후)**: Make.com 시나리오가 30+ 모듈로 비대해지면 [Supplement 10 §4-7 (Claude Agent SDK)](./Supplement_10_L3_AI_Agent_Building.md) 또는 [§4-6-bis (MCP 표준 프로토콜)](./Supplement_10_L3_AI_Agent_Building.md)로 마이그레이션. Cursor 3로 직접 코드 작성 시 [Week 6](./Week06_Cursor_Coding_Optimization.md) Composer 2 + Agents Window 활용.
+
 예: "쇼피파이에 새 주문이 들어오면(Trigger), 내 슬랙으로 알림을 보내라(Action)."
 
 ---

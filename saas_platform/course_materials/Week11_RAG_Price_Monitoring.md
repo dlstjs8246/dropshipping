@@ -23,6 +23,8 @@
 
 이렇게 AI가 내 회사 규칙을 무시하고 지어내는 걸 막기 위해, **내 규정집(PDF)을 먼저 던져주고 "이 안에서만 대답해"라고 가두는 기술**이 RAG입니다.
 
+> 💡 **2025-2026 RAG 진화**: Claude Projects 외에 **Anthropic Files API** + **Claude Skills (2025.10)** + **MCP (2024.11~)** 표준이 등장. 단일 셀러는 Claude Projects로 충분하지만 졸업 후 본격화 시 [Supplement 07 §Skills](./Supplement_07_AI_Agent_Builder_Comparison.md) + [Supplement 10 §4-6-bis MCP](./Supplement_10_L3_AI_Agent_Building.md) 참조. 또한 **프롬프트 캐싱**으로 매뉴얼을 한 번만 입력하고 1,000회 호출까지 90% 할인 ([Supplement 03 §3](./Supplement_03_AI_Tool_Selection_Guide.md)).
+
 ### 2. 가격 방어 봇의 필요성
 
 내 스토어에 주문이 10개나 들어와서 신나게 알리에 발주하러 갔는데, 어제까지 10달러였던 물건이 20달러로 올랐거나 품절(Out of stock)이라면? 완전 망한 겁니다. 주문 다 취소해주고 페널티 먹습니다. 그래서 **원가가 변동되면 즉시 폰으로 알람이 울리는 모니터링 봇**을 하나 띄울 겁니다.

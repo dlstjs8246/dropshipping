@@ -93,3 +93,39 @@
 - [ ] [Week 13] 워크플로우 자동화 고도화 (VIP 메일 발송 등)
 - [ ] [Week 14] 최종 성과 리포트 PPT 제작 및 발표 완료
 - [ ] **졸업 후 SaaS 알파 테스터 신청하기!**
+
+---
+
+## 🤖 매주 운영 루틴 — Master Prompts §40~§47 (Phase 4 진입 후 매주 사용)
+
+매주 일요일 22시 [Supplement 11 자가 진단](./Supplement_11_Self_Assessment_and_Progress_Tracker.md) → 월요일 09:00 다음 AI 루틴.
+
+### 매주 월요일 (5분)
+- [ ] [§40 이번 주 우선순위](./02_Master_Prompts.md) — KPI dump → 5가지 액션 자동 결단
+- [ ] [§42 Repeat Refunder 점검](./02_Master_Prompts.md) — Tier 0~4 자동 분류 (마진 +1~3% 회복)
+
+### 매주 월요일 (10분, Phase 4 진입 후 — 광고 운영 시)
+- [ ] [§30 Creative Fatigue 진단](./02_Master_Prompts.md) — 광고별 4단계 자동 분류
+- [ ] [§29 Cart Abandonment 심리](./02_Master_Prompts.md) — Klaviyo 행동 데이터 분석
+
+### 매주 일요일 (10분 — Sup 11 자가 진단 후)
+- [ ] [§38 멘탈 코치](./02_Master_Prompts.md) — 5 함정 패턴 자가 진단 + 다음 7일 5개 행동
+- [ ] 의욕 5/10 미만 시 — 위 §38이 1순위
+
+### 월 1회 (Phase 4 진입 후)
+- [ ] [§41 Cross-sell 자동 발굴](./02_Master_Prompts.md) — AOV +30~50%
+- [ ] [§43 Image SEO bulk 적용](./02_Master_Prompts.md)
+
+### 분기 1회
+- [ ] [§35 Cohort LTV 분석](./02_Master_Prompts.md) — 월별 코호트 30/60/90/180일 LTV
+- [ ] [§31 Niche Pivot 3-way 진단](./02_Master_Prompts.md) — Pivot/Persist/Pause
+- [ ] [§36 Brand Voice Cross-Channel 점검](./02_Master_Prompts.md)
+- [ ] [§44 Tiered Pricing 결정](./02_Master_Prompts.md)
+
+### 매번 (트리거 발생 시)
+- [ ] 신규 SKU 등록 전 — [§47 IP 사전 점검](./02_Master_Prompts.md) (5분 / 1년 1회 위반 = $5K+ 변호사비 회피)
+- [ ] 크리에이터 DM 발송 전 — [§45 Authenticity Score](./02_Master_Prompts.md) (50점 미만 SKIP)
+- [ ] 크리에이터 협업 시 — [§46 Content Brief](./02_Master_Prompts.md)
+- [ ] 막힐 때 — [§39 Router](./02_Master_Prompts.md) (자유 글쓰기 → 적합한 §N 자동 추천)
+
+> **본 강의 핵심**: 47개 프롬프트 외우지 말고 **§39 Router를 첫 번째 도구**로. 본인 막힘을 자유롭게 입력 → AI가 §1~§47 중 추천.

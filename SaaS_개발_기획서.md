@@ -22,7 +22,7 @@
 *(교육 중 Week 2-3에 수강생이 엑셀로 수행하는 이 규칙들이 SaaS의 백엔드 로직으로 탑재됩니다.)*
 
 ### 🚫 7대 절대 필터링 기준 (Kill Criteria)
-1. **마진율 ≥ 30%**: (판매가 - 소싱가 - 배송비 - 관세 125% 등) ÷ 판매가
+1. **마진율 ≥ 30%**: (판매가 - 소싱가 - 배송비 - 관세 50%(2026 Q2 보수적 가정, IEEPA 무효 후 Section 122+301+232 적층) 등) ÷ 판매가
 2. **무게 ≤ 500g**: 국제 배송비 마지노선
 3. **부피 소형**: 30×30×15cm 이내 (DIM Weight 회피)
 4. **판매가 $25~80**: 충동구매 + 마진 확보 최적 구간
@@ -44,7 +44,7 @@
 **"더 이상 엑셀과 계산기를 두드리지 마세요"**
 
 * **Opportunity Scanner**: 키워드 입력 시 Google Trends, TikTok 해시태그 데이터 종합 분석. 상품 URL 입력 시 7대 Kill Criteria 자동 판별 (PASS/FAIL).
-* **Margin Shield 계산기**: AliExpress/CJ Dropshipping 상품 URL 입력 시, 실시간 환율 및 미국 HTS 관세율(De Minimis 폐지 및 125% 관세 등)을 자동 매핑하여 정확한 순마진 산출.
+* **Margin Shield 계산기**: AliExpress/CJ Dropshipping 상품 URL 입력 시, 실시간 환율 및 미국 HTS 관세율(De Minimis 폐지 + 2026.2 IEEPA 무효 후 Section 122+301+232 4-Layer 적층)을 자동 매핑하여 정확한 순마진 산출.
 * **경쟁사 모니터링**: 타겟 스토어 URL 등록 시 신제품 등록 및 가격 변동 알림.
 
 ### 📅 Phase 2: 크리에이터 아웃리치 (수료 후 3~4개월 차)

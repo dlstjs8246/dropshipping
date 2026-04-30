@@ -37,7 +37,7 @@
 **🛠 L2 — AI Activation (활용)**
 - 🔗 [Supplement 03: AI 도구 선택 가이드 (작업별 매트릭스 2026)](./Supplement_03_AI_Tool_Selection_Guide.md)
 - 🔗 [Supplement 04: 고급 프롬프트 엔지니어링 (CoT·Few-shot·Self-Critique 등 6대 패턴)](./Supplement_04_Advanced_Prompt_Engineering.md)
-- 🔗 [Supplement 05: AI 워크플로우 레시피 (다중 AI 연결 10종)](./Supplement_05_AI_Workflow_Recipes.md)
+- 🔗 [Supplement 05: AI 워크플로우 레시피 (다중 AI 연결 13종 — atomization·페르소나·A/B 학습 포함)](./Supplement_05_AI_Workflow_Recipes.md)
 - 🔗 [Supplement 06: AI 에셋 생산 스택 (음성·영상·음악 통합)](./Supplement_06_AI_Asset_Generation_Stack.md)
 - 🔗 [Supplement 09: L2 AI Assistant 사용법 — 본인 비서 만들기 (카피·DM·CS)](./Supplement_09_L2_AI_Assistant_Building.md)
 
@@ -55,7 +55,7 @@
 - 🔗 [Appendix C: 배송 옵션 분석 (DDP/DDU + 캐리어 비교)](./Appendix_C_Shipping_Carriers_DDP_DDU.md)
 - 🔗 [Appendix D: 첫 100명 고객 확보 90일 플레이북 (Seed → Validate → Accelerate → Scale + 졸업 직후 7일 Sprint)](./Appendix_D_First_100_Customers.md)
 - 🔗 [Appendix E: 용어집 (ROAS·CVR·DDP·HTS·CoT·RAG 등 90+ 용어)](./Appendix_E_Glossary.md) ← **매 주차 옆 탭에**
-- 🔗 [Appendix F: 흔한 실수 10선 — 매주 일요일 자가 검열](./Appendix_F_Common_Mistakes_10.md)
+- 🔗 [Appendix F: 흔한 실수 12선 — 매주 일요일 자가 검열](./Appendix_F_Common_Mistakes_10.md)
 
 ---
 

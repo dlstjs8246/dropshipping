@@ -2,12 +2,16 @@
 
 > **강사 체크리스트 (수업 전)**
 > - 수강생용 Notion 대시보드 링크 준비 및 공유
-> - `02_Master_Prompts.md` 열어두기
+> - `02_Master_Prompts.md` 열어두기 (**§1~§47, 3 Part 구조** — Part 1 콘텐츠 / Part 2 운영·진단·메타 / Part 3 매주 운영 결단)
 > - (Week 10 이후) Make.com 템플릿(Blueprint) 사전 세팅 및 테스트 완료
 >
 > **수강생 자기주도 학습 인프라 (모든 주차 공통 안내)**
-> - 학습 진척: [Supplement 11 자가 진단 시스템](../Supplement_11_Self_Assessment_and_Progress_Tracker.md) — Week 0 Pre-flight + 매주 일요일 22시 5문항 작성. Week 1 종료 시 첫 Checkpoint 안내.
-> - 용어 참조: [Appendix E 용어집](../Appendix_E_Glossary.md) — ROAS·CVR·DDP·HTS·CoT·RAG 등 90+ 용어. 매 주차 옆 탭에 띄워두라고 1주차에 강조.
+> - 학습 진척: [Supplement 11 자가 진단 시스템](../Supplement_11_Self_Assessment_and_Progress_Tracker.md) — Week 0 Pre-flight + 매주 일요일 22시 5문항 작성. Week 1 종료 시 첫 Checkpoint 안내. **§5.4 매주 우선순위 + §5.5 멘탈 코치 AI 루틴 매주 강조**.
+> - 용어 참조: [Appendix E 용어집](../Appendix_E_Glossary.md) — ROAS·CVR·DDP·HTS·CoT·RAG·MoCRA·IOR·MCP 등 100+ 용어.
+> - 흔한 실수 자가 검열: [Appendix F 12선](../Appendix_F_Common_Mistakes_10.md) — 매주 일요일 자가 검열 시트 강조.
+>
+> **강사가 강의 중 자주 호출할 Master Prompts (Part 2·3)**
+> - §29 Cart Abandonment 진단 (W7+) / §30 Creative Fatigue (W9+) / §31 Niche Pivot 3-way (Day 30+) / §32 Reverse Atomization (W7+) / §33 EAT 점검 (W4+) / §34 Trust Signal 9칸 (W4+) / §35 Cohort LTV (W12) / §36 Brand Voice Cross-Channel (W14) / §37 공급사 응답 분류 (W3·W5) / §38 멘탈 코치 (Sup11과 함께) / §39 Router (학생 막힘 시) / §40 매주 우선순위 (월요일 09:00) / §41 Cross-sell (W12) / §42 Repeat Refunder (W11+) / §43 Image SEO (W4·W6) / §44 Tiered Pricing (W4·W12) / §45 Creator Authenticity (W8) / §46 Creator Brief (W8) / §47 IP 사전 점검 (W3·W5 신규 SKU 등록 전 매번)
 
 ---
 

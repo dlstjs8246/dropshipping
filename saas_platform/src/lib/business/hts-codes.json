@@ -2,7 +2,7 @@
   "_meta": {
     "source": "USITC HTS 2024 + practitioner shortlist",
     "fallback_rate": 0.25,
-    "note": "Rates as of 2025-Q4 with post-de-minimis 125% surcharge for China origin (CN). Always verify with CBP for shipments > $800."
+    "note": "Rates as of 2026-Q2. Post-De Minimis (2025) elimination + post-IEEPA invalidation (SCOTUS 2026-02-20). Effective duty = MFN rate (this column) + Section 122 (10% global) + Section 301 (China-specific 7.5-100%) + Section 232 (steel/aluminum/copper/semis 25-50%). Conservative course assumption: 50% of sourcing cost. Always verify with CBP and USITC.gov for current rates."
   },
   "categories": [
     { "keywords": ["necklace", "earring", "pendant", "ring", "bracelet", "jewelry"], "hts": "7117.19.9000", "rate": 0.11 },
