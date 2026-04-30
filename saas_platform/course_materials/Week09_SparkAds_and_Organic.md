@@ -226,6 +226,19 @@ Meta ROAS > TikTok ROAS × 1.3?
 
 > **핵심**: AI가 카피를 "처음 쓰는" 단계가 아니라, **"데이터 보고 진화"하는** 단계가 진짜 가치 발생 지점.
 
+### Step C-bis. Creative Fatigue 자동 감지 — 4단계
+
+광고가 잘 나가다가 어느 시점부터 CTR·CVR이 슬며시 떨어지는데 학생이 모름 → 광고비 폭주. AI가 시계열 추적 + 4단계 진단.
+
+| 단계 | 신호 | 권장 액션 |
+|:--:|---|---|
+| **0 Healthy** | CTR 안정·증가, frequency <3 | 유지 (예산 +20% 가능) |
+| **1 Warning** | CTR 7d MA −10% ↓, freq 3~5 | 새 hook 추가 |
+| **2 Decline** | CTR −25% ↓, CPC +30% ↑, freq 5~7 | v2 카피·소재 교체 |
+| **3 Dead** | CTR −50% ↓ + ROAS < BEP | **즉시 KILL** |
+
+**자동화**: 매주 월요일 09:00 광고 데이터 dump → [Master Prompts §30 (Creative Fatigue 감지)](./02_Master_Prompts.md) → 모든 활성 광고 단계 + 권장 액션 자동 보고. 광고비 -15~25%.
+
 ### Step D. 닫힌 학습 루프 — 분기마다 누적 갱신
 
 3 라운드 (라운드당 4시간 광고비) 후 학습 노트를 분기마다 누적 갱신. 자세한 워크플로우는 [Supplement 05 레시피 13 (A/B 광고 닫힌 학습 루프)](./Supplement_05_AI_Workflow_Recipes.md) 참조.

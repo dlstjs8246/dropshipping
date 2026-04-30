@@ -134,6 +134,10 @@ For showing up, here's a 10% off code: WELCOME10
 
 ## 3. 장바구니 이탈 (Abandoned Cart) 3단계 시퀀스
 
+> 💡 **Phase 4 진입 시 업그레이드**: 본 §3은 동일한 시퀀스를 모든 이탈 고객에게 발송. 첫 100건 매출 후엔 [Master Prompts §29 (Cart Abandonment 심리 진단)](./02_Master_Prompts.md)로 **이탈 사유 5 카테고리 자동 분류 → 개인화 시퀀스** 도입. 복귀율 +30~50%.
+
+
+
 장바구니에 담고 결제하지 않은 고객을 다시 데려오는 자동화. **이커머스 매출의 평균 10~15% 회수**.
 
 ### 시퀀스 구조

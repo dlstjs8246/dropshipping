@@ -88,6 +88,11 @@ Shopify 호스티드 체크아웃은 기본적으로 **SAQ A** (가장 단순한
    > 예: "햇살이 비치는 아늑한 거실 한가운데 놓인 세련된 가습기 이미지, 고화질 4K, 여백 있음"
 
 ### Step 3. AI로 About Us(브랜드 스토리) 작성 (20분)
+
+> 💡 **작성 후 AI 자동 점검**: About Us·상세페이지·결제 페이지 작성 후 [Master Prompts §33 (EAT 자동 점검)](./02_Master_Prompts.md)으로 Expertise·Authority·Trust 3축 점수화 + 누락 요소 자동 보강 카피 생성. CVR 7~12% → 12~18% 향상 가능.
+>
+> 💡 **결제 페이지 trust signal 결정**: Free Shipping 한도, Money-Back 30/60일, Apple Pay 노출 순서를 [Master Prompts §34 (Trust Signal A/B 9칸)](./02_Master_Prompts.md)으로 객단가·마진 기준 1순위 권장 자동 도출.
+
 1. Claude를 켜고 다음과 같이 입력하세요:
    > "우리 브랜드는 [상품 니치]를 다루는 전문 스토어야. 바쁜 현대인들에게 휴식과 건강을 찾아주는 것이 목표야. 고객에게 신뢰감을 주는 'About Us' 페이지 텍스트를 영문으로 3문단으로 작성해 줘."
 2. 작성된 텍스트를 쇼피파이 Pages 메뉴에 붙여넣습니다.

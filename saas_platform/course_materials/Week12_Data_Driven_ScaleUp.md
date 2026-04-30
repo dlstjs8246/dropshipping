@@ -85,6 +85,8 @@
 4. **KEEP / SCALE / KILL** 결단
 5. **STOP doing immediately** 1가지
 
+> 💡 **Phase 4 진입 시 (월 매출 $5K+)**: 위 단순 ROAS 분석을 넘어 [Master Prompts §35 (Cohort LTV 자동 분석)](./02_Master_Prompts.md)으로 **월별 코호트 30/60/90/180일 LTV + 채널별 LTV/CAC + 6개월 예측** 자동. 코호트 12개월 누적 후 본격 활용 권장.
+
 ### Step 2. 병목 진단 의사결정 트리 (40분)
 
 `Dashboard` KPI를 보고 아래 트리를 따라 1개 액션을 선택합니다.

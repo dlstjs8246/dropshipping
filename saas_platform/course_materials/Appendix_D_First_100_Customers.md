@@ -287,6 +287,10 @@
 
 각 게이트 실패 시 다음 분기를 따릅니다. **광고비 더 태우는 건 거의 항상 오답**입니다.
 
+> 🤖 **AI 자동 진단 (Day 30 이후 권장)**: 본 트리는 binary KILL만 다룸. Day 30 이후엔 [Master Prompts §31 (Niche Pivot 3-way)](./02_Master_Prompts.md)로 **Pivot / Persist / Pause** 3가지 시나리오 + 강도 점수 + 7일 행동 자동 진단. 잘못된 KILL 방지 효과 매출 ±50%.
+
+
+
 ### Case 1: Day 14에 매출 0건
 
 ```
