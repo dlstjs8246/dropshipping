@@ -93,7 +93,7 @@
 - 추천 컬러를 적용한 Shopify 테마 변수명 매핑"
 ```
 
-### Step E. 히어로 배너 자동 생성 (DALL-E 또는 Imagen 3)
+### Step E. 히어로 배너 자동 생성 (DALL-E 또는 Imagen 4)
 
 위 Step A~D의 결과를 모두 종합한 프롬프트로 한 번에 히어로 배너 생성:
 

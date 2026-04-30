@@ -9,12 +9,12 @@
 
 | 카테고리 | 1순위 도구 | 2순위 | 무료 한도 | 유료 (월) |
 |---|---|---|:--:|:--:|
-| **이미지 (사실적)** | DALL-E 3 (ChatGPT Plus) | Imagen 3 (Gemini) | Gemini 무제한 | $20 |
-| **이미지 (예술적)** | Midjourney | Ideogram | Ideogram 무료 | $10~ |
-| **단편 영상 (B-roll)** | Runway Gen-3 | Pika 1.5 | 두 곳 무료 한도 | $15~ |
+| **이미지 (사실적)** | DALL-E 3 / GPT Image (ChatGPT Plus) | Imagen 4 (Gemini) | Gemini 한도 내 | $20 |
+| **이미지 (예술적)** | Midjourney v7 | Ideogram 3 | Ideogram 무료 | $10~ |
+| **단편 영상 (광고)** | **Sora 2** (ChatGPT Plus) / **Veo 3** (Gemini Advanced) | Runway Gen-4 · Pika 2 | Sora/Veo 일 한도 | $20~ |
 | **AI 아바타 (얼굴 영상)** | HeyGen | D-ID | HeyGen 1분/월 | $30~ |
-| **음성 (TTS)** | ElevenLabs | OpenAI TTS | EL 10분/월 | $5~ |
-| **음악 (BGM)** | Suno AI | Udio | Suno 50곡/일 | $10~ |
+| **음성 (TTS)** | ElevenLabs v3 | OpenAI TTS-1-HD | EL 10분/월 | $5~ |
+| **음악 (BGM)** | Suno v4 | Udio v1.5 | Suno 50곡/일 | $10~ |
 
 **총 무료 스택**: 월 $0로 영상 30개, 이미지 100장, 음성 10분, 음악 무제한 가능
 **유료 풀 스택**: 월 ~$60로 무제한급 운영 가능
@@ -59,9 +59,9 @@
 --cref [URL] : 캐릭터 일관성 (모델 얼굴 고정)
 ```
 
-### Imagen 3 (Gemini, 무료)
-- **강점**: 무제한 무료, 영문 텍스트 우수
-- **약점**: 미세 디테일 약함
+### Imagen 4 (Gemini)
+- **강점**: 영문 타이포그래피 강력, Gemini Advanced 포함 시 사실상 무제한
+- **약점**: 미세 디테일은 여전히 Midjourney 대비 약함
 - **드랍쉬핑 적용**:
   - 영웅 배너 (히어로 섹션)
   - 블로그 썸네일
@@ -77,12 +77,22 @@
 
 ---
 
-## 3. 영상 생성 — Runway vs Pika
+## 3. 영상 생성 — 2026 스택 (Sora 2 / Veo 3 / Runway / Pika)
 
-### Runway Gen-3 ($15/월)
-- **강점**: 영화적 모션, 물리 정확도, 10초 영상
-- **약점**: 처리 시간 5~10분/영상
-- **추천 용도**: 광고용 B-roll, 시네마틱 컷
+### Sora 2 (ChatGPT Plus 포함, 일 한도)
+- **강점**: 물리 시뮬레이션·동기화 사운드 자동, 최대 20초, 캐릭터 일관성 강력
+- **약점**: 일 생성 한도 (Plus 기준 일 ~30회), 한국 IP에서 일부 기능 제한
+- **추천 용도**: 광고 1번 컷 (Hook), 라이프스타일 시연
+
+### Veo 3 (Gemini Advanced 포함)
+- **강점**: 8초 클립에 음성·SFX 자동 포함, Native 1080p, 영문 립싱크
+- **약점**: 8초 단편만 (긴 컷은 다중 생성 + 편집)
+- **추천 용도**: UGC 스타일 토킹헤드, 음성 포함 광고
+
+### Runway Gen-4 ($15/월)
+- **강점**: 캐릭터 레퍼런스(Gen-4 References)로 일관 모션, 10초+
+- **약점**: 처리 시간 3~5분/영상
+- **추천 용도**: 시네마틱 B-roll, 같은 모델/제품으로 다중 컷
 
 ```text
 [Runway 프롬프트 패턴]
@@ -97,10 +107,18 @@ lighting, shot on Sony A7IV 50mm, shallow depth of field,
 4K, 24fps, 5 second duration"
 ```
 
-### Pika 1.5 ($10/월)
-- **강점**: 빠른 생성 (2분/영상), 만화·일러스트 스타일 우수
+### Pika 2 ($10/월)
+- **강점**: 빠른 생성 (2분/영상), 만화·일러스트 스타일·Pikaffects 특수효과
 - **약점**: 사실적 표현 약함
 - **추천 용도**: 빠른 프로토타입, 일러스트 영상, 만화 스타일
+
+### 본 강의 권장 결정 트리
+```
+음성 포함 광고 (5~8초)?           → Veo 3 우선
+물리 동작 + 자연 사운드 강조?     → Sora 2 우선
+같은 모델/제품으로 다중 컷?       → Runway Gen-4 (Reference)
+빠른 컨셉 검증 / 일러스트 톤?     → Pika 2
+```
 
 ```text
 [Pika 프롬프트 패턴]
@@ -242,7 +260,9 @@ Step 5 (60분): CapCut에서 5개 영상 조립
 
 | ☐ | 항목 |
 |:--:|---|
-| ☐ | DALL-E·Midjourney·Imagen 생성물은 상업적 이용 OK (각 약관 확인) |
+| ☐ | DALL-E·Midjourney·Imagen 4 생성물은 상업적 이용 OK (각 약관 확인) |
+| ☐ | Sora 2 생성 영상은 워터마크 + C2PA 메타데이터 자동 포함 (제거 시 OpenAI 약관 위반) |
+| ☐ | Veo 3 생성 영상은 SynthID 워터마크 자동 삽입 (육안 비식별, 검출 도구 별도) |
 | ☐ | ElevenLabs 본인 Voice Clone은 본인 저작권 |
 | ☐ | ElevenLabs 내장 Voice는 ElevenLabs 약관 확인 (Starter 이상은 상업적 OK) |
 | ☐ | Suno AI 본인 생성 음악은 본인 저작권 |
@@ -257,12 +277,12 @@ Step 5 (60분): CapCut에서 5개 영상 조립
 
 ### 월 $0 (시작 단계)
 ```
-이미지: Imagen 3 (Gemini 무료 무제한)
-영상: Pika 무료 한도
-음성: ElevenLabs 무료 10분
-음악: Suno 무료 50곡/일
+이미지: Imagen 4 (Gemini 무료 한도)
+영상: Veo 3 무료 한도 + Pika 2 무료
+음성: ElevenLabs v3 무료 10분
+음악: Suno v4 무료 50곡/일
 편집: CapCut 무료
-→ 영상 30개/월 가능
+→ 영상 20~30개/월 가능
 ```
 
 ### 월 $20 (성장 단계)

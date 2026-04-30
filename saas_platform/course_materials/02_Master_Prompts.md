@@ -916,7 +916,7 @@ ElevenLabs/HeyGen/Runway 등을 영상 마케팅에 통합하는 워크플로우
 - 스크립트: Claude Sonnet 4.6
 - TTS 음성: ElevenLabs (Voice Cloning)
 - AI 아바타: HeyGen (실제 사람 영상이 어려울 때)
-- B-roll 영상: Runway Gen-3 또는 Pika 1.5
+- B-roll 영상: Sora 2 (ChatGPT Plus) / Veo 3 (Gemini Advanced) 1순위, Runway Gen-4 / Pika 2 대안
 - 편집: CapCut (자동 자막)
 - 음악: Suno AI (15초 BGM 자동 생성)
 

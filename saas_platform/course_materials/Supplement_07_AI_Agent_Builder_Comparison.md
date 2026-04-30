@@ -13,7 +13,7 @@
 | **컨텍스트 (한 대화)** | 128K tokens | **200K tokens** | 1M tokens |
 | **파일 업로드** | 20개 (총 512MB) | **무제한** (Project당) | 10개 |
 | **Web Search** | ✓ | ⚠️ Web Search Tool 별도 | ✓ |
-| **이미지 생성** | ✓ DALL-E | ✗ | ✓ Imagen 3 |
+| **이미지 생성** | ✓ DALL-E | ✗ | ✓ Imagen 4 |
 | **Code Interpreter** | ✓ | ✓ Artifacts | ✓ |
 | **공유 가능** | ✓ Public/Private | Pro 사용자 간 공유 | ✓ Public |
 | **외부 API 연동** | ✓ Actions (Open API) | Function Calling (API만) | ⚠️ 제한적 |
@@ -66,7 +66,7 @@
 **강점**:
 - 1M 컨텍스트 (Claude의 5배)
 - Google Workspace 완벽 통합 (Sheets, Docs, Gmail 직접 접근)
-- Imagen 3 무제한 이미지 생성
+- Imagen 4 무제한 이미지 생성
 - 한국어 강함 (Google 학습)
 
 **약점**:

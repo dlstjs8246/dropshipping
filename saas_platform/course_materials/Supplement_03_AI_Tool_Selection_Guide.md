@@ -11,7 +11,7 @@
 |---|---|---|---|---|
 | **Claude (Anthropic)** | 긴 문서·뉘앙스·코딩 추론·정직성 (200K context) | 이미지 생성 X, 실시간 검색 부분적 | 일 ~30회 | $20/월 (Pro) |
 | **ChatGPT (OpenAI)** | DALL-E 이미지·웹 검색·다목적·Custom GPTs | 톤 단조, 긴 글 일관성 약함 | GPT-4o-mini 무제한 / GPT-4o 일 10회 | $20/월 (Plus) |
-| **Gemini (Google)** | Workspace 통합·이미지 생성·100만 토큰 컨텍스트 | 한국어 구어체 어색, 추론 깊이 평이 | Gemini 2.0 Flash 무제한 | $20/월 (Advanced) |
+| **Gemini (Google)** | Workspace 통합·Imagen 4 이미지 생성·100만+ 토큰 컨텍스트 | 한국어 구어체 어색, 추론 깊이 평이 | Gemini 2.5 Flash 무제한 | $20/월 (Advanced — Gemini 3 Pro + Imagen 4) |
 | **Perplexity** | 실시간 웹 + 출처 인용 자동 | 창작·코딩 약함 | 일 5회 Pro Search | $20/월 (Pro) |
 | **Cursor (코딩 전용)** | Claude/GPT 백엔드 + IDE 통합 | 비코딩 작업 불가 | 월 2,000 completions | $20/월 (Pro) |
 
@@ -28,7 +28,7 @@
 | W3 | HTS 코드 추정 | **Perplexity** | Claude (단, USITC.gov 검증 필수) | 실시간 데이터베이스 접근 |
 | W4 | 브랜드 네이밍 10개 | **Claude** | GPT-4o | 창의성 + 일관된 평가 |
 | W4 | 로고 컨셉 5종 이미지 | **Midjourney → DALL-E (ChatGPT)** | Ideogram (무료) | 이미지 품질 |
-| W4 | 영웅 배너 이미지 | **Gemini Imagen 3** (무료) | DALL-E 3 | 무료 + 텍스트 처리 우수 |
+| W4 | 영웅 배너 이미지 | **Gemini Imagen 4** (무료) | DALL-E 3 | 무료 + 텍스트 처리 우수 |
 | W5 | 상세페이지 PAS 카피 | **Claude Sonnet 4.6** | GPT-4o | 긴 문맥 일관성 + 톤 미묘함 |
 | W5 | 영문 SEO 메타 | **Claude** | GPT-4o | 정확한 길이 제한 준수 |
 | W5 | 공급사 스펙 검증 | **Perplexity** | Claude | 실시간 비교 + 의심점 도출 |
@@ -63,7 +63,8 @@
 | Claude Opus 4.7 | $15.00 | $75.00 | 최고 추론 (특수 용도만) |
 | GPT-4o | $2.50 | $10.00 | Claude Sonnet 대안 |
 | GPT-4o-mini | $0.15 | $0.60 | Claude Haiku 대안 |
-| Gemini 2.0 Flash | 무료 (한도 내) | 무료 (한도 내) | 폭넓은 무료 한도 |
+| Gemini 2.5 Flash | 무료 (한도 내) | 무료 (한도 내) | 폭넓은 무료 한도 |
+| Gemini 3 Pro | $1.25 | $10.00 | 100만+ context, 멀티모달 |
 
 > **💡 자동화 비용 절감 비법**: 분류/추출 같은 단순 작업은 Haiku/4o-mini로, 창작/추론은 Sonnet/4o로. **프롬프트 캐싱** 활용 시 RAG 비용 90% 절감 가능.
 
@@ -78,11 +79,11 @@
 | **실시간 정보 + 출처** | Perplexity |
 | **이미지 생성 (사실적)** | DALL-E (ChatGPT Plus) |
 | **이미지 생성 (예술적)** | Midjourney |
-| **이미지 생성 (무료)** | Gemini Imagen 3 또는 Ideogram |
+| **이미지 생성 (무료)** | Gemini Imagen 4 또는 Ideogram |
 | **긴 문서 처리** (PDF, 100+ 페이지) | Claude Sonnet (200K context) |
 | **코드 작성·디버깅** | Cursor (Claude 백엔드) 또는 Claude Sonnet |
 | **음성 생성 (TTS)** | ElevenLabs |
-| **영상 생성** | Runway Gen-3 또는 Pika 1.5 |
+| **영상 생성 (광고 컷)** | Sora 2 (ChatGPT Plus) 또는 Veo 3 (Gemini Advanced) — Runway Gen-4 차선 |
 | **음악 생성 (BGM)** | Suno AI |
 | **자동화 분류 (저비용)** | Claude Haiku 4.5 API |
 | **Google Workspace 연동** | Gemini Advanced |
@@ -104,7 +105,7 @@ ChatGPT 무료 + Claude 무료 + Gemini 무료를 같이 쓰면 일일 한도를
 - 빠른 검색·간단 질문
 - 무제한이라 자유롭게
 
-저녁 (Gemini 2.0 Flash):
+저녁 (Gemini 2.5 Flash):
 - 이미지 생성·긴 문서 요약
 - 무제한 + 100만 토큰
 
