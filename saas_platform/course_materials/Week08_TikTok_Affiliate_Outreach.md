@@ -35,13 +35,13 @@
 
 | 항목 | 콜드 DM Affiliate (Step 1~3) | TikTok Shop Affiliate Center (Step 4) |
 |---|---|---|
-| 진입 장벽 | 상품 + DM 능력만 있으면 즉시 가능 | 셀러 입점 심사 (한국 셀러 직접 입점 제한 — 미국 LLC 또는 글로벌셀러 프로그램 필요) |
+| 진입 장벽 | 상품 + DM 능력만 있으면 즉시 가능 | 셀러 입점 심사 — **미국 시장 셀링은 미국 LLC + Primary Business Representative(PBR)**, **한국 도메스틱 셀링은 KR 사업자 단독 OK** (TikTok Shop KR 2025-08 정식 오픈 [TikTok Shop 국가별](https://dpl.company/countries-with-access-to-tiktok-shop-seller-center/)) |
 | 크리에이터 발견 | 내가 100명 검색·선별·DM | **크리에이터가 카탈로그에서 셀프 픽업** |
 | 결제·수수료 | 별도 PayPal/Wise 송금 | TikTok이 자동 정산 (수수료 ~5%) |
 | 트래픽 → 결제 | 외부 링크 → Shopify | 인앱 체크아웃 — CVR 2~3배 |
 | 적합 단계 | Day 1부터 | 매출 검증 후 (월 $500+) |
 
-> **Day 1 → 30일**: 콜드 DM (Step 1~3) 운영. **Day 30 → 60일**: 매출 1건이라도 나오면 Step 4 TikTok Shop 입점 병행. 한국 사업자만 있으면 4번은 진입 자체가 막혀 있어 우회로(미국 LLC, Stripe Atlas, Doola 등) 필요 — 이 부분은 Week 13 고도화에서 다룹니다.
+> **Day 1 → 30일**: 콜드 DM (Step 1~3) 운영. **Day 30 → 60일**: 매출 1건이라도 나오면 Step 4 TikTok Shop 입점 병행. 미국 시장 입점은 한국 사업자만으로는 막혀 있어 우회로(미국 LLC, Stripe Atlas, Doola 등) 필요 — 이 부분은 Week 13 고도화에서 다룹니다. **단 한국 도메스틱 시장은 KR 사업자만으로 TikTok Shop KR 입점 가능** (2025-08~).
 
 ---
 

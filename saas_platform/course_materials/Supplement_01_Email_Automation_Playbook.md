@@ -228,6 +228,75 @@ Save → 세그먼트 자동 갱신 (실시간)
 
 ---
 
+## 7. SMS 마케팅 — A2P 10DLC 등록 (미국 시장 SMS 발송 전 필수)
+
+이메일 응답률 25% vs **SMS 응답률 50~70%** — 매출 직결성이 크지만, 미국 SMS는 캐리어(T-Mobile/AT&T/Verizon)가 **A2P 10DLC**(Application-to-Person 10-Digit Long Code) 등록을 강제. **2025-02-01부터 미등록 SMS는 throttle이 아니라 100% 차단** ([Apten 2026 가이드](https://www.apten.ai/blog/a2p-dlc-compliance-2026)).
+
+### 7-1. 10DLC 의무 — 무엇이 등록되나
+
+| 등록 단위 | 내용 | 검증 시간 | 비용 |
+|---|---|---|---|
+| **Brand** | 회사·EIN·주소 | 1~3 영업일 | $4 1회 |
+| **Campaign** | 발송 목적 (Marketing/Transactional) + 샘플 메시지 + 옵트인 흐름 | 5~10 영업일 | $10/월 (Marketing) / $1.5/월 (Low-volume) |
+| **DCA** (Direct Connect Aggregator) | 캐리어 직접 연동 | Klaviyo/Postscript 자동 | 포함 |
+
+**Brand 등급별 처리량 (Throughput)**:
+- Sole Proprietor (개인사업자): T-Mobile 75/일, 다른 캐리어 정상
+- Standard Brand (법인 + EIN): 분당 60건+
+- Enterprise (Vetted, 추가 검증): 분당 6,000건
+
+> **본 강의 권장 등급**: Standard Brand. Sole Proprietor는 T-Mobile 75건/일 한도 때문에 사실상 불가. **EIN 보유 미국 LLC** 또는 **한국 사업자번호로 Klaviyo 우회 등록** 둘 중 하나 필요.
+
+### 7-2. Klaviyo SMS 셋업 (10DLC 자동)
+
+```
+1. Klaviyo Dashboard → Account → Channels → SMS
+2. [Set up SMS] → 미국 시장 선택
+3. Brand Information:
+   - Legal name (사업자등록증 영문명과 정확히 일치)
+   - EIN (US LLC) 또는 KR 사업자번호
+   - 주소 (US LLC 주소 또는 KR 사업장 주소)
+4. Use Case 선택: Marketing (할인·프로모션) 또는 Mixed (트랜잭션 + 마케팅)
+5. Sample messages 5종 작성:
+   "Hey [name], thanks for your order #1234! Track here: [link]"
+   "Last call: 20% off ends tonight. Shop: [link]. Reply STOP to unsubscribe."
+   ...
+6. 옵트인 흐름 캡처:
+   - Pop-up 또는 체크아웃의 "Sign up for SMS" 체크박스 스크린샷
+   - 옵트인 문구: "By signing up, you agree to receive recurring marketing
+     texts at the number provided. Consent is not a condition of purchase.
+     Reply STOP to unsubscribe. Msg & data rates may apply."
+7. [Submit] → TCR(The Campaign Registry) 검수 5~10일
+8. 승인 후 자동 발송 가능
+```
+
+### 7-3. TCPA — 2-Stage Opt-in 의무
+
+미국 **TCPA (Telephone Consumer Protection Act)**: 자동 SMS는 **명시적·서면 동의** 필수. 위반 시 **건당 $500~$1,500 + 클래스 액션 $$$**.
+
+**올바른 옵트인 패턴 (Klaviyo 자동 처리)**:
+```
+1. 폼 제출 → 첫 SMS: "Reply YES to confirm subscription to [BRAND]"
+2. 사용자 YES 회신 → 마케팅 메시지 발송 가능
+3. 사용자 STOP → 즉시 발송 중지 + 확인 SMS 1통
+```
+
+### 7-4. 본 강의 권장 SMS 진입 경로
+
+```
+Phase 1~3 (월 매출 < $5K): SMS 미진입 — 10DLC 셋업 비용·시간 X
+Phase 4 (월 매출 $5K+): 10DLC 등록 + Klaviyo SMS 활성
+Phase 5 (월 매출 $20K+): SMS Premium ($60/월~) + RVM/MMS 시도
+```
+
+### 7-5. Sole Proprietor·KR 사업자 우회
+
+KR 사업자번호로 **Sole Proprietor 등급 등록 가능**하지만 T-Mobile 75건/일 한도 → 매출 검증 후 미국 LLC 셋업 강력 권장 (Doola/Stripe Atlas, [Appendix A §8-5-bis](./Appendix_A_Refund_Legal_Checklist.md) 참조).
+
+> ⚠️ **불확실**: Klaviyo가 한국 EIN 없는 셀러를 Standard Brand로 등록 처리해 주는지 케이스별. 직접 Klaviyo 지원에 영문 메일로 문의해 확인 필수.
+
+---
+
 ## 📌 졸업 전 1회독 체크리스트
 
 | ☐ | 항목 |

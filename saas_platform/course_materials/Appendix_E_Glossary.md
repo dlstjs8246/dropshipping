@@ -244,6 +244,22 @@ Visa 분쟁 자동 적격 부여 표준. 5가지 증거(이전 거래·device·I
 한국 소비자의 미국 상품 구매를 대행하는 모델. 본 강의 직판(525101) 모델과 구분 — 사업자 등록 시 헷갈리지 말 것.
 - 등장: Appendix A §8-5
 
+**MoCRA** (Modernization of Cosmetics Regulation Act)
+2024-07-01 시행. 미국 시장 화장품 셀러 의무 — Facility Registration + Product Listing + US Agent + Adverse Event Reporting + Biennial Renewal.
+- 등장: Appendix A §6.6
+
+**A2P 10DLC** (Application-to-Person 10-Digit Long Code)
+미국 캐리어가 강제하는 비즈니스 SMS 등록. 2025-02-01부터 미등록 SMS 100% 차단. Brand + Campaign 등록 의무.
+- 등장: Supplement 01 §7
+
+**FTC Fake Reviews Rule** (16 CFR Part 465)
+2024-10-21 시행. 가짜 리뷰·인센티브·억제·hijacking 모두 금지. 위반당 $51,744.
+- 등장: Appendix A §6.3
+
+**CPSIA** (Consumer Product Safety Improvement Act)
+12세 이하 어린이용품 의무 — 3rd-party lab 테스트 + CPC 발행 + Lead 100ppm·페인트 90ppm·Phthalate 0.1% 한도. 2026-07-08부터 e-Filing.
+- 등장: Week 2 Kill Criteria #8
+
 **HTS** (Harmonized Tariff Schedule)
 미국 관세 분류 코드. 상품마다 다른 관세율 적용.
 - 등장: W3, [Master Prompts §18](./02_Master_Prompts.md)

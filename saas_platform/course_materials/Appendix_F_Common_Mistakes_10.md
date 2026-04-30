@@ -1,4 +1,4 @@
-# 🚨 Appendix F: 흔한 실수 10선 (Common Mistakes Hall of Shame)
+# 🚨 Appendix F: 흔한 실수 11선 (Common Mistakes Hall of Shame)
 
 > **목적**: 14주 동안 매 기수마다 반복되는 **"피할 수 있었던 실수 TOP 10"**을 한 곳에 모았습니다. 매주 일요일 [Supplement 11 자가 진단](./Supplement_11_Self_Assessment_and_Progress_Tracker.md) 작성 직전에 본 문서를 1회 훑어 자기 검열하세요.
 >
@@ -130,6 +130,21 @@
 
 ---
 
+## 11. 도메인·서브도메인 보안 방치 (운영 종료 시 폭탄)
+
+❌ **증상**: 스토어 셧다운 / 다른 호스팅으로 이전 → DNS의 CNAME 레코드 (예: shop.brand.com → brand.myshopify.com)가 살아있음 → 공격자가 동일 myshopify 핸들 등록 → **본인 도메인이 피싱 사이트로 둔갑** ([Bolster Subdomain Takeover](https://bolster.ai/blog/subdomain-hijacking-takeover)).
+
+✅ **올바른 흐름**:
+- Shopify·다른 SaaS 종료 시 **CNAME·A 레코드 즉시 DNS에서 삭제**
+- 도메인 자체는 **3년+ 보유** — 만료 후 캠색 가능. 자동 갱신 카드 만료 점검
+- Shopify branded subdomain 사용 시 **DNSSEC** 활성화 (Cloudflare 무료)
+
+**왜 치명적인가**: 본인 도메인이 사기·악성코드 사이트로 변하면 **이메일 평판 추락 + 새 도메인으로도 발송 어려움**. 1년 이상 회복 불가.
+
+📚 [Appendix A §1](./Appendix_A_Refund_Legal_Checklist.md) · [Week 6](./Week06_Cursor_Coding_Optimization.md)
+
+---
+
 ## 📊 자가 검열 시트 (매주 일요일 사용)
 
 | # | 실수 | 이번 주 ❌/✅ |
@@ -144,5 +159,6 @@
 | 8 | Make.com 시나리오 비대화 | ☐ |
 | 9 | RAG 매뉴얼 없이 봇 자동화 | ☐ |
 | 10 | 분쟁률 모니터링 누락 | ☐ |
+| 11 | 도메인·DNS 보안 방치 (CNAME 잔재 / 자동 갱신 실패) | ☐ |
 
 > **3개 이상 ❌이면**: 그 주는 신규 학습 정지. 해당 항목의 📚 링크로 가서 복구 우선.

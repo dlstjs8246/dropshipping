@@ -60,11 +60,26 @@
 |---|:--:|:--:|---|
 | Claude Sonnet 4.6 | $3.00 | $15.00 | 최고 균형 |
 | Claude Haiku 4.5 | $1.00 | $5.00 | **분류·자동화 추천** |
-| Claude Opus 4.7 | $15.00 | $75.00 | 최고 추론 (특수 용도만) |
-| GPT-4o | $2.50 | $10.00 | Claude Sonnet 대안 |
+| Claude Opus 4.7 | $5.00 | $25.00 | 1M context · 최고 추론 |
+| GPT-4o (또는 GPT-5-mini) | $2.50 | $10.00 | Claude Sonnet 대안 |
 | GPT-4o-mini | $0.15 | $0.60 | Claude Haiku 대안 |
 | Gemini 2.5 Flash | 무료 (한도 내) | 무료 (한도 내) | 폭넓은 무료 한도 |
 | Gemini 3 Pro | $1.25 | $10.00 | 100만+ context, 멀티모달 |
+
+#### Anthropic 프롬프트 캐싱 가격 (2026 기준)
+
+| 작업 | 기본 input 대비 | 비고 |
+|---|:--:|---|
+| **Cache Read** | **0.1×** (90% 할인) | 시스템 프롬프트·매뉴얼 재사용 시 |
+| **Cache Write (5분 TTL)** | 1.25× | 첫 요청 한 번만 |
+| **Cache Write (1시간 TTL)** | 2.0× | 자주 호출 시 1시간 권장 |
+| **Batch API** | 0.5× input + 0.5× output | 비실시간 (5분~24h 응답) |
+
+**RAG CS 봇 절감 예시** (Sonnet 4.6, 정책 매뉴얼 50K 토큰):
+- 캐싱 X: 1,000회 호출 = $150 (input 50K × $3 × 1000)
+- **캐싱 O (1시간 TTL)**: 첫 호출 $0.30 + 999회 cache read = $15 (90% 할인) → **총 $15.30**
+
+> **결론**: Long context + 반복 호출 = **즉시 캐싱 ON**. RAG·자동 분류·CS 봇 운영 시 비용 1/10. 자세한 구현은 [Supplement 10 §8.2](./Supplement_10_L3_AI_Agent_Building.md).
 
 > **💡 자동화 비용 절감 비법**: 분류/추출 같은 단순 작업은 Haiku/4o-mini로, 창작/추론은 Sonnet/4o로. **프롬프트 캐싱** 활용 시 RAG 비용 90% 절감 가능.
 

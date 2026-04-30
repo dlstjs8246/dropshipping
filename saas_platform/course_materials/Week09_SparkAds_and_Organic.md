@@ -165,11 +165,11 @@ BEP_CPA = 판매가 - Landed_Cost - 기타수수료
 
 ```
 1. ads.facebook.com → [Create Campaign]
-2. Objective → "Sales" (Advantage+ 캠페인 추천 — AI 자동 최적화)
+2. Objective → "Sales" → **Advantage+ Shopping Campaigns (ASC)** ⚠️ 2026-01-15부터 manual detailed targeting 사실상 폐지, ASC가 SMB 디폴트 ([eMarketer](https://www.emarketer.com/content/meta-will-phase-manual-targeting-some-advantage-campaigns)) — Audience·Placement·Optimization 모두 자동 위임
 3. Conversion Location → Website
 4. Pixel + Conversion Event → "Purchase"
-5. Audience: 미국 18+, Detailed Targeting 비워두기
-6. Placements → Advantage+ Placements (Auto)
+5. Audience: ASC는 자동 — 본인이 만질 수 있는 건 Country (US) + Custom Audience (구매자 LookAlike) 정도
+6. Placements → Advantage+ Placements (Auto, 강제)
 7. Budget: $20/일 (TikTok과 동일 예산으로 시작)
 8. Ad Creative:
    - Spark Ads에서 가장 잘된 영상의 MP4 다운로드 (Identity 권한 필요)
