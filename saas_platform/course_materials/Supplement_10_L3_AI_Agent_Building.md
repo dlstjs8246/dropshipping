@@ -743,6 +743,88 @@ Anthropic Computer Use는 **본인 PC 화면 전체**를 제어합니다 (마우
 
 ---
 
+## 9.5. Build 4 — Voice Agent: 인입 CS 자동 응대 (잠자는 동안)
+
+### 9.5-1. 왜 Voice Agent인가
+
+이메일 CS는 [§5 Multi-Agent](#5-build-3--multi-agent-cs-풀-처리-watcher--analyst--communicator) 패턴이지만 **전화·라이브챗 인입은 무방비**. Shopify 라이브챗에 깔리는 위젯 또는 Twilio 전화번호로 들어오는 음성을 **잠자는 동안 봇이 1차 응대 + 분쟁 위험만 사람에게 에스컬레이트**.
+
+### 9.5-2. 스택 (2026.4 기준)
+
+| 컴포넌트 | 도구 | 비용 |
+|---|---|---|
+| ASR (음성→텍스트) | Whisper API (or ElevenLabs 통합) | $0.006/분 |
+| **대화 엔진** | **Sonnet 4.6 + 본인 RAG** | $3 / $15 (캐싱 90% 할인) |
+| TTS (텍스트→음성) | ElevenLabs v3 (Voice Cloning) | $5/월 Starter |
+| 통합 플랫폼 | **ElevenLabs Convai** (전 스택 1-click) | $11/월~ |
+| 전화번호 | Twilio US local | $1/월 + $0.01/분 |
+| 라이브챗 위젯 | Tidio / Crisp + Convai SDK | 무료~ |
+
+### 9.5-3. ElevenLabs Convai 셋업 (45분)
+
+```
+1. elevenlabs.io → Conversational AI → New Agent
+2. Agent 설정:
+   - Name: "[BRAND] CS Assistant"
+   - First message: "Hi! I'm Lily from [BRAND]. How can I help today?"
+   - System prompt: §5 Communicator + RAG 매뉴얼 4개 (Refund / Shipping / FAQ / Banned_Words)
+3. Knowledge Base 업로드:
+   - PDF: Refund_Policy.md, Shipping_Policy.md, Product_FAQ.md
+   - 자동으로 Files API로 인덱싱 (Anthropic Files 또는 Convai 내장)
+4. Voice 선택:
+   - 본인 Voice Cloning ID 또는 'Sweet Vibes' 같은 안전한 영문 보이스
+5. Tools 활성화:
+   - check_order_status (Shopify API → 주문 상태 조회)
+   - escalate_to_human (Slack #cs-escalate 알림 + 전화 받기 종료)
+6. 가드레일:
+   - 환불·취소 결정 = 봇 결정 X (escalate 강제)
+   - 배송 약속 = 봇이 단정 X ("typically 7-12 business days" 표현만)
+7. 연결:
+   - Twilio 번호 연결 또는 Tidio 위젯 임베드
+8. 첫 24h 모니터링: Convai Dashboard → Conversations 모든 통화 듣기 + Self-Critique 메모
+```
+
+### 9.5-4. Voice Agent 의사결정 매트릭스
+
+| 인입 의도 | 봇 처리 | 휴먼 에스컬레이트 |
+|---|:--:|:--:|
+| 배송 추적 (Where is my order?) | ✓ Shopify API 조회 → 답변 | — |
+| 상품 스펙 문의 | ✓ RAG에서 검색 → 답변 | — |
+| 환불 요청 | ✗ | ✓ 즉시 Slack |
+| 분쟁·법적 문제 | ✗ | ✓ 즉시 |
+| 사이즈·색상 변경 (배송 전) | ✓ 24h 이내만 → API로 수정 | 24h 초과 시 휴먼 |
+| 일반 안부·잡담 | ✓ 짧게 응대 후 종료 | — |
+
+### 9.5-5. 비용 시뮬레이션 (월 1,000건 인입)
+
+| 항목 | 비용 |
+|---|---|
+| ElevenLabs Convai Starter | $11/월 |
+| Twilio 번호 + 통화비 (1,000건 × 2분) | $1 + $20 = $21 |
+| Sonnet 4.6 + 캐싱 (RAG 매뉴얼 캐시) | ~$5 |
+| Whisper API | ~$10 |
+| **총** | **~$50/월** |
+
+수동 응대 시간 가치 (1,000건 × 3분 = 50시간) ≫ $50 → ROI 명확.
+
+### 9.5-6. 첫 30일 점진 확대
+
+```
+Week 1: 라이브챗 위젯에만 봇 활성. 모든 응답 = 휴먼 검수 후 발송 (shadow mode)
+Week 2: 봇 자율 응답 + 모든 대화 매일 저녁 5건 spot-check
+Week 3: 휴먼 검수 0% — Convai metrics + 분쟁률 모니터링만
+Week 4: Twilio 전화번호 연결 (인입 음성 봇)
+```
+
+> ⚠️ **첫 1주 shadow mode 필수**: 봇이 환불·약속·법적 발언 환각하는지 직접 검수. 통과하지 못한 카테고리는 즉시 escalate 강제 룰 추가.
+
+> 📊 **검증 지표 (한 달 후)**:
+> - 봇 처리율 60%+ (40%는 휴먼 에스컬레이트가 정상)
+> - 분쟁률 변동 0 (봇 도입으로 분쟁률 증가 시 즉시 OFF)
+> - Convai "Customer Satisfaction" 점수 4.0+/5
+
+---
+
 ## 10. 다음 단계 — L4 영역 미리보기 (선택)
 
 | L4 영역 | 의미 |

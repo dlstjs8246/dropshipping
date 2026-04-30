@@ -280,6 +280,26 @@ Anthropic 발표(2024.11) → Linux Foundation 이관(2025.12). Agent와 외부 
 2025-10-17 글로벌 자동 적용. 5가지 증거 보관 시 Reason Code 10.4 분쟁 자동 승소.
 - 등장: Appendix A §6 끝
 
+**Atomization** (콘텐츠)
+영상 1개 → TikTok·Reels·Shorts·이메일·블로그 30+개 자산으로 변환하는 AI 워크플로우. 1인 셀러 매주 5시간 절감.
+- 등장: Master Prompts §26, Supplement 05 레시피 11
+
+**Voice Agent** (대화형 AI)
+ElevenLabs Convai + Sonnet으로 인입 음성·라이브챗 1차 응대. 잠자는 동안 봇이 60% 처리 + 분쟁 위험만 휴먼 escalate.
+- 등장: Supplement 10 §9.5
+
+**Confidence Threshold** (신뢰도 임계값)
+AI 출력에 포함된 self-reported confidence를 작업별 임계값으로 의사결정 — 즉시 채택 / 인간 검수 / 재시도 분기.
+- 등장: Supplement 08 §6.6
+
+**Closed-Loop Learning** (닫힌 학습 루프)
+A/B 데이터 → AI가 "왜 졌나" 분석 → v2 자동 생성 → 재테스트의 누적 패턴. 분기마다 ICP·훅·CTA 베스트 패턴 갱신.
+- 등장: Supplement 05 레시피 13, Week 9 Step D
+
+**Claude Skills** (2025.10 출시)
+본인 정책·매뉴얼·SOP를 재사용 가능한 단위로 패키징. LLM이 작업에 따라 자동 발동 — Custom GPT Knowledge보다 비용 ↓.
+- 등장: Supplement 07 §Skills
+
 **HTS** (Harmonized Tariff Schedule)
 미국 관세 분류 코드. 상품마다 다른 관세율 적용.
 - 등장: W3, [Master Prompts §18](./02_Master_Prompts.md)

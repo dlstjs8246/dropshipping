@@ -81,6 +81,50 @@
 
 ---
 
+### (옵션) Claude Skills — 본인 매뉴얼·정책 패키징 (2025.10 출시)
+
+Anthropic이 2025년 10월 발표한 **Skills**는 Claude.ai·Claude Desktop·Claude API에서 **본인의 정책·매뉴얼·SOP를 재사용 가능한 단위로 패키징**하는 기능. Custom GPT의 "Knowledge Files"와 비슷하지만 **다음이 결정적 차이**:
+
+| 항목 | Custom GPT Knowledge | **Claude Skills** |
+|---|---|---|
+| 발동 방식 | 항상 컨텍스트에 첨부 | **LLM이 작업에 따라 자동 발동** (관련 없으면 미사용) |
+| 비용 | 매번 토큰 소비 | 발동 시에만 토큰 소비 (비용 ↓) |
+| 공유 | GPT 자체 통째 공유 | **Skill 단위 export·import 가능** |
+| 코드·실행 | 텍스트만 | Skills에 Python 코드 첨부 가능 (계산·시각화) |
+
+#### 1인 셀러용 Skill 5선
+
+| Skill 이름 | 내용 | 발동 트리거 |
+|---|---|---|
+| `refund-policy` | 본인 환불 정책 + FAQ | "환불"·"refund" 키워드 자동 |
+| `brand-voice` | Brand_Voice.md 5축 + 금지어 | 카피·이메일 작성 시 자동 |
+| `personas` | §27 페르소나 3종 풀 정의 | "이 카피를 어떤 페르소나에 쓸까?" |
+| `kill-criteria` | 7대 + 8번째 카테고리 회피 | 신상품 평가 시 자동 |
+| `tariff-calculator` | 4-Layer 관세 계산 (Python 코드 포함) | "이 상품 관세 얼마?" 시 코드 실행 |
+
+#### 셋업 (Claude Pro 또는 API)
+
+```
+1. claude.ai → Settings → Skills → New Skill
+2. Skill name + description (LLM이 발동 판단할 단서)
+3. Knowledge files 업로드 (PDF·MD·DOCX)
+4. (선택) Python helper 첨부
+5. Save → 모든 Project·대화에서 자동 발동
+```
+
+#### Custom GPT Knowledge vs Claude Skills 결정 규칙
+
+| 본인 상황 | 추천 |
+|---|---|
+| ChatGPT Plus $20만 결제 | Custom GPT Knowledge |
+| Claude Pro $20만 결제 | **Claude Skills** |
+| 둘 다 결제 + 비용 최적화 | Claude Skills (자동 발동으로 토큰 ↓) |
+| API 자동화 운영 | Claude Skills + Agent SDK 통합 |
+
+> 📌 **본 강의 권장**: L1·L2 학습 종료 후, 매뉴얼 4개 + 페르소나 3종을 Claude Skills로 패키징 → CS 봇·카피 생성·페르소나 매칭 모두 동일 Skill 재사용 = 운영 시간 30%+ 절감.
+
+---
+
 ### (옵션) 코드 우선 — Claude Agent SDK / OpenAI Agents SDK
 
 위 3개 빌더는 **노코드 GUI** 방식. 본 강의의 1인 셀러는 여기서 시작이 정답입니다. 단, L3 [Supplement 10](./Supplement_10_L3_AI_Agent_Building.md) 학습 후 운영 자동화를 코드로 본격화한다면 2025년 출시된 Agent SDK가 다음 단계입니다.

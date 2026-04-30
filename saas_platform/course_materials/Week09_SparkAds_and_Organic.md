@@ -226,6 +226,20 @@ Meta ROAS > TikTok ROAS × 1.3?
 
 > **핵심**: AI가 카피를 "처음 쓰는" 단계가 아니라, **"데이터 보고 진화"하는** 단계가 진짜 가치 발생 지점.
 
+### Step D. 닫힌 학습 루프 — 분기마다 누적 갱신
+
+3 라운드 (라운드당 4시간 광고비) 후 학습 노트를 분기마다 누적 갱신. 자세한 워크플로우는 [Supplement 05 레시피 13 (A/B 광고 닫힌 학습 루프)](./Supplement_05_AI_Workflow_Recipes.md) 참조.
+
+```yaml
+# 분기말 누적 학습 노트 예시
+best_hook: "POV: 매일 X 겪는 너" (Curiosity-led, 페르소나 1 적합)
+best_cta: "Grab yours before this 24h sale ends" (Social Proof, 페르소나 3)
+best_visual: "Before/After 시각 비교" (CVR +60%)
+worst: "Authority 톤" (페르소나 무관 일관 실패)
+```
+
+**효과**: 일회성 광고 분석 → 누적 자산. 3개월 운영 시 광고 ROAS +50~100%.
+
 ---
 
 ## 📊 [AI 활용 심화] Spark Ads 데이터 → 결단 자동화 (15분 추가)
