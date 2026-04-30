@@ -220,6 +220,30 @@ EU 개인정보 보호 규정. 위반 시 매출 4% 과태료.
 대법원 6-3으로 IEEPA 기반 관세 권한 무효화. 중국발 평균 실효 관세율 약 2/3 감소. 대체로 Section 122(10% 글로벌) + Section 301 + Section 232 4-Layer 적층 구조가 표준. 본 강의는 보수적으로 "소싱가의 50%"를 관세로 가정.
 - 등장: W3 §2-2
 
+**Form 5472 + Pro-forma 1120**
+외국인 단독 소유 미국 LLC가 매년 IRS에 제출 의무. 소득 0원이라도 의무. 미신고 페널티 $25,000/년.
+- 등장: Appendix A §8-5-bis
+
+**FBAR (FinCEN 114)**
+미국 LLC 명의 외국 계좌(Wise·Mercury) 잔액이 한 번이라도 $10K+ 초과 시 신고 의무. 미신고 페널티 최소 $10K.
+- 등장: Appendix A §8-5-bis
+
+**W-8BEN-E**
+외국 법인이 미국 결제처(Stripe·PayPal·Amazon)에서 페이아웃 받을 때 30% 자동 원천징수 면제용 IRS 양식. LLC 설립 직후 1회 제출.
+- 등장: Appendix A §8-5-bis
+
+**SAQ A / SAQ A-EP** (PCI DSS 4.0.1)
+Self-Assessment Questionnaire — 머천트 PCI 자가 평가 등급. Shopify 호스티드 체크아웃 = SAQ A 자동. 체크아웃에 3rd-party 스크립트 inject 시 SAQ A-EP 격상 위험.
+- 등장: Week 4 §3.5
+
+**Visa CE 3.0** (Compelling Evidence 3.0)
+Visa 분쟁 자동 적격 부여 표준. 5가지 증거(이전 거래·device·IP·login·배송지) 보관 시 Reason Code 10.4 자동 승소.
+- 등장: Appendix A §6 끝
+
+**해외직구 대행업** (525105 / 구매대행)
+한국 소비자의 미국 상품 구매를 대행하는 모델. 본 강의 직판(525101) 모델과 구분 — 사업자 등록 시 헷갈리지 말 것.
+- 등장: Appendix A §8-5
+
 **HTS** (Harmonized Tariff Schedule)
 미국 관세 분류 코드. 상품마다 다른 관세율 적용.
 - 등장: W3, [Master Prompts §18](./02_Master_Prompts.md)

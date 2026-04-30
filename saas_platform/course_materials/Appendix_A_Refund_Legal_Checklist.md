@@ -223,6 +223,19 @@ Email [PRIVACY_EMAIL] for any privacy-related questions.
 - 개인정보처리방침 미게시: 1,000만 원 이하
 - 동의 없는 마케팅 이메일 발송: 3,000만 원 이하
 
+### ⚠️ PIPA 2025-10-02 시행 — 외국 사업자 국내대리인 지정 의무
+
+2025년 10월 2일부터 PIPA 외국 사업자 가이드라인 시행 ([Baker McKenzie](https://connectontech.bakermckenzie.com/south-korea-issues-guidelines-on-applying-the-personal-information-protection-act-to-foreign-business-operators/)). KR 거주자가 미국 LLC 명의 Shopify를 운영해도, **KR 거주자 데이터를 처리하면 외국 사업자로 분류** 가능. 매출·이용자 수 기준 충족 시 다음 의무:
+
+| 매출 / 이용자 기준 | 의무 |
+|---|---|
+| 직전년도 KR 매출 1,000만 원 또는 KR 이용자 정보 1,000명 이상 | **국내대리인 지정** (개인정보보호법 §31의2) — KR 주소·연락처 보유 자연인/법인 |
+| 동일 + 한국 이용자 100만 명 이상 | **PIPC 사전 통지** + 데이터보호책임자(DPO) 지정 |
+
+**1인 KR 셀러 실무**: 본인이 KR 거주 → 본인이 국내대리인 자동 충족. **단 미국 LLC + 미국 거주 친척 명의 등으로 셋업한 경우 별도 한국 대리인 지정 필요**. 위반 시 과태료 2,000만 원 이하.
+
+> **본 강의 권장**: KR 시장 매출 비중이 5% 미만이면 Shopify Markets에서 KR 차단 → PIPA 적용 회피. KR 시장도 노린다면 본인 명의 한국 사업자가 국내대리인 자동 겸직.
+
 ---
 
 ## 6. 분쟁 발생 시 PayPal / Stripe Dispute 대응 SOP
@@ -265,6 +278,31 @@ Email [PRIVACY_EMAIL] for any privacy-related questions.
 | Shopify Payments | 1.0% | 1.5% |
 
 > **결론**: 분쟁률 0.5% 이하를 유지하지 못하면 결제 처리사 계정이 정지됩니다. 환불 정책을 명확히 하고 배송 기간을 정직하게 표시하는 것이 가장 싸게 분쟁을 줄이는 방법입니다.
+
+### Visa CE 3.0 (Compelling Evidence 3.0) — 2025-10-17 글로벌 자동 적용
+
+Visa의 신규 분쟁 방어 표준. **Reason Code 10.4 (Other Fraud) 분쟁에서 자동 적격 부여**되면 Visa가 머천트 승소 처리 ([Chargebacks911](https://chargebacks911.com/prevent-chargebacks/prevent-visa-disputes/visa-compelling-evidence-3-0/)).
+
+#### 자동 적격 요건 (5가지 모두 보관 의무)
+1. 동일 카드로 **이전 정상 거래 2건 이상** (분쟁 거래 ≥120일 전)
+2. **Device fingerprint** (브라우저·OS·해상도) 거래 시점 기록
+3. **IP 주소** 거래 시점 기록
+4. **Login history** — 이메일 또는 계정 ID 기준 18개월 보관
+5. **배송 주소** 동일 (또는 본인 인증된 가족 주소)
+
+#### Shopify 자동 처리 vs 수동 작업
+
+| 데이터 | Shopify 자동 보관 | 셀러 추가 작업 |
+|---|---|---|
+| 거래 이력 | ✓ | — |
+| Device fingerprint | ✓ (Shopify Fraud Analysis) | — |
+| IP 주소 | ✓ | — |
+| Login history | △ (Shopify 계정 로그인만) | Klaviyo 또는 별도 CDP 연동 권장 |
+| 배송 주소 | ✓ | — |
+
+> **실무**: Stripe Dispute 응답 시 위 5가지 증거를 **하나의 PDF로 묶어 첨부** + Shopify Order URL 명시. 자동 적격 시 Visa 측에서 즉시 승소 처리, 수수료도 면제.
+
+> ⚠️ **2026.4 적용 카드망**: Visa만. Mastercard는 자체 표준 (Mastercom Collaboration), AmEx는 별도. **Visa는 미국 시장 ~52% — 자동 처리만으로 분쟁 ~30% 감소 효과**.
 
 ---
 
@@ -473,7 +511,31 @@ EU·UK 매출 비중이 전체의 5% 이하?
 ### 8-5. 한국 사업자 등록 시 업종 코드
 
 - **소매업 — 통신판매업**: 525101 (전자상거래 소매업)
+- **해외직구 대행업**: 525105 (구매대행 모델 — 본 강의 직판 모델과 다름, 헷갈리지 말 것)
 - **수출 활동 추가**: 부가세 영세율 적용을 위해 사업자 등록 시 "수출 포함" 명시
+
+### 8-5-bis. ⚠️ 미국 LLC를 보유한 KR 셀러 — IRS 의무 (Phase 5 진입 전 필독)
+
+Doola/Stripe Atlas로 **미국 Single-Member LLC**를 만들면 KR 거주자라도 **매년 IRS에 다음 의무**:
+
+| 의무 | 마감 | 미신고 페널티 | 적용 대상 |
+|---|---|---|---|
+| **Form 5472 + Pro-forma 1120** | 매년 4월 15일 | **$25,000/년** + 연 $10,000 누적 | 외국인 단독 소유 미국 LLC 전원 (소득 0원도 의무) |
+| **FBAR (FinCEN 114)** | 매년 4월 15일 (10/15 자동연장) | 최소 $10,000 (고의면 $100K+) | LLC 명의 Wise/Mercury 잔액 한 번이라도 **$10K+ 초과** 시 |
+| **Form W-8BEN-E** | LLC 설립 직후 1회 | 30% 자동 원천징수 | Stripe·PayPal·Amazon 페이아웃 시 미제출 = 30% 자동 차감 |
+| **Form 1099-K** (받는 쪽) | 1월 31일 (Stripe → 셀러) | 직접 의무 X — 단 IRS 매칭 | $20K + 200건 초과 시 (2026 OBBB 기준 환원) |
+| State Annual Report | 주별 (예: DE는 6월 1일) | $400~$800 + 회사 강제 해산 | LLC 설립 주에 매년 |
+
+**왜 KR 거주자도 적용?** Single-Member LLC는 IRS 시점에서 **disregarded entity** — 세금은 소유주(KR 거주자)에게 흐르지만, **정보 신고 의무는 LLC 본체에 부과**. 그래서 소득 0원 LLC도 5472는 반드시.
+
+**실무 셋업 권장**:
+- **Doola·Stripe Atlas 패키지에 5472 신고 포함되어 있는지 확인** ($300~$500/년 추가)
+- 또는 [James Baker CPA](https://jamesbakercpa.com) / Greenback Tax 같은 KR-Friendly EA 위임 ($400~$600/년)
+- **셀프 신고 시도 X** — 양식이 영문·미국 회계 용어 다수, 첫해 실수가 최저 $25K 페널티
+
+> ⚠️ **단정 금지**: 위 의무는 본 강의 일반 가이드. **본인 케이스(공동 소유, S-Corp 전환, US 거주 가족 등)에 따라 추가 의무**(Form 5471, GILTI 등) 발생 가능. **반드시 EA 또는 미국세무사 1회 상담 후 LLC 설립**.
+
+> 💡 **무엇이 KR 거주자에게 적용 안 되나**: GILTI(Subpart F), PFIC, FATCA reporting on KR account → 모두 미국 시민·영주권자에게만 적용. KR 거주자 본인에 직접 의무 없음. (단, 미국 시민·영주권 가진 KR 거주자는 예외 — 별도 상담 필수.)
 
 ### 8-6. 추천 도구
 
@@ -496,6 +558,8 @@ EU·UK 매출 비중이 전체의 5% 이하?
 | ☐ | CA 정책을 결정했는가? (§6.5) — 배송 차단 또는 Prop 65 앱 |
 | ☐ | EU·UK 발송 정책을 결정했는가? (§7) — 미배송 또는 IOSS 중개자 |
 | ☐ | PG 정산 경로를 셋업했는가? (§8-1) — PayPal/Wise/미국 LLC 중 택1 |
+| ☐ | 미국 LLC 소유 시 — Form 5472 + FBAR + W-8BEN-E 셋업했는가? (§8-5-bis) |
+| ☐ | (KR 시장 매출 시) 국내대리인 지정 + PIPA 통지 했는가? (§5) |
 | ☐ | 매출·환차손 자동 기록 시트를 만들었는가? (§8-6) |
 | ☐ | 매입 영수증 보관 폴더를 만들었는가? (종소세 기준경비율용, §8-3) |
 | ☐ | 부가세 영세율 신고 절차를 노션에 정리했는가? (§8-4) |

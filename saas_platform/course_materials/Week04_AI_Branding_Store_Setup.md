@@ -50,6 +50,26 @@
 
 수많은 플랫폼 중에 왜 쇼피파이일까요? **앱 생태계가 압도적**이고, **글로벌 결제가 가장 안정적**이기 때문입니다. 지금 첫 3개월간 월 1달러 프로모션을 하고 있으니, 오늘 1달러만 결제하고 3개월 안에 승부를 보겠습니다.
 
+### 3.5. PCI DSS 4.0.1 (2025-03-31 시행) — 앱 설치 시 컴플라이언스 함정
+
+Shopify 호스티드 체크아웃은 기본적으로 **SAQ A** (가장 단순한 PCI 자가 평가) 자동 처리. 단, **체크아웃·Cart·Thank You 페이지에 3rd-party 스크립트(Klaviyo, Loox 리뷰, GA4, Meta CAPI 픽셀 등) inject 시 SAQ A-EP로 격상 위험** ([2026 PCI DSS 4.0.1 체크리스트](https://strictlyzero.com/announcements/payments-announcements/pci-compliance-checklist-2026-the-merchants-guide-to-dss-4-0-1/)).
+
+#### 4.0.1 신규 요구사항 (2026 SAQ 작성 시 의무)
+- **Req 6.4.3**: 결제 페이지 모든 스크립트의 인벤토리 + 무결성 검증
+- **Req 11.6.1**: 결제 페이지 변경 모니터링 (HTTP 헤더·스크립트 변경 알림)
+
+#### Shopify 1인 셀러용 안전 가이드
+
+| 행동 | PCI 영향 | 권장 |
+|---|---|---|
+| Shopify 기본 체크아웃 사용 | SAQ A (자동) | ✓ 유지 |
+| Klaviyo·Loox·GA4 일반 페이지에만 설치 | SAQ A 유지 | ✓ |
+| Klaviyo Onsite Tracking 활성화 (cart 페이지) | 경계선 — QSA 의견 갈림 | ⚠️ 가능 |
+| 체크아웃 커스터마이징 (Plus 전용) | SAQ A-EP 격상 가능 | ✗ 첫 12개월엔 X |
+| 자체 결제 폼 (Stripe Elements 직접) | SAQ A-EP 또는 D | ✗ 영원히 X |
+
+> **본 강의 권장**: 첫 12개월 = **Shopify 기본 결제 + 체크아웃 커스터마이징 0** → SAQ A 자동 처리. PCI 신경 쓸 필요 없음. 매출 $50K+ 이후에 acquirer (Stripe/Shopify Payments)에 PCI 등급 직접 문의 필요.
+
 ---
 
 ## 💻 실습 파트 (0:50 - 2:10)

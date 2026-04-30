@@ -65,9 +65,20 @@ Landed Cost = 소싱가 + 국제 배송비 + 통관 수수료 + 관세(Tariff)
 - 직접 영향받은 매출이 있다면 [Holland & Knight 환급 가이드](https://www.hklaw.com/en/insights/publications/2026/02/supreme-court-strikes-down-ieepa-tariffs) 참조
 - 1인 셀러에게 실익은 적지만 누적 매출 $50K+ 셀러는 신청 가치 있음
 
-#### 2-4. 경제적 넥서스 (Economic Nexus)
+#### 2-4. 경제적 넥서스 (Economic Nexus) — 2026 갱신 thresholds
 
-또한 주마다 세금을 걷는 **'Economic Nexus' 법안** 때문에 각 주별 소비세(Sales Tax)도 신경 써야 합니다. 일반적으로 한 주에서 **연 매출 $100K 또는 200건 초과**시 해당 주에 등록 의무. Shopify 내장 Tax 시스템 + Avalara AvaTax(자동) 또는 TaxJar로 자동 계산 가능.
+각 주가 매출 발생 시 Sales Tax 등록·징수를 요구하는 기준. 2018 Wayfair 판결 이후 모든 주에서 시행, **2024-2026 사이 단순화 트렌드**.
+
+| 주 | 매출 기준 | 거래 건수 | 비고 |
+|---|---|---|---|
+| 대다수 주 (CA·TX·FL 등) | $100K | 폐지/미적용 | 단순화 |
+| NY · MA · NJ · CT | $500K | 100건 (NY만) | 큰 셀러만 적용 |
+| **Illinois (2026-01-01~)** | $100K | **200건 폐지** | "또는 200건" 조항 삭제 |
+| Streamlined Sales Tax (SST) 24개 주 | $100K | — | Avalara·TaxJar 일괄 자동 등록 |
+
+> **1인 셀러 실용**: 첫해 단일 주 $100K 초과는 거의 없음 → **첫 12개월은 등록 부담 X**. Shopify 내장 Tax + Avalara AvaTax (Connect 무료) 활성화로 자동 모니터링. **첫 $100K 초과 임박 시 알림 → 1주 내 SST 등록**.
+
+> **본 강의 자료에 "$100K 또는 200건" 표현이 보이면**: 2026 기준 200건 조항은 **대부분 주에서 폐지**됨. 매출 기준만 본다고 보면 됨 (NY·MA 등 큰 주는 예외).
 
 > **핵심 변화 요약**:
 > - "$800 이하 무관세" 시대는 끝남 (2025 De Minimis 폐지)

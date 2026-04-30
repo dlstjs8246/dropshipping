@@ -31,6 +31,39 @@
 
 이 공식을 그대로 AI 편집기에 태웁니다.
 
+### 3. ⚠️ AI 생성 콘텐츠 — 2026 법적 지뢰 5선
+
+Sora 2 / Veo 3 / Imagen 4로 광고를 만들 때 **모르고 위반하면 즉시 벌금** 5건. 미국·EU 발송이 1건이라도 있으면 적용:
+
+| 법규 | 시행 | 위반 사례 | 페널티 |
+|---|---|---|---|
+| **California AB 1836** | 2025-01-01 | 사망 셀럽 likeness 무단 AI 생성 ("Steve Jobs가 추천하는…") | **위반 1건당 $10K+** ([Perkins Coie](https://perkinscoie.com/insights/update/single-day-california-enacts-five-bills-tackling-digital-replicas-and-deepfakes)) |
+| **California AB 2655** | 2025-01-01 | 선거기 직전 정치 deepfake | $1K~$5K + 민사 |
+| **California AB 2839** | 2025-01-01 | 광고에서 실존 인물 likeness 무단 사용 (CEO 흉내) | 민사 + 광고 즉시 중단 명령 |
+| **EU AI Act Article 50** | **2026-08-02 시행** | EU 거주자에게 AI 생성/조작 콘텐츠를 **AI라 표시 안 함** | 매출의 1% 또는 €750만 |
+| **C2PA / SynthID 워터마크 제거** | 즉시 (Sora 2·Veo 3 약관) | OpenAI/Google 자동 삽입 워터마크 의도적 제거 | 계정 정지 + 민사 |
+
+#### 안전 프롬프트 / 위험 프롬프트
+
+| ❌ 위험 (즉시 벌금) | ✅ 안전 |
+|---|---|
+| "Inspired by [실존 셀럽 이름]" | "30대 미국인 모델 스타일" |
+| "스티브 잡스가 우리 제품 추천" | "tech entrepreneur archetype" |
+| 실존 회사 CEO 얼굴 합성 | 익명 fictional persona |
+| Sora 2 영상에서 워터마크 잘라내기 | 워터마크 그대로 유지 + 자막으로 가림 |
+| 정치인·국가 지도자 이미지 | 카테고리 자체 회피 |
+
+#### EU 발송 시 의무 라벨 (2026.8~)
+
+EU 거주자에게 AI 생성 광고를 노출 시 **명시적 표시 의무**:
+
+```
+영문: "This ad contains AI-generated/altered content."
+영상 자막 마지막 1초 또는 캡션 첫 줄 권장.
+```
+
+> **본 강의 권장**: 미국 단일 시장 모델은 EU AI Act 영향 X. 단 California AB 시리즈는 **미국 발송이면 무조건 적용** — 실존 인물 likeness 절대 회피. 광고 1건이 매출 6개월 분 벌금 가능.
+
 ---
 
 ## 💻 실습 파트 (0:50 - 2:10)

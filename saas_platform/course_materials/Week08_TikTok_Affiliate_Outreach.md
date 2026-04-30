@@ -6,6 +6,8 @@
 3. AI를 활용해 차단당하지 않는 '초개인화된 DM'을 대량 발송하고 CRM으로 관리한다.
 4. 매출 검증 단계 진입 시 **TikTok Shop Affiliate Center**로 셀프 픽업 트랙을 병행 가동한다.
 
+> 💡 **TikTok 매각 이슈 해소 (2026.1.22)**: PAFACA 분할 명령에 따라 ByteDance가 TikTok USDS(US Data Security)를 분할 완료, 미국 사업체로 분리. **미국 시장 정상 운영 확정** ([Wikipedia PAFACA](https://en.wikipedia.org/wiki/Protecting_Americans_from_Foreign_Adversary_Controlled_Applications_Act)). 2024-2025년 자주 거론되던 "TikTok 금지 시 plan B (Lemon8/RedNote)" 시나리오는 사실상 종료. **본 강의는 안심하고 TikTok 단일 채널 학습**.
+
 ---
 
 ## ⏰ 타임라인 (총 2.5시간)
