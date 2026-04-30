@@ -130,9 +130,95 @@
 
 ---
 
-## 🎯 [심화] 사업 모델 3가지 — Low-Ticket / Niche Brand / High-Ticket (Phase 4~5 결정)
+## 🎯 [심화] 사업 모델 5가지 — 본인 자본·시간·스킬에 맞는 path 선택 (2026 갱신)
 
-본 강의 14주는 **저가($25~80) sweet spot**을 표준으로 가르침. 단 매출 $5K+ 안정 후 **사업 모델 자체를 진화**시킬 수 있음. 2026 시점 1인 셀러용 3가지 모델 + 마진 구조.
+> ⚠️ **2026 시점 변경**: 이전 강의는 "Day 0 = Low-Ticket Pure Dropship 표준 → Phase 4 Niche → Phase 5 High-Ticket" 단일 진화 경로 가정. **De Minimis 폐지 + 4-Layer 관세** 환경에서 학생 본인 자본·시간·스킬에 따라 **처음부터 다른 path 선택이 더 합리적**.
+
+### 5 가지 가능 path (각 학생이 자기 상황에 맞게 1개 선택)
+
+| Path | 자본 | 시간 commit (launch) | 진입 난이도 | 적합 학생 |
+|---|:--:|:--:|:--:|---|
+| **A. Low-Ticket Pure Dropship** (강의 default) | $50~$200 | 15-25h/주 | 낮음 | 자본 적음, 시간 많음, 학습용 |
+| **B. Mid-Ticket Niche** ($50-150) — **2026 권장 default** | $300~$1K | 15-25h/주 | 중간 | 자본 약간, 강의 표준 모델 |
+| **C. High-Ticket First** ($150-300) | $1K~$3K | 10-15h/주 | 중간-높음 | 자본 중간, 마케팅 경험 |
+| **D. Print-on-Demand** (Printify·Gelato) | $50~$200 | 10-15h/주 | 낮음 | 디자인 스킬, 관세 회피 우선 |
+| **E. TikTok Shop + Shopify Hybrid** | $100~$500 | 15-25h/주 | 중간 | TikTok 영상 강한 학생 |
+
+### 각 path별 마진·BEP·timeline 비교
+
+| Path | 객단가 | 실현 마진 | BEP 매출 | 첫 흑자 |
+|---|:--:|:--:|:--:|:--:|
+| A. Low-Ticket | $25-50 | 5-10% | $1,500/월 | 6-12개월 |
+| **B. Mid-Ticket Niche** | $50-150 | **12-18%** | **$1,000/월** | **3-6개월** |
+| C. High-Ticket First | $150-300 | 20-30% | $800/월 (5-10 sales) | 2-4개월 |
+| D. Print-on-Demand | $25-60 | 15-25% | $1,200/월 | 4-8개월 |
+| E. TikTok Shop Hybrid | $30-80 | 10-15% | $1,500/월 | 3-6개월 (organic 강할 시) |
+
+### Path별 진입 결정 트리 (본인 상황 입력)
+
+```
+Q1. 본인 자본 (광고 학습비용 포함):
+  < $300  → A 또는 D
+  $300~$1K → B (강의 표준)
+  $1K~$3K → B 또는 C
+  $3K+    → C 권장
+
+Q2. 본인 디자인·창작 스킬:
+  강함 → D (Print-on-Demand)도 적합
+  보통 → A·B·C·E
+  
+Q3. 본인 TikTok 영상 제작 능력:
+  강함 (월 30+ 영상 가능) → E (TikTok Shop Hybrid)도 적합
+  보통 → A·B·C·D
+  
+Q4. 본인 시간 commit (launch phase):
+  10h/주 미만 → C 또는 D만 가능
+  15-25h/주 → 모두 가능
+```
+
+### 본 강의 권장 (2026 갱신)
+
+**Day 0 default = B. Mid-Ticket Niche** ($50-150 + US warehouse 우선). 이전 "Low-Ticket Pure Dropship"은 De Minimis 폐지 후 마진 erosion 너무 심함. 강의의 14주 워크플로우(Week 1~14)는 **B path 기준** 작성 — A·C·D·E는 응용.
+
+#### Path별 강의 자료 활용 가이드
+
+| Path | 강의 워크플로우 | 갱신 필요 영역 |
+|---|---|---|
+| **A** | 그대로 사용 (단 마진 5-10% 가정) | Week 3 마진 표 본인 카테고리로 재계산 |
+| **B (default)** | 그대로 사용 | 없음 — 강의 표준 |
+| **C High-Ticket** | Week 5 카피 더 길게 (Comparison·Buying Guide), Week 9 Google Ads + SEO 추가 | Phase 5로 미루지 말고 처음부터 |
+| **D Print-on-Demand** | Week 5 디자인 워크플로우 추가 (Canva·Midjourney → Printify) | Week 4·5 sourcing 우회 |
+| **E TikTok Shop Hybrid** | Week 8·9에 TikTok Shop 셋업 추가 (KR 학생 한국 시장만 가능) | Week 7 영상 매주 30+ |
+
+### High-Ticket First (Path C) — 자본 있는 학생용
+
+자본 $1K-3K 있으면 처음부터 high-ticket 권장. 이유:
+- 객단가 높아 광고비 흡수 여유 (4:1 ROAS 가능)
+- CS 빈도 낮음 (고객 적음, 객단가 높음)
+- 마진 20-30% 안정 → 광고 학습기 견딜 수 있음
+- 단점: 학습 곡선 가파름, 경쟁사 높은 수준
+
+**적합 카테고리**: 가구·홈데코, 운동기구, 취미용품 (드론·악기·아트), 펫 액세서리 프리미엄, 사무 가전.
+
+### Print-on-Demand (Path D) — 관세 회피 옵션
+
+Printify·Gelato·Printful 등은 **미국 fulfillment + 디자인 only** 모델. 학생이 디자인 1개만 만들면 자동 인쇄·발송. 관세·재고 0.
+
+**적합 카테고리**: 의류 (Tee·Hoodie), 머그컵·텀블러, 포스터·아트 프린트, 폰 케이스, 토트백.
+**단점**: 마진 15-25% (Printify base + 디자인 마크업), Tier 1 카테고리 경쟁 매우 심함, 디자인 차별화가 곧 사업 차별화.
+
+### TikTok Shop Hybrid (Path E) — 영상 잘 만드는 학생
+
+KR 학생: 2025-08~ TikTok Shop KR 정식 운영. KR 사업자만으로 KR 도메스틱 셀링.
+US 학생: 미국 LLC + PBR 필수.
+
+획득은 TikTok Shop (organic + Affiliate Center), 재구매는 Shopify로 owning. 인앱 결제 → CVR 2-3배.
+
+---
+
+## 🎯 [Phase 4~5] 사업 모델 진화 (B Path → Niche/High 전환)
+
+본 강의 14주는 **2026 갱신 default = B Path Mid-Ticket** ($50-150)을 표준으로 가르침. 매출 $5K+ 안정 후 **사업 모델 자체를 진화**시킬 수 있음. 2026 시점 1인 셀러용 진화 경로.
 
 ### 모델 비교
 

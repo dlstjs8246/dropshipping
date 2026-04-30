@@ -44,10 +44,28 @@
 
 ## 💻 실습 파트 (0:50 - 2:10)
 
-### Step 1. CJ Dropshipping / Zendrop 연동 및 상품 임포트 (30분)
-1. 쇼피파이 App Store에 들어가서 CJ Dropshipping (또는 DSers) 앱을 설치하세요.
-2. 3주차에 확정한 '위닝 상품'을 CJ Dropshipping에서 검색합니다.
-3. 'List(리스팅)' 버튼을 눌러 내 쇼피파이 스토어로 상품 정보를 가져옵니다. (가격은 본인이 정한 판매가로 수정합니다.)
+### Step 1. 공급사 결정 — US warehouse 우선 (2026 갱신) (30분)
+
+> ⚠️ **2026 공급사 전략 변경**: 2024 이전엔 CJ Dropshipping 중국 직발송이 표준이었지만 De Minimis 폐지(2025-08) + 4-Layer 관세 + 검사 강화로 **실제 배송 12-18일 → 20-60일 사례 다수**. 미국 고객은 2-7일 익숙해진 상태 → 분쟁률 폭증. **Day 0부터 US warehouse 보장 SKU 우선**.
+
+#### 공급사 선택 우선순위 (2026)
+
+| 우선 | 공급사 | 배송 | 가격 프리미엄 (CJ China 대비) | 적합 카테고리 |
+|:--:|---|---|---|---|
+| **1** | **Spocket US** | 2-5일 | +20-40% | 의류·뷰티·홈데코 (US 제조) |
+| **1** | **Zendrop Plus** | 3-7일 (US warehouse SKU) | +15-30% | 가전·잡화 |
+| **1** | **CJ Dropshipping US Warehouse** | 3-7일 | +10-25% | 베스트셀러 SKU만 |
+| 2 | DSers (AliExpress) | 12-25일 | 기준 | Tier 1 검증 안 끝난 신규 SKU만 (검증용) |
+| 2 | CJ China 직발송 | 20-60일 | 기준 -10% | 비추 (분쟁률 위험) |
+
+#### 셋업 SOP
+
+1. **Spocket** (Shopify App Store) 설치 → US Suppliers 필터 → 본인 위닝 상품 검색
+2. 매칭 SKU 없으면 **Zendrop Plus** ($49/월) 또는 **CJ Dropshipping** US warehouse 옵션
+3. 첫 SKU는 **본인 직접 1개 구매** → 실제 배송일·품질·포장 검증 → 그 후 Shopify에 Import
+4. 가격은 [Week 3 갱신 마진 표](./Week03_Landed_Cost_Scorecard.md) 기준 — 실현 마진 15%+ 가능한 판매가 결정
+
+> 💡 **CJ China 직발송이 여전히 OK인 케이스**: (a) 카테고리가 매우 niche해서 US warehouse 매칭 0건, (b) 첫 5건 검증용 (학생이 직접 받아 품질 확인), (c) 가격 매우 저렴 + 고객이 "China shipping" 사전 동의. 그 외엔 분쟁률 폭증 위험.
 
 > ⚠️ **임포트 전 IP 위험 5분 점검 필수**: 공급사 사진 그대로 사용하면 저작권 침해, 'Inspired by [브랜드]' 표현은 상표권 침해, 가격이 진짜 브랜드의 1/10이면 위조품 — 모두 즉시 소송·계정 정지. [Master Prompts §47 (IP & Photography Risk Pre-Check)](./02_Master_Prompts.md)으로 자동 진단. 1년 1회 위반 = 변호사 비용 $5K+ — 5분 투자가 가장 큰 보험. 자세한 사례: [Appendix F #11](./Appendix_F_Common_Mistakes_10.md).
 
