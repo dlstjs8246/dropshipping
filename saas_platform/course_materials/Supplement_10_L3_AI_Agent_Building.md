@@ -408,6 +408,49 @@ print(result)
 - ✅ 매 요청 사이 5초+ 지연 (서버 부담 X)
 - ✅ User-Agent 명시 ("Brand-Name competitor monitoring")
 
+### 4-7. 코드 우선 옵션 — Agent SDK (Claude Agent SDK / OpenAI Agents SDK)
+
+§3 Make.com·§4 Browser Use는 노코드/저코드 빠른 셋업에 최적. 하지만 **Agent를 본격적으로 빌드한다면** (멀티 도구 호출 + 메모리 + 서브 에이전트 + 스트리밍 + 구조화 출력) 2025년 출시된 Agent SDK가 골격 없이 직접 만드는 것보다 압도적으로 빠릅니다.
+
+| 항목 | **Claude Agent SDK** | **OpenAI Agents SDK** |
+|---|---|---|
+| 출시 | 2025-Q4 | 2025-Q1 (Swarm 후속) |
+| 언어 | Python · TypeScript | Python · JS |
+| 장점 | 200K context · 프롬프트 캐싱 90% 할인 · MCP 표준 도구 | GPT-5 · 빌트인 트레이싱 UI · Voice Agent |
+| 핸드오프 | `Subagent` + `Tool` 데코레이터 | `handoff()` 함수 |
+| 가드레일 | `permission_mode` (system 권한 격리) | `Guardrail` 클래스 (입출력 검증) |
+| 본 강의 적합도 | **L3 빌드 1순위** (Claude 톤 일관성) | Voice 보조 (영어 IVR 등) |
+
+```python
+# Claude Agent SDK — §3 의사결정 룰을 SDK로 재작성한 예
+from claude_agent_sdk import query, AssistantAgent, tool
+
+@tool
+def check_inventory(sku: str) -> dict:
+    return cj_api.stock(sku)
+
+@tool
+def recompute_margin(sku: str, sale_price: float) -> dict:
+    return margin_engine.run(sku, sale_price)
+
+agent = AssistantAgent(
+    model="claude-sonnet-4-6",
+    tools=[check_inventory, recompute_margin],
+    system="너는 Shopify 주문 의사결정 Agent. 3룰(재고/마진/BL) 평가 후 JSON 반환.",
+    max_iterations=5,
+)
+
+result = await query(agent, order_payload)  # AUTO_ORDER or ESCALATE
+```
+
+**언제 Make.com에서 SDK로 옮길까**:
+- Make.com 시나리오가 30+ 모듈로 비대해짐
+- 동일 LLM 호출이 3+ 모듈에서 반복 (캐싱 못함)
+- 멀티 단계 사고가 필요 (Make Router로는 표현 한계)
+- 월 Make.com Operations 한도 초과 ($30+ 결제 시점)
+
+> **추천 진입 경로**: §3 Make.com → 첫 매출 + 운영 안정 (1~2개월) → §4-7 Claude Agent SDK 마이그레이션. SDK는 [Cursor (W6)](./Week06_Cursor_Coding_Optimization.md) + [Supplement 09 L2 학습](./Supplement_09_L2_AI_Assistant_Building.md) 후 진입 권장.
+
 ---
 
 ## 5. Build 3 — Multi-Agent: CS 풀 처리 (Watcher → Analyst → Communicator)

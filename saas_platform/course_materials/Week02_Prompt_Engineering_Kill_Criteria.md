@@ -28,7 +28,7 @@ Role(역할) → Context(맥락) → Instruction(지시) → Format(형식) → 
 
 **예시 — Bad vs Good**:
 - ❌ Bad: "좋은 상품 추천해줘"
-- ✅ Good: "너는 10년 차 미국 아마존 소싱 MD야(Role). 지금 관세가 올라서 마진이 빡빡해(Context). 그러니까 마진율 40%가 넘는 제품 5개를 찾아줘(Instruction). 표 형태로 정리하고(Format) 다음 형식으로 답해줘(Example)."
+- ✅ Good: "너는 10년 차 미국 아마존 소싱 MD야(Role). 지금 관세가 올라서 마진이 빡빡해(Context). 그러니까 **Kill Criteria 1번(마진율 30% 이상)**을 통과하는 제품 5개를 찾아줘(Instruction). 표 형태로 정리하고(Format) 다음 형식으로 답해줘(Example)."
 
 > 💡 **심화 자료**: 6대 고급 프롬프트 패턴(CoT·Few-shot·Self-Critique 등)은 [Supplement 04: 고급 프롬프트 엔지니어링](./Supplement_04_Advanced_Prompt_Engineering.md) 참조. 1주차의 단순 프롬프트와 비교 학습 강력 권장.
 

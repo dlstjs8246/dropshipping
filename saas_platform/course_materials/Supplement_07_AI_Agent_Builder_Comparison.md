@@ -81,6 +81,22 @@
 
 ---
 
+### (옵션) 코드 우선 — Claude Agent SDK / OpenAI Agents SDK
+
+위 3개 빌더는 **노코드 GUI** 방식. 본 강의의 1인 셀러는 여기서 시작이 정답입니다. 단, L3 [Supplement 10](./Supplement_10_L3_AI_Agent_Building.md) 학습 후 운영 자동화를 코드로 본격화한다면 2025년 출시된 Agent SDK가 다음 단계입니다.
+
+| 항목 | 노코드 빌더 (이 문서 §1) | **Agent SDK** (코드) |
+|---|---|---|
+| 진입 | 즉시 (드래그·업로드) | Cursor + Python/TS 기본 |
+| 도구 호출 | Actions (Open API 스펙) | `@tool` 데코레이터 + MCP |
+| 공유 | GPT Store / Pro 공유 | 본인 인프라 (Vercel/Render) |
+| 비용 | 월 $20 정액 | API 사용량 + 캐싱 90% 할인 |
+| 적합 시점 | Day 1 ~ 매출 검증 | 매출 안정 후 운영 자동화 |
+
+> **결정 규칙**: L1·L2는 GUI 빌더, L3 본격 운영(Agent가 실제 의사결정 수행 + 매일 N회 자동 트리거)은 SDK. 자세한 SDK 코드 예시는 [Supplement 10 §4-7](./Supplement_10_L3_AI_Agent_Building.md) 참조.
+
+---
+
 ## 3. 드랍쉬핑 1인 셀러용 5개 Agent 청사진
 
 ### 🤖 Agent 1: CS 응답 봇 (Claude Projects 추천)
