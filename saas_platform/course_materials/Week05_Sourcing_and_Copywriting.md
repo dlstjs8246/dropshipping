@@ -49,6 +49,8 @@
 2. 3주차에 확정한 '위닝 상품'을 CJ Dropshipping에서 검색합니다.
 3. 'List(리스팅)' 버튼을 눌러 내 쇼피파이 스토어로 상품 정보를 가져옵니다. (가격은 본인이 정한 판매가로 수정합니다.)
 
+> ⚠️ **임포트 전 IP 위험 5분 점검 필수**: 공급사 사진 그대로 사용하면 저작권 침해, 'Inspired by [브랜드]' 표현은 상표권 침해, 가격이 진짜 브랜드의 1/10이면 위조품 — 모두 즉시 소송·계정 정지. [Master Prompts §47 (IP & Photography Risk Pre-Check)](./02_Master_Prompts.md)으로 자동 진단. 1년 1회 위반 = 변호사 비용 $5K+ — 5분 투자가 가장 큰 보험. 자세한 사례: [Appendix F #11](./Appendix_F_Common_Mistakes_10.md).
+
 ### Step 2. AI(Claude)로 PAS 상세페이지 작성 (50분)
 1. [02_Master_Prompts.md §2 PAS 카피라이팅 프롬프트](./02_Master_Prompts.md)를 Claude에 입력합니다.
 2. AI가 뽑아준 스크립트를 쇼피파이 상품 설명란에 붙여넣습니다.

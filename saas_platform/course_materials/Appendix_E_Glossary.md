@@ -376,6 +376,30 @@ Basic/Standard/Pro 가격대를 페르소나·LTV·마진 기준 자동 결정. 
 가격대·마진·운영 모델 차이. Low(5~15%) / Niche(15~35%) / High(20~45%). Day 0 = Low(표준), Phase 4 = Niche, Phase 5 = High 진화.
 - 등장: Week 12 [심화]
 
+**CPSC eFiling §1110.11**
+2026-07-08부터 모든 CPSC 규제 제품 수입 시 적합성 증명 데이터를 CBP에 전자 제출 의무. Full PGA(소량) vs Reference PGA(다량 + Product Registry 등록). FTZ는 2027-01-08.
+- 등장: Appendix A §6.7
+
+**Finished Product Certifier**
+CPSC eFiling §1110.11에서 데이터 정확성 최종 책임자. Customs Broker는 대리 제출만, 정확성 책임 X. 본인 LLC 또는 US Agent (Registrar Corp 등).
+- 등장: Appendix A §6.7
+
+**FTC Mail Order Rule** (16 CFR Part 435)
+1971 시행, 2024 enforcement 강화. 광고 명시 X 시 30일 이내 배송 의무. 30일 초과 = 고객 동의 + 거절 시 환불.
+- 등장: Appendix A §1
+
+**제품 책임 보험** (General/Product Liability + Cyber Liability)
+1인 셀러 권장 $300~$500/년 (BOP 통합 $700~$1,200). Hiscox·Next Insurance·Thimble.
+- 등장: Appendix A §1
+
+**다채널 진화 — Shopify·TikTok·Amazon·eBay·Etsy**
+플랫폼별 드랍쉬핑 정책 차이. Shopify 완전 허용 / TikTok Shop 조건부 / Amazon 엄격 / eBay 도매만 / Etsy 금지.
+- 등장: Week 14 [심화]
+
+**IP 사전 점검** (§47 Master Prompt)
+신규 SKU 등록 전 5분 — 상표권·저작권·위조품·CPSC 4 차원 자동 진단. GO/WARNING/SKIP. 1년 1회 위반 = 변호사 $5K+.
+- 등장: Master Prompts §47, Appendix F #11
+
 **HTS** (Harmonized Tariff Schedule)
 미국 관세 분류 코드. 상품마다 다른 관세율 적용.
 - 등장: W3, [Master Prompts §18](./02_Master_Prompts.md)

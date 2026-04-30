@@ -1,4 +1,4 @@
-# 🚨 Appendix F: 흔한 실수 11선 (Common Mistakes Hall of Shame)
+# 🚨 Appendix F: 흔한 실수 12선 (Common Mistakes Hall of Shame)
 
 > **목적**: 14주 동안 매 기수마다 반복되는 **"피할 수 있었던 실수 TOP 10"**을 한 곳에 모았습니다. 매주 일요일 [Supplement 11 자가 진단](./Supplement_11_Self_Assessment_and_Progress_Tracker.md) 작성 직전에 본 문서를 1회 훑어 자기 검열하세요.
 >
@@ -130,7 +130,28 @@
 
 ---
 
-## 11. 도메인·서브도메인 보안 방치 (운영 종료 시 폭탄)
+## 11. 지식재산권(IP) 침해 — 즉시 소송 + 계정 정지
+
+❌ **증상**: AliExpress·CJ에서 받은 상품 사진을 그대로 본인 스토어에 사용 → 진짜 브랜드(Apple·Hydroflask·Yeti·Stanley 등) 디자인 카피 → 며칠 안에 cease-and-desist letter + Stripe·Shopify 계정 정지 + 변호사 비용 $5K+.
+
+✅ **올바른 흐름**: 신상품 등록 전 **3 체크 사전 점검**:
+
+1. **상표권 검색** — uspto.gov/trademarks/search 본인 브랜드명 + 상품 카테고리 충돌 검색 (5분)
+2. **이미지 저작권** — 공급사 사진 그대로 사용 X. 본인이 다시 촬영 또는 [Master Prompts §5](./02_Master_Prompts.md) AI 이미지 생성 또는 공급사로부터 **"unrestricted commercial use" 서면 동의**
+3. **위조품 신호 감지** — 공급사 가격이 진짜 브랜드의 1/10 이하면 100% 위조품. 즉시 SKIP
+
+**Master Prompts 자동 점검**: [§47 (IP & Photography Risk Pre-Check)](./02_Master_Prompts.md)으로 신상품 등록 전 자동 위험도 진단 + 회피 액션. 신규 SKU 1개당 5분.
+
+**왜 치명적인가**:
+- TikTok Shop·Amazon은 IP 침해 즉시 계정 정지 (48점 시스템 무관 — 별도 정책)
+- 진짜 브랜드 (Stanley·Yeti 등)가 DMCA + Federal lawsuit → 1인 셀러 변호 X = 자동 패배
+- 본인 LLC = 개인 자산 보호되지만 **법인 자산은 압류 가능**
+
+📚 [Master Prompts §47](./02_Master_Prompts.md) · [Week 5](./Week05_Sourcing_and_Copywriting.md)
+
+---
+
+## 12. 도메인·서브도메인 보안 방치 (운영 종료 시 폭탄)
 
 ❌ **증상**: 스토어 셧다운 / 다른 호스팅으로 이전 → DNS의 CNAME 레코드 (예: shop.brand.com → brand.myshopify.com)가 살아있음 → 공격자가 동일 myshopify 핸들 등록 → **본인 도메인이 피싱 사이트로 둔갑** ([Bolster Subdomain Takeover](https://bolster.ai/blog/subdomain-hijacking-takeover)).
 
@@ -159,6 +180,7 @@
 | 8 | Make.com 시나리오 비대화 | ☐ |
 | 9 | RAG 매뉴얼 없이 봇 자동화 | ☐ |
 | 10 | 분쟁률 모니터링 누락 | ☐ |
-| 11 | 도메인·DNS 보안 방치 (CNAME 잔재 / 자동 갱신 실패) | ☐ |
+| 11 | IP 침해 (상품 사진 무단 사용·위조품·상표권) | ☐ |
+| 12 | 도메인·DNS 보안 방치 (CNAME 잔재 / 자동 갱신 실패) | ☐ |
 
 > **3개 이상 ❌이면**: 그 주는 신규 학습 정지. 해당 항목의 📚 링크로 가서 복구 우선.

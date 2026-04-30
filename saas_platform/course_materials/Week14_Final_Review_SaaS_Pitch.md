@@ -53,6 +53,66 @@
 
 ---
 
+## 🌐 [심화] 다채널 확장 — 졸업 후 6개월~ (Phase 4~5)
+
+본 강의 Day 0~Phase 3은 **Shopify 단일 채널** 표준. 매출 $5K+ 안정 후 다채널 확장이 가능. 단 각 플랫폼이 드랍쉬핑을 다르게 다룸.
+
+### 플랫폼별 드랍쉬핑 정책 비교
+
+| 플랫폼 | 드랍쉬핑 허용 | 진입 장벽 | 본 강의 확장 시점 |
+|---|---|---|---|
+| **Shopify (자사몰)** | ✅ 완전 허용 | 낮음 — 본 강의 표준 | Day 0 |
+| **TikTok Shop US** | ✅ Affiliate Center 통합 | 미국 LLC + PBR 필수 | Phase 4 (월 $5K+) |
+| **TikTok Shop KR** | ✅ 2025-08~ | KR 사업자 단독 OK | KR 시장 진출 시 |
+| **Amazon FBA / FBM** | ⚠️ **엄격 조건** | 중간 — Brand Registry 필요 | Phase 5 (월 $20K+) |
+| **eBay** | ⚠️ 도매 공급사 한정 | 낮음 | Phase 4 |
+| **Etsy** | ❌ **원칙 금지** | 진입 불가 | — |
+
+#### Amazon 드랍쉬핑 — 엄격 조건 (위반 시 즉시 정지)
+
+Amazon 정책 ([Selling Policies](https://sellercentral.amazon.com/help)):
+- ✅ **본인이 Seller of Record** (기록상의 판매자) 명시 의무
+- ✅ **Amazon 패키징** (외부 박스에 본인 브랜드만)
+- ❌ **타 소매업체에서 직접 구매하여 고객에게 발송 금지** (Walmart·Target → Amazon 고객 = 즉시 정지)
+- ❌ **CJ·AliExpress 직발송 금지** (포장재에 외부 마켓 노출 시 위반)
+
+→ **본 강의 권장**: Amazon은 **3PL Hybrid + 본인 LLC IOR 진입 후에만** ([Appendix C §6](./Appendix_C_Shipping_Carriers_DDP_DDU.md)). 그 전엔 Shopify만.
+
+#### eBay 드랍쉬핑 — 도매 공급사만
+
+- ✅ **도매 공급사** (Wholesalers, Brand-authorized distributors)에서 받은 상품 OK
+- ❌ **소매 중개(Retail Arbitrage)** 금지 — Walmart·Amazon에서 사다가 eBay에 파는 행위
+
+→ 본 강의 모델 (CJ Dropshipping)은 eBay 정책 통과 가능. 단 매출 비중 작아 우선순위 낮음.
+
+#### Etsy — 본 강의 모델 부적합
+
+- ❌ 단순 리셀링 = 즉시 정지
+- ✅ **본인 디자인 제품** + **제작 파트너 공개** 의무
+- → 본 강의 졸업생이 Etsy 가려면 = **자체 디자인 + Print-on-Demand (Printful 등)** 모델로 전환 필요. 별도 학습.
+
+### 본 강의 권장 다채널 진화 경로
+
+```
+Day 0~Phase 3 (월 매출 < $5K):
+  Shopify 단일 채널 + TikTok organic 영상
+
+Phase 4 (월 매출 $5K~$20K):
+  Shopify (메인) + TikTok Shop US Affiliate (보조)
+  + Klaviyo SMS (Phase 4 초입)
+  + 베스트셀러 1~2개 SKU = 3PL Hybrid
+
+Phase 5 (월 매출 $20K+):
+  Shopify (메인 70%) + TikTok Shop (15%) + Amazon (15%)
+  + 본인 LLC IOR + CPSC eFiling (§6.7)
+  + Full 3PL 또는 자체 창고
+  + Google Ads + SEO 콘텐츠 클러스터
+```
+
+> **핵심**: 다채널은 매출 분산 + 위험 분산. Shopify 단일 의존 = TikTok 정지·Stripe 정지 1회로 매출 0. **Phase 4부터 채널 2개+ 보장**이 사업 안정성의 진짜 의미.
+
+---
+
 ## ❓ 자주 묻는 질문 (FAQ)
 
 **Q: 이 SaaS는 나중에 유료로 파실 건가요?**

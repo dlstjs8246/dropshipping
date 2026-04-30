@@ -23,6 +23,35 @@
 | ☐ | 비환불 항목 (final sale, custom, perishable) |
 | ☐ | 분쟁 발생 시 연락 채널 (이메일 + 응답 시간 약속) |
 
+### ⚠️ FTC Mail Order Rule (16 CFR Part 435) — 30일 배송 의무
+
+**1971년 시행, 2024 enforcement 강화**. 광고에 명시적 배송 기간(예: "7-12 business days") 표시 안 하면 자동으로 **30일 이내 배송** 의무. 30일 초과 시 고객에게 **명시적 동의 요청 + 거절 시 전액 환불** 의무.
+
+**1인 셀러 실무 — 안전 셋업 3가지**:
+1. 모든 상품 페이지에 **명시적 배송 기간** 표시 (`Ships in 7-12 business days from China`)
+2. 결제 완료 메일에 **예상 도착일** 자동 변수 (Klaviyo Order Confirmation에 추가)
+3. 30일 초과 가능성 SKU = 결제 페이지에 **추가 경고** ("This item may take up to 25 business days during peak season")
+
+**위반 시**: FTC 민사 벌금 + 고객 환불 강제. 본 강의 추적성 좋은 캐리어(DHL eCom·Yanwen) + 12~18일 표기로 안전.
+
+### 🛡 제품 책임 보험 — 1인 셀러 권장 ($300~$500/년)
+
+본인 LLC IOR (또는 고객 IOR) 무관, **고객이 본인 상품으로 상해·손해 입었다고 소송하면 셀러 노출**. 드랍쉬핑 = 셀러가 직접 만지지 않더라도 "Seller of Record" 책임.
+
+| 보험 종류 | 보장 범위 | 연간 비용 (1인 셀러 매출 < $500K) |
+|---|---|---|
+| **General Liability** | 일반 상해·재산 손해 | $300~$500 |
+| **Product Liability** | 상품 결함으로 인한 상해 | $500~$1,000 |
+| **Cyber Liability** | 데이터 유출·랜섬웨어 | $400~$800 |
+| **포괄 BOP (Business Owner's Policy)** | 위 3가지 통합 | $700~$1,200 |
+
+**추천 보험사 (1인 D2C 셀러 친화)**:
+- **Hiscox** — 온라인 가입 5분, 매출 < $250K
+- **Next Insurance** — 모바일 앱, $500~/년
+- **Thimble** — 짧은 기간만 가입 가능 (캠페인 단위)
+
+> **본 강의 권장**: Phase 1~3 = 보험 X (매출 작아 노출 적음). Phase 4+ (월 $5K+) = General + Product Liability 통합 BOP $700/년 가입. 화장품·전자제품·어린이용품 카테고리는 매출 무관 즉시 가입.
+
 ---
 
 ## 2. 30일 환불 정책 영문 템플릿 (Shopify Refund Policy 페이지용)
@@ -523,6 +552,80 @@ CJ/AliExpress 공급자에게 SDS(Safety Data Sheet) 요청 → 받은 화학물
 ```
 
 > **본 강의 권장**: 첫 12개월은 화장품·의류·쿠킹웨어 = **Kill Criteria 8번 자동 탈락 카테고리**. 매출 $5K+ 안정 후 단일 SKU로 검증 진입.
+
+---
+
+## 6.7. CPSC eFiling 의무화 (2026-07-08) — 본인 LLC IOR 시 풀 컴플라이언스
+
+[Week 3 §2-2-bis IOR 결정 트리](./Week03_Landed_Cost_Scorecard.md)에서 본인 LLC IOR로 진입한 경우 — **2026년 7월 8일부터 CPSC 규제 제품 수입 시 적합성 증명 데이터를 CBP에 전자 제출(eFiling) 의무**. 16 CFR Part 1110 개정 ([CPSC 공식](https://www.cpsc.gov/Business--Manufacturing/Business-Education/Lab-Testing/eFiling-of-Certificates-of-Compliance)).
+
+### 6.7-1. 시행 일정
+
+| 일정 | 적용 |
+|---|---|
+| **2026-07-08** | 모든 CPSC 규제 대상 소비자 제품·물질 |
+| **2027-01-08** | 외국무역지대(FTZ)에서 국내 소비용으로 반입되는 제품 (6개월 추가 유예) |
+
+### 6.7-2. 제출 방법 — Full PGA vs Reference PGA
+
+CBP의 ACE(Automated Commercial Environment) 통해 제출. 셀러가 SKU 수에 따라 선택:
+
+| 방법 | 적합 셀러 | 셋업 |
+|---|---|---|
+| **Full PGA Message Set** | SKU < 10개 (소량) | 매번 수입 신고 시 모든 인증 데이터 직접 제출 |
+| **Reference PGA Message Set** | SKU 10+ 개 (다량) | **CPSC Product Registry**에 미리 등록 → 고유 식별 번호(Unique ID)만 제출 |
+
+> **본 강의 권장**: 본인 LLC IOR + SKU 5+개면 **Reference PGA** + Product Registry 등록이 통관 속도 + 오류 방지에 유리. Customs Broker 위임 시 Broker가 둘 중 선택.
+
+### 6.7-3. § 1110.11 적합성 증명서 8개 필수 항목
+
+수입 1건당 다음 모두 포함되어야 합니다 (체크리스트로 보관 권장):
+
+| # | 항목 | 본인 셋업 시 사전 준비 |
+|:--:|---|---|
+| 1 | **제품 식별 정보** (Unique ID + 상세 설명) | SKU별 Master Sheet 1개 |
+| 2 | **적용 규칙 목록** (CPSC 규정 코드, 예: ASTM F963 토이 표준 §X) | 카테고리별 규제 사전 매핑 |
+| 3 | **인증자(Finished Product Certifier) 정보** (이름·주소·이메일·전화) | 본인 LLC 또는 US Agent (Registrar Corp 등) |
+| 4 | **기록 보관 담당자 연락처** (테스트 결과 기록 유지자) | 동일 또는 별도 담당자 |
+| 5 | **제조일 + 제조 장소** (연월 + 상세 주소) | CJ/공급사에서 분기마다 갱신 받기 |
+| 6 | **시험 날짜 + 시험소 정보** (가장 최근 테스트) | 3rd-party lab 테스트 보관 (ASTM·ISO 인증) |
+| 7 | **인증 선언(Attestation)** (정보 진실성 + 규정 준수 법적 확인) | 본인 LLC 명의 서명 |
+| 8 | **Risk Assessment Methodology (RAM) 데이터** | CPSC가 위험도 기반 통관 감시 — 이력 누적 시 통과율 ↑ |
+
+### 6.7-4. 책임 주체
+
+- **법적 책임자**: IOR (Importer of Record) — 본인 LLC
+- **데이터 정확성 최종 책임**: 지정된 **Finished Product Certifier** (Customs Broker는 대리 제출만 가능, 정확성 책임 X)
+- **위반 시**: 통관 보류 + CPSC 벌금 (위반당 $X,XXX, 반복 시 가중) + 제품 압류
+
+### 6.7-5. 1인 셀러 실무 SOP
+
+**Phase 1~3 (고객 IOR 모델)** — 본 §6.7 사실상 무관. CPSC 규제 카테고리 회피([Kill Criteria #8](./Week02_Prompt_Engineering_Kill_Criteria.md))로 우회.
+
+**Phase 4+ (본인 LLC IOR 모델)** — 셋업 SOP:
+
+```
+Step 1: CPSC Product Registry 계정 생성 (https://www.saferproducts.gov)
+Step 2: 첫 SKU 등록 — 본 §6.7-3의 8개 항목 입력
+Step 3: 3rd-party lab 위임 ($300~$1,500/SKU·1회)
+        - 추천: SGS, Bureau Veritas, Intertek
+Step 4: Customs Broker 계약 ($200~$600/통관건)
+        - Broker가 ACE 직접 제출 처리
+Step 5: 수입 신고 시 Reference PGA로 Unique ID만 전달
+Step 6: 분기별 — Product Registry 정보 갱신 (제조사·재료 변경 시)
+```
+
+### 6.7-6. 비용 시뮬레이션 (월 매출 $20K 셀러 기준)
+
+| 항목 | 비용 (연간) |
+|---|---|
+| CPSC Product Registry | 무료 |
+| 3rd-party lab 테스트 (SKU 5개 × $500) | $2,500 (1회) |
+| Customs Broker 위임 | $500 × 12 = $6,000 |
+| US Agent (Registrar Corp 등 — 외국 제조사 대리) | $600~$2,000 |
+| **합계** | **$9K~$10K/년** |
+
+> **결론**: 본인 LLC IOR 진입 = 컴플라이언스 비용 $9K+/년 + 인증 셋업 시간 1~2개월. **매출 $20K+ 안정 후에 진입** 권장. 미만 시 고객 IOR (CJ 직발송) + Kill Criteria #8 카테고리 회피로 우회.
 
 ---
 

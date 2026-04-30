@@ -12,7 +12,7 @@
 학생들에게 직접 링크로 배포하거나 수업 중 활용할 필수 템플릿입니다.
 
 - 🔗 [01. 수강생 개인 노션 대시보드 양식](./01_Notion_Dashboard.md)
-- 🔗 [02. 수업용 마스터 프롬프트 모음집 (46종 — Part 1 콘텐츠 + Part 2 운영·진단 + Part 3 매주 운영 결단)](./02_Master_Prompts.md)
+- 🔗 [02. 수업용 마스터 프롬프트 모음집 (47종 — Part 1 콘텐츠 + Part 2 운영·진단 + Part 3 매주 운영 결단·IP 사전 점검)](./02_Master_Prompts.md)
 - 🔗 [03. 마진 계산기 및 상품 스코어카드 (CSV)](./03_Scorecard_Template.csv)
 - 🔗 [04. Make.com 노코드 자동화 블루프린트 가이드](./04_Make_Automation_Guide.md)
 

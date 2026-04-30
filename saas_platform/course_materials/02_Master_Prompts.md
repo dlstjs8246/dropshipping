@@ -1,11 +1,11 @@
 # 🧠 마스터 프롬프트 컬렉션 (Master Prompts)
 
-> **수강생 사용 안내**: 본 컬렉션은 14주 동안 반복적으로 사용할 핵심 프롬프트 46종을 모아둔 것입니다. 변수(`[괄호]`) 부분만 본인 상품·브랜드 정보로 바꿔 AI(Claude, ChatGPT, Gemini)에 그대로 입력하세요. 각 프롬프트의 사용 시점은 제목 옆 `(Week N)` 표기를 참고하세요.
+> **수강생 사용 안내**: 본 컬렉션은 14주 동안 반복적으로 사용할 핵심 프롬프트 47종을 모아둔 것입니다. 변수(`[괄호]`) 부분만 본인 상품·브랜드 정보로 바꿔 AI(Claude, ChatGPT, Gemini)에 그대로 입력하세요. 각 프롬프트의 사용 시점은 제목 옆 `(Week N)` 표기를 참고하세요.
 >
 > **구조**:
 > - **Part 1 (§1~§28)**: 콘텐츠 생성 AI — 카피·DM·이미지·영상·번역
 > - **Part 2 (§29~§39)**: 운영·진단·메타 AI — Cart Abandonment·Fatigue·Pivot·EAT·Cohort·멘탈·Router
-> - **Part 3 (§40~§46)**: 매주 운영 결단 AI — Weekly Priority·Cross-sell·Fraud·Image SEO·Pricing·Creator Score·Brief
+> - **Part 3 (§40~§47)**: 매주 운영 결단 AI — Weekly Priority·Cross-sell·Fraud·Image SEO·Pricing·Creator·IP Risk
 
 ---
 
@@ -2249,7 +2249,83 @@ Step 4 — 본인용 검증 체크리스트:
 
 ---
 
-## 📑 Master Prompts §40~§46 카테고리 (Quick Reference)
+## 47. ⚖️ IP & Photography Risk Pre-Check — 신상품 등록 전 5분 (W3, W5)
+
+신상품 등록 전 **상표권·저작권·위조품·CPSC** 위험 자동 진단. 1년에 1번이라도 위반하면 변호사 비용 $5K+ + 계정 정지. 신규 SKU당 5분 투자가 가장 큰 보험.
+
+```text
+[Role]
+너는 IP 침해 + 제품 안전 컴플라이언스 사전 진단 전문가야.
+
+[Input]
+- 상품명 + 카테고리: [PRODUCT, CATEGORY]
+- 공급사 (CJ/AliExpress) 가격: $[X]
+- 본인 예상 판매가: $[Y]
+- 공급사 상품 사진 URL 5장
+- 공급사가 사용한 상품명 영문 (직역)
+- 본인이 쓰려는 브랜드명: [BRAND]
+
+[프롬프트]
+
+"4가지 차원으로 위험도 자동 진단:
+
+[1. 상표권 (Trademark) 위험]
+- 본인 [BRAND]가 USPTO 등록 상표와 충돌 가능성 1~5
+- 공급사 상품명에 진짜 브랜드명(Apple·Stanley·Hydroflask·Yeti·Lululemon 등) 포함되어 있나?
+- 'Style of [브랜드]' / 'Inspired by [브랜드]' 같은 표현 — 즉시 위반
+- 권장 액션: 등록 가능한 안전 브랜드명 3개 제안
+
+[2. 저작권 (Copyright) 위험 — 사진]
+- 공급사 사진 5장에 워터마크·로고·다른 셀러 사진 흔적
+- 'Stock photo' 표시 또는 Unsplash·Shutterstock 출처
+- 같은 사진을 검색했을 때 다른 셀러 100+이 사용 중인지 (Google Reverse Image Search)
+- 권장 액션: 본인 촬영 / AI 생성 (Imagen 4 / DALL-E) / 공급사 'unrestricted commercial use' 서면 동의
+
+[3. 위조품 (Counterfeit) 신호]
+- 공급사 가격이 진짜 브랜드의 1/10 이하면 100% 위조품
+- 공급사 상품명에 'Premium quality' / 'OEM original' / '1:1 copy' / 'AAA grade' = 위조품 신호
+- 동일 카테고리 진짜 브랜드 평균가의 30% 미만 = 의심
+- 권장 액션: 즉시 SKIP
+
+[4. 제품 안전 (CPSC·FDA·MoCRA) 사전]
+- [CATEGORY]가 CPSC 규제 카테고리인가? (어린이용품·전자·가구)
+- FDA 규제 카테고리인가? (화장품·식품·의료기기·OTC)
+- MoCRA 등록 의무? Prop 65? PFAS 금지?
+- 본인 LLC IOR 진입 시 컴플라이언스 비용 $X 추정
+
+[Output 형식]
+
+== 종합 위험도 ==
+점수: X / 20 (각 차원 1~5)
+판정: GO / WARNING / SKIP
+
+== 차원별 상세 ==
+1. 상표권: X/5 — [신호] [근거] [액션]
+2. 저작권: X/5 — ...
+3. 위조품: X/5 — ...
+4. 제품 안전: X/5 — ...
+
+== 즉시 액션 ==
+- [가장 큰 위험 1개에 대한 구체 행동]
+
+== 진입 결정 ==
+- GO: 셋업 진행 ([Master Prompts §1 Kill Criteria])로 이어서)
+- WARNING: 1~2 차원 보강 후 진행
+- SKIP: 다른 SKU 후보로 즉시 전환
+
+== 컴플라이언스 비용 추정 ==
+- 본인 LLC IOR 진입 시 첫해 비용: $X
+- 고객 IOR 모델 유지 시 비용: $0 (단 카테고리 회피)"
+
+[검증 루틴]
+- 신규 SKU 등록 시 매번 (5분 투자)
+- WARNING/SKIP 결과는 [Appendix F #11 IP 침해](./Appendix_F_Common_Mistakes_10.md) 자가 검열 시트에 기록
+- USPTO + Google Reverse Image Search는 본 프롬프트와 별도로 본인 직접 1회 점검 권장
+```
+
+---
+
+## 📑 Master Prompts §40~§47 카테고리 (Quick Reference)
 
 | §N | 사용 빈도 | 카테고리 |
 |:--:|---|---|
@@ -2260,3 +2336,4 @@ Step 4 — 본인용 검증 체크리스트:
 | 44 | 분기 1회 | 가격 전략 |
 | 45 | DM 발송 전 | 크리에이터 검증 |
 | 46 | 협업 시 매번 | 크리에이터 브리프 |
+| 47 | **신규 SKU 등록 시 매번** | IP·저작권·위조품·CPSC 사전 진단 |
