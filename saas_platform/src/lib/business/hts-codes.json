@@ -2,7 +2,8 @@
   "_meta": {
     "source": "USITC HTS 2024 + practitioner shortlist",
     "fallback_rate": 0.25,
-    "note": "Rates as of 2026-Q2. Post-De Minimis (2025) elimination + post-IEEPA invalidation (SCOTUS 2026-02-20). Effective duty = MFN rate (this column) + Section 122 (10% global) + Section 301 (China-specific 7.5-100%) + Section 232 (steel/aluminum/copper/semis 25-50%). Conservative course assumption: 50% of sourcing cost. Always verify with CBP and USITC.gov for current rates."
+    "fallback_rate_explanation": "Used by Margin Shield SaaS when no HTS keyword match. 25% reflects typical post-IEEPA (SCOTUS 2026-02-20) effective rate for unclassified Chinese consumer goods (MFN ~5-15% + Section 122 10% + light Section 301). The course curriculum (Week 3 §2-2-bis) recommends a more conservative 50% buffer for student manual spreadsheet calculations without HTS lookup capability — these are complementary: SaaS uses precise HTS match, course uses conservative buffer.",
+    "note": "Rates as of 2026-Q2. Post-De Minimis (2025) elimination + post-IEEPA invalidation (SCOTUS 2026-02-20). Effective duty = MFN rate (this column) + Section 122 (10% global) + Section 301 (China-specific 7.5-100%) + Section 232 (steel/aluminum/copper/semis 25-50%). Always verify with CBP and USITC.gov for current rates."
   },
   "categories": [
     { "keywords": ["necklace", "earring", "pendant", "ring", "bracelet", "jewelry"], "hts": "7117.19.9000", "rate": 0.11 },

@@ -101,7 +101,7 @@ export default function CurriculumIndex() {
       subtitle: 'Week 6 직후 권장 — 졸업 후 6개월 생존율 결정',
     },
     {
-      title: '📖 용어집 (Glossary) — ROAS·CVR·DDP·HTS·CoT·RAG 등 90+ 용어',
+      title: '📖 용어집 (Glossary) — ROAS·CVR·DDP·HTS·CoT·RAG·MoCRA·IOR·MCP 등 130+ 용어',
       file: 'Appendix_E_Glossary',
       subtitle: '매 주차 옆 탭에 띄워두기 — 한국 학습자 필수',
     },

@@ -81,6 +81,8 @@ Landed Cost = 소싱가 + 국제 배송비 + 통관 수수료 + 관세(Tariff)
 > 🇰🇷 **한국 셀러 추가 주의**: 2026.1.27 트럼프가 한국 상호관세를 15% → 25%로 재인상 ([Al Jazeera](https://www.aljazeera.com/news/2026/1/27/trump-says-he-is-raising-tariffs-on-south-korea-to-25)). **단 본 강의는 중국 소싱 → 미국 발송이 기본 모델 → KR 원산지 아니므로 25% 직접 영향 없음**. 한국에서 직접 제조한 상품을 미국으로 보내는 모델만 해당.
 
 > **본 강의 보수적 가정**: 위 합계는 카테고리·HTS 코드에 따라 ±20%p 변동. 본 강의 스코어카드는 안전 마진 확보를 위해 **"소싱가의 50%를 관세로 가정"** 으로 갱신 (이전 125%에서 하향 — IEEPA 무효 반영). HTS는 [Master Prompts §18](./02_Master_Prompts.md) + Perplexity 교차 검증으로 본인 상품 실제 률 확인 필수.
+>
+> 💡 **강의 50% vs Margin Shield SaaS 25% fallback 차이**: 학생이 손으로 계산할 땐 50% 보수 버퍼. **Margin Shield SaaS** (졸업 후 사용)는 본인 상품을 50개+ HTS 카테고리에서 정확 매치 → 실제 률 적용 (보통 5~15% MFN), 매치 실패 시에만 25% fallback (post-IEEPA 평균 실효 률). 즉 **둘 다 정합** — 매뉴얼 계산은 보수, 자동화는 정밀.
 
 > ⚠️ **불확실성 경고**: 2026.4 현재 트럼프 행정부가 **Section 232 신규 발동·확대**를 시사 + Congress의 새 관세 입법 가능성도 있음. 매월 본인 카테고리 HTS 률을 [USITC.gov](https://hts.usitc.gov) 직접 검증 필수. **본 수치가 2026 Q3에 또 바뀔 수 있음**.
 

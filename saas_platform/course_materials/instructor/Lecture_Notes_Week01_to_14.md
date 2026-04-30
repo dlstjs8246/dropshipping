@@ -7,7 +7,7 @@
 >
 > **수강생 자기주도 학습 인프라 (모든 주차 공통 안내)**
 > - 학습 진척: [Supplement 11 자가 진단 시스템](../Supplement_11_Self_Assessment_and_Progress_Tracker.md) — Week 0 Pre-flight + 매주 일요일 22시 5문항 작성. Week 1 종료 시 첫 Checkpoint 안내. **§5.4 매주 우선순위 + §5.5 멘탈 코치 AI 루틴 매주 강조**.
-> - 용어 참조: [Appendix E 용어집](../Appendix_E_Glossary.md) — ROAS·CVR·DDP·HTS·CoT·RAG·MoCRA·IOR·MCP 등 100+ 용어.
+> - 용어 참조: [Appendix E 용어집](../Appendix_E_Glossary.md) — ROAS·CVR·DDP·HTS·CoT·RAG·MoCRA·IOR·MCP 등 130+ 용어.
 > - 흔한 실수 자가 검열: [Appendix F 12선](../Appendix_F_Common_Mistakes_10.md) — 매주 일요일 자가 검열 시트 강조.
 >
 > **강사가 강의 중 자주 호출할 Master Prompts (Part 2·3)**
@@ -73,7 +73,7 @@
 
 **[0:30 - 2:00] 실습: Cursor 활용**
 * **실습 가이드**: 코딩을 전혀 모르는 수강생에게 Cursor 편집기를 열게 하고, 자연어 채팅(Cmd+K)으로 버튼 색상을 바꾸거나 불필요한 섹션을 숨기는 시연을 합니다. (깊이 들어가지 않도록 주의)
-* **심화 자료 안내**: 다중 AI 연결 워크플로우 10종은 [Supplement 05](../Supplement_05_AI_Workflow_Recipes.md). 단일 프롬프트의 한계를 깨우치는 결정적 자료.
+* **심화 자료 안내**: 다중 AI 연결 워크플로우 13종은 [Supplement 05](../Supplement_05_AI_Workflow_Recipes.md) (atomization·페르소나·A/B 닫힌 학습 포함). 단일 프롬프트의 한계를 깨우치는 결정적 자료. 막힘 시 카탈로그 인덱스에서 작업명 → 레시피 매핑.
 * **운영 플레이북 안내**: 스토어 완성 후 첫 매출 30~90일 운영은 [Appendix D 첫 100명 플레이북](../Appendix_D_First_100_Customers.md) — Day 0 체크리스트 8개를 W6 종료 직후 함께 점검 권장. Stuck Recovery Tree로 막힘 회피.
 
 ---

@@ -141,7 +141,7 @@ Phase 5 (월 매출 $20K+):
 
 ### 2. 졸업 후 60일 — 다중 AI 워크플로우 자동화
 
-[Supplement 05: AI 워크플로우 레시피](./Supplement_05_AI_Workflow_Recipes.md)의 10개 레시피 중 3개 자동화:
+[Supplement 05: AI 워크플로우 레시피](./Supplement_05_AI_Workflow_Recipes.md)의 13개 레시피 중 3개 자동화:
 - 레시피 6: 광고 분석 → 액션 (매주 일요일)
 - 레시피 7: RAG CS 봇 + 휴먼 검수 (실시간)
 - 레시피 9: 트렌드 모니터링 (매일 9시)
